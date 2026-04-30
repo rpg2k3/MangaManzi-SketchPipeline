@@ -1,0 +1,2316 @@
+{
+  "pose_count": 231,
+  "unique_poses": 41,
+  "poses": [
+    {
+      "number": 1,
+      "filename": "F_adult_front_contrapposto_classic_01.png",
+      "view": "front",
+      "pose": "contrapposto_classic",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Classic contrapposto \u2014 weight on right leg, left hand on hip, right arm relaxed at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 2,
+      "filename": "F_adult_side_L_contrapposto_classic_01.png",
+      "view": "side_L",
+      "pose": "contrapposto_classic",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Classic contrapposto \u2014 weight on right leg, left hand on hip, right arm relaxed at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 3,
+      "filename": "F_adult_side_R_contrapposto_classic_01.png",
+      "view": "side_R",
+      "pose": "contrapposto_classic",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Classic contrapposto \u2014 weight on right leg, left hand on hip, right arm relaxed at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 4,
+      "filename": "F_adult_back_contrapposto_classic_01.png",
+      "view": "back",
+      "pose": "contrapposto_classic",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Classic contrapposto \u2014 weight on right leg, left hand on hip, right arm relaxed at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 5,
+      "filename": "F_adult_3q_front_L_contrapposto_classic_01.png",
+      "view": "3q_front_L",
+      "pose": "contrapposto_classic",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Classic contrapposto \u2014 weight on right leg, left hand on hip, right arm relaxed at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 6,
+      "filename": "F_adult_3q_front_R_contrapposto_classic_01.png",
+      "view": "3q_front_R",
+      "pose": "contrapposto_classic",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Classic contrapposto \u2014 weight on right leg, left hand on hip, right arm relaxed at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 7,
+      "filename": "F_adult_front_contrapposto_relaxed_01.png",
+      "view": "front",
+      "pose": "contrapposto_relaxed",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Relaxed contrapposto \u2014 weight on left leg, both arms hanging naturally, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 8,
+      "filename": "F_adult_side_L_contrapposto_relaxed_01.png",
+      "view": "side_L",
+      "pose": "contrapposto_relaxed",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Relaxed contrapposto \u2014 weight on left leg, both arms hanging naturally, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 9,
+      "filename": "F_adult_side_R_contrapposto_relaxed_01.png",
+      "view": "side_R",
+      "pose": "contrapposto_relaxed",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Relaxed contrapposto \u2014 weight on left leg, both arms hanging naturally, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 10,
+      "filename": "F_adult_back_contrapposto_relaxed_01.png",
+      "view": "back",
+      "pose": "contrapposto_relaxed",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Relaxed contrapposto \u2014 weight on left leg, both arms hanging naturally, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 11,
+      "filename": "F_adult_3q_front_L_contrapposto_relaxed_01.png",
+      "view": "3q_front_L",
+      "pose": "contrapposto_relaxed",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Relaxed contrapposto \u2014 weight on left leg, both arms hanging naturally, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 12,
+      "filename": "F_adult_3q_front_R_contrapposto_relaxed_01.png",
+      "view": "3q_front_R",
+      "pose": "contrapposto_relaxed",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Relaxed contrapposto \u2014 weight on left leg, both arms hanging naturally, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 13,
+      "filename": "F_adult_front_power_stance_01.png",
+      "view": "front",
+      "pose": "power_stance",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Power stance \u2014 feet wide, shoulders squared, both hands on hips, symmetric weight",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 14,
+      "filename": "F_adult_side_L_power_stance_01.png",
+      "view": "side_L",
+      "pose": "power_stance",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Power stance \u2014 feet wide, shoulders squared, both hands on hips, symmetric weight",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 15,
+      "filename": "F_adult_side_R_power_stance_01.png",
+      "view": "side_R",
+      "pose": "power_stance",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Power stance \u2014 feet wide, shoulders squared, both hands on hips, symmetric weight",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 16,
+      "filename": "F_adult_back_power_stance_01.png",
+      "view": "back",
+      "pose": "power_stance",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Power stance \u2014 feet wide, shoulders squared, both hands on hips, symmetric weight",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 17,
+      "filename": "F_adult_3q_front_L_power_stance_01.png",
+      "view": "3q_front_L",
+      "pose": "power_stance",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Power stance \u2014 feet wide, shoulders squared, both hands on hips, symmetric weight",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 18,
+      "filename": "F_adult_3q_front_R_power_stance_01.png",
+      "view": "3q_front_R",
+      "pose": "power_stance",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Power stance \u2014 feet wide, shoulders squared, both hands on hips, symmetric weight",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 19,
+      "filename": "F_adult_front_idle_casual_01.png",
+      "view": "front",
+      "pose": "idle_casual",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Casual idle \u2014 weight slightly shifted, one hand in implied pocket, head turned slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 20,
+      "filename": "F_adult_side_L_idle_casual_01.png",
+      "view": "side_L",
+      "pose": "idle_casual",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Casual idle \u2014 weight slightly shifted, one hand in implied pocket, head turned slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 21,
+      "filename": "F_adult_side_R_idle_casual_01.png",
+      "view": "side_R",
+      "pose": "idle_casual",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Casual idle \u2014 weight slightly shifted, one hand in implied pocket, head turned slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 22,
+      "filename": "F_adult_back_idle_casual_01.png",
+      "view": "back",
+      "pose": "idle_casual",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Casual idle \u2014 weight slightly shifted, one hand in implied pocket, head turned slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 23,
+      "filename": "F_adult_3q_front_L_idle_casual_01.png",
+      "view": "3q_front_L",
+      "pose": "idle_casual",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Casual idle \u2014 weight slightly shifted, one hand in implied pocket, head turned slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 24,
+      "filename": "F_adult_3q_front_R_idle_casual_01.png",
+      "view": "3q_front_R",
+      "pose": "idle_casual",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Casual idle \u2014 weight slightly shifted, one hand in implied pocket, head turned slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 25,
+      "filename": "F_adult_front_resting_lean_01.png",
+      "view": "front",
+      "pose": "resting_lean",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Resting lean \u2014 weight against implied surface, arms crossed loosely, one foot crossed over other",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 26,
+      "filename": "F_adult_side_L_resting_lean_01.png",
+      "view": "side_L",
+      "pose": "resting_lean",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Resting lean \u2014 weight against implied surface, arms crossed loosely, one foot crossed over other",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 27,
+      "filename": "F_adult_side_R_resting_lean_01.png",
+      "view": "side_R",
+      "pose": "resting_lean",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Resting lean \u2014 weight against implied surface, arms crossed loosely, one foot crossed over other",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 28,
+      "filename": "F_adult_back_resting_lean_01.png",
+      "view": "back",
+      "pose": "resting_lean",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Resting lean \u2014 weight against implied surface, arms crossed loosely, one foot crossed over other",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 29,
+      "filename": "F_adult_3q_front_L_resting_lean_01.png",
+      "view": "3q_front_L",
+      "pose": "resting_lean",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Resting lean \u2014 weight against implied surface, arms crossed loosely, one foot crossed over other",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 30,
+      "filename": "F_adult_3q_front_R_resting_lean_01.png",
+      "view": "3q_front_R",
+      "pose": "resting_lean",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Resting lean \u2014 weight against implied surface, arms crossed loosely, one foot crossed over other",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 31,
+      "filename": "F_adult_front_crossed_arms_01.png",
+      "view": "front",
+      "pose": "crossed_arms",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing with crossed arms \u2014 weight centered, arms folded at chest, slight forward lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 32,
+      "filename": "F_adult_side_L_crossed_arms_01.png",
+      "view": "side_L",
+      "pose": "crossed_arms",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing with crossed arms \u2014 weight centered, arms folded at chest, slight forward lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 33,
+      "filename": "F_adult_side_R_crossed_arms_01.png",
+      "view": "side_R",
+      "pose": "crossed_arms",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing with crossed arms \u2014 weight centered, arms folded at chest, slight forward lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 34,
+      "filename": "F_adult_back_crossed_arms_01.png",
+      "view": "back",
+      "pose": "crossed_arms",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing with crossed arms \u2014 weight centered, arms folded at chest, slight forward lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 35,
+      "filename": "F_adult_3q_front_L_crossed_arms_01.png",
+      "view": "3q_front_L",
+      "pose": "crossed_arms",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing with crossed arms \u2014 weight centered, arms folded at chest, slight forward lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 36,
+      "filename": "F_adult_3q_front_R_crossed_arms_01.png",
+      "view": "3q_front_R",
+      "pose": "crossed_arms",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing with crossed arms \u2014 weight centered, arms folded at chest, slight forward lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 37,
+      "filename": "F_adult_front_glute_reveal_01.png",
+      "view": "front",
+      "pose": "glute_reveal",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing back-emphasis \u2014 weight shifted to show glute contour, torso slight twist",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 38,
+      "filename": "F_adult_side_L_glute_reveal_01.png",
+      "view": "side_L",
+      "pose": "glute_reveal",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing back-emphasis \u2014 weight shifted to show glute contour, torso slight twist",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 39,
+      "filename": "F_adult_side_R_glute_reveal_01.png",
+      "view": "side_R",
+      "pose": "glute_reveal",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing back-emphasis \u2014 weight shifted to show glute contour, torso slight twist",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 40,
+      "filename": "F_adult_back_glute_reveal_01.png",
+      "view": "back",
+      "pose": "glute_reveal",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing back-emphasis \u2014 weight shifted to show glute contour, torso slight twist",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 41,
+      "filename": "F_adult_3q_front_L_glute_reveal_01.png",
+      "view": "3q_front_L",
+      "pose": "glute_reveal",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing back-emphasis \u2014 weight shifted to show glute contour, torso slight twist",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 42,
+      "filename": "F_adult_3q_front_R_glute_reveal_01.png",
+      "view": "3q_front_R",
+      "pose": "glute_reveal",
+      "category": "Standing & Contrapposto",
+      "pose_description": "Standing back-emphasis \u2014 weight shifted to show glute contour, torso slight twist",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 43,
+      "filename": "F_adult_front_walk_neutral_01.png",
+      "view": "front",
+      "pose": "walk_neutral",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Mid-stride casual walk \u2014 right leg forward heel-strike, left leg back push-off",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 44,
+      "filename": "F_adult_side_L_walk_neutral_01.png",
+      "view": "side_L",
+      "pose": "walk_neutral",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Mid-stride casual walk \u2014 right leg forward heel-strike, left leg back push-off",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 45,
+      "filename": "F_adult_side_R_walk_neutral_01.png",
+      "view": "side_R",
+      "pose": "walk_neutral",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Mid-stride casual walk \u2014 right leg forward heel-strike, left leg back push-off",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 46,
+      "filename": "F_adult_back_walk_neutral_01.png",
+      "view": "back",
+      "pose": "walk_neutral",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Mid-stride casual walk \u2014 right leg forward heel-strike, left leg back push-off",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 47,
+      "filename": "F_adult_3q_front_L_walk_neutral_01.png",
+      "view": "3q_front_L",
+      "pose": "walk_neutral",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Mid-stride casual walk \u2014 right leg forward heel-strike, left leg back push-off",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 48,
+      "filename": "F_adult_3q_front_R_walk_neutral_01.png",
+      "view": "3q_front_R",
+      "pose": "walk_neutral",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Mid-stride casual walk \u2014 right leg forward heel-strike, left leg back push-off",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 49,
+      "filename": "F_adult_front_walk_confident_01.png",
+      "view": "front",
+      "pose": "walk_confident",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Confident strut \u2014 longer stride, shoulders back, chin up, arms swinging wide",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 50,
+      "filename": "F_adult_side_L_walk_confident_01.png",
+      "view": "side_L",
+      "pose": "walk_confident",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Confident strut \u2014 longer stride, shoulders back, chin up, arms swinging wide",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 51,
+      "filename": "F_adult_side_R_walk_confident_01.png",
+      "view": "side_R",
+      "pose": "walk_confident",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Confident strut \u2014 longer stride, shoulders back, chin up, arms swinging wide",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 52,
+      "filename": "F_adult_back_walk_confident_01.png",
+      "view": "back",
+      "pose": "walk_confident",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Confident strut \u2014 longer stride, shoulders back, chin up, arms swinging wide",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 53,
+      "filename": "F_adult_3q_front_L_walk_confident_01.png",
+      "view": "3q_front_L",
+      "pose": "walk_confident",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Confident strut \u2014 longer stride, shoulders back, chin up, arms swinging wide",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 54,
+      "filename": "F_adult_3q_front_R_walk_confident_01.png",
+      "view": "3q_front_R",
+      "pose": "walk_confident",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Confident strut \u2014 longer stride, shoulders back, chin up, arms swinging wide",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 55,
+      "filename": "F_adult_front_run_jog_01.png",
+      "view": "front",
+      "pose": "run_jog",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Jogging pace mid-stride \u2014 lead knee lifted high, back leg extended behind",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 56,
+      "filename": "F_adult_side_L_run_jog_01.png",
+      "view": "side_L",
+      "pose": "run_jog",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Jogging pace mid-stride \u2014 lead knee lifted high, back leg extended behind",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 57,
+      "filename": "F_adult_side_R_run_jog_01.png",
+      "view": "side_R",
+      "pose": "run_jog",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Jogging pace mid-stride \u2014 lead knee lifted high, back leg extended behind",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 58,
+      "filename": "F_adult_back_run_jog_01.png",
+      "view": "back",
+      "pose": "run_jog",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Jogging pace mid-stride \u2014 lead knee lifted high, back leg extended behind",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 59,
+      "filename": "F_adult_3q_front_L_run_jog_01.png",
+      "view": "3q_front_L",
+      "pose": "run_jog",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Jogging pace mid-stride \u2014 lead knee lifted high, back leg extended behind",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 60,
+      "filename": "F_adult_3q_front_R_run_jog_01.png",
+      "view": "3q_front_R",
+      "pose": "run_jog",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Jogging pace mid-stride \u2014 lead knee lifted high, back leg extended behind",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 61,
+      "filename": "F_adult_front_run_sprint_01.png",
+      "view": "front",
+      "pose": "run_sprint",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Full sprint \u2014 extreme forward lean, high knee drive, arms pumping",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 62,
+      "filename": "F_adult_side_L_run_sprint_01.png",
+      "view": "side_L",
+      "pose": "run_sprint",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Full sprint \u2014 extreme forward lean, high knee drive, arms pumping",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 63,
+      "filename": "F_adult_side_R_run_sprint_01.png",
+      "view": "side_R",
+      "pose": "run_sprint",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Full sprint \u2014 extreme forward lean, high knee drive, arms pumping",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 64,
+      "filename": "F_adult_back_run_sprint_01.png",
+      "view": "back",
+      "pose": "run_sprint",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Full sprint \u2014 extreme forward lean, high knee drive, arms pumping",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 65,
+      "filename": "F_adult_3q_front_L_run_sprint_01.png",
+      "view": "3q_front_L",
+      "pose": "run_sprint",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Full sprint \u2014 extreme forward lean, high knee drive, arms pumping",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 66,
+      "filename": "F_adult_3q_front_R_run_sprint_01.png",
+      "view": "3q_front_R",
+      "pose": "run_sprint",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Full sprint \u2014 extreme forward lean, high knee drive, arms pumping",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 67,
+      "filename": "F_adult_front_walk_stealth_01.png",
+      "view": "front",
+      "pose": "walk_stealth",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Stealth crouch-walk \u2014 low center of gravity, bent knees, arms close to body",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 68,
+      "filename": "F_adult_side_L_walk_stealth_01.png",
+      "view": "side_L",
+      "pose": "walk_stealth",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Stealth crouch-walk \u2014 low center of gravity, bent knees, arms close to body",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 69,
+      "filename": "F_adult_side_R_walk_stealth_01.png",
+      "view": "side_R",
+      "pose": "walk_stealth",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Stealth crouch-walk \u2014 low center of gravity, bent knees, arms close to body",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 70,
+      "filename": "F_adult_back_walk_stealth_01.png",
+      "view": "back",
+      "pose": "walk_stealth",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Stealth crouch-walk \u2014 low center of gravity, bent knees, arms close to body",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 71,
+      "filename": "F_adult_3q_front_L_walk_stealth_01.png",
+      "view": "3q_front_L",
+      "pose": "walk_stealth",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Stealth crouch-walk \u2014 low center of gravity, bent knees, arms close to body",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 72,
+      "filename": "F_adult_3q_front_R_walk_stealth_01.png",
+      "view": "3q_front_R",
+      "pose": "walk_stealth",
+      "category": "Walking/Running/Sprinting",
+      "pose_description": "Stealth crouch-walk \u2014 low center of gravity, bent knees, arms close to body",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 73,
+      "filename": "F_adult_front_sit_chair_neutral_01.png",
+      "view": "front",
+      "pose": "sit_chair_neutral",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated upright on implied chair \u2014 knees at 90 degrees, hands on thighs",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 74,
+      "filename": "F_adult_side_L_sit_chair_neutral_01.png",
+      "view": "side_L",
+      "pose": "sit_chair_neutral",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated upright on implied chair \u2014 knees at 90 degrees, hands on thighs",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 75,
+      "filename": "F_adult_side_R_sit_chair_neutral_01.png",
+      "view": "side_R",
+      "pose": "sit_chair_neutral",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated upright on implied chair \u2014 knees at 90 degrees, hands on thighs",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 76,
+      "filename": "F_adult_back_sit_chair_neutral_01.png",
+      "view": "back",
+      "pose": "sit_chair_neutral",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated upright on implied chair \u2014 knees at 90 degrees, hands on thighs",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 77,
+      "filename": "F_adult_3q_front_L_sit_chair_neutral_01.png",
+      "view": "3q_front_L",
+      "pose": "sit_chair_neutral",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated upright on implied chair \u2014 knees at 90 degrees, hands on thighs",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 78,
+      "filename": "F_adult_3q_front_R_sit_chair_neutral_01.png",
+      "view": "3q_front_R",
+      "pose": "sit_chair_neutral",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated upright on implied chair \u2014 knees at 90 degrees, hands on thighs",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 79,
+      "filename": "F_adult_front_sit_chair_relaxed_01.png",
+      "view": "front",
+      "pose": "sit_chair_relaxed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Relaxed seated \u2014 one leg crossed over other, leaning back slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 80,
+      "filename": "F_adult_side_L_sit_chair_relaxed_01.png",
+      "view": "side_L",
+      "pose": "sit_chair_relaxed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Relaxed seated \u2014 one leg crossed over other, leaning back slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 81,
+      "filename": "F_adult_side_R_sit_chair_relaxed_01.png",
+      "view": "side_R",
+      "pose": "sit_chair_relaxed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Relaxed seated \u2014 one leg crossed over other, leaning back slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 82,
+      "filename": "F_adult_back_sit_chair_relaxed_01.png",
+      "view": "back",
+      "pose": "sit_chair_relaxed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Relaxed seated \u2014 one leg crossed over other, leaning back slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 83,
+      "filename": "F_adult_3q_front_L_sit_chair_relaxed_01.png",
+      "view": "3q_front_L",
+      "pose": "sit_chair_relaxed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Relaxed seated \u2014 one leg crossed over other, leaning back slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 84,
+      "filename": "F_adult_3q_front_R_sit_chair_relaxed_01.png",
+      "view": "3q_front_R",
+      "pose": "sit_chair_relaxed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Relaxed seated \u2014 one leg crossed over other, leaning back slightly",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 85,
+      "filename": "F_adult_front_sit_floor_crossed_01.png",
+      "view": "front",
+      "pose": "sit_floor_crossed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor cross-legged \u2014 hands on knees, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 86,
+      "filename": "F_adult_side_L_sit_floor_crossed_01.png",
+      "view": "side_L",
+      "pose": "sit_floor_crossed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor cross-legged \u2014 hands on knees, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 87,
+      "filename": "F_adult_side_R_sit_floor_crossed_01.png",
+      "view": "side_R",
+      "pose": "sit_floor_crossed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor cross-legged \u2014 hands on knees, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 88,
+      "filename": "F_adult_back_sit_floor_crossed_01.png",
+      "view": "back",
+      "pose": "sit_floor_crossed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor cross-legged \u2014 hands on knees, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 89,
+      "filename": "F_adult_3q_front_L_sit_floor_crossed_01.png",
+      "view": "3q_front_L",
+      "pose": "sit_floor_crossed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor cross-legged \u2014 hands on knees, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 90,
+      "filename": "F_adult_3q_front_R_sit_floor_crossed_01.png",
+      "view": "3q_front_R",
+      "pose": "sit_floor_crossed",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor cross-legged \u2014 hands on knees, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 91,
+      "filename": "F_adult_front_sit_floor_side_01.png",
+      "view": "front",
+      "pose": "sit_floor_side",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor side-saddle \u2014 legs tucked to one side, one hand on floor for support",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 92,
+      "filename": "F_adult_side_L_sit_floor_side_01.png",
+      "view": "side_L",
+      "pose": "sit_floor_side",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor side-saddle \u2014 legs tucked to one side, one hand on floor for support",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 93,
+      "filename": "F_adult_side_R_sit_floor_side_01.png",
+      "view": "side_R",
+      "pose": "sit_floor_side",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor side-saddle \u2014 legs tucked to one side, one hand on floor for support",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 94,
+      "filename": "F_adult_back_sit_floor_side_01.png",
+      "view": "back",
+      "pose": "sit_floor_side",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor side-saddle \u2014 legs tucked to one side, one hand on floor for support",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 95,
+      "filename": "F_adult_3q_front_L_sit_floor_side_01.png",
+      "view": "3q_front_L",
+      "pose": "sit_floor_side",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor side-saddle \u2014 legs tucked to one side, one hand on floor for support",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 96,
+      "filename": "F_adult_3q_front_R_sit_floor_side_01.png",
+      "view": "3q_front_R",
+      "pose": "sit_floor_side",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Seated on floor side-saddle \u2014 legs tucked to one side, one hand on floor for support",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 97,
+      "filename": "F_adult_front_kneel_one_01.png",
+      "view": "front",
+      "pose": "kneel_one",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "One-knee kneel \u2014 right knee on ground, left knee up at 90 degrees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 98,
+      "filename": "F_adult_side_L_kneel_one_01.png",
+      "view": "side_L",
+      "pose": "kneel_one",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "One-knee kneel \u2014 right knee on ground, left knee up at 90 degrees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 99,
+      "filename": "F_adult_side_R_kneel_one_01.png",
+      "view": "side_R",
+      "pose": "kneel_one",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "One-knee kneel \u2014 right knee on ground, left knee up at 90 degrees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 100,
+      "filename": "F_adult_back_kneel_one_01.png",
+      "view": "back",
+      "pose": "kneel_one",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "One-knee kneel \u2014 right knee on ground, left knee up at 90 degrees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 101,
+      "filename": "F_adult_3q_front_L_kneel_one_01.png",
+      "view": "3q_front_L",
+      "pose": "kneel_one",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "One-knee kneel \u2014 right knee on ground, left knee up at 90 degrees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 102,
+      "filename": "F_adult_3q_front_R_kneel_one_01.png",
+      "view": "3q_front_R",
+      "pose": "kneel_one",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "One-knee kneel \u2014 right knee on ground, left knee up at 90 degrees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 103,
+      "filename": "F_adult_front_kneel_both_01.png",
+      "view": "front",
+      "pose": "kneel_both",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Both-knees kneel \u2014 sitting on heels, hands resting on thighs, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 104,
+      "filename": "F_adult_side_L_kneel_both_01.png",
+      "view": "side_L",
+      "pose": "kneel_both",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Both-knees kneel \u2014 sitting on heels, hands resting on thighs, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 105,
+      "filename": "F_adult_side_R_kneel_both_01.png",
+      "view": "side_R",
+      "pose": "kneel_both",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Both-knees kneel \u2014 sitting on heels, hands resting on thighs, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 106,
+      "filename": "F_adult_back_kneel_both_01.png",
+      "view": "back",
+      "pose": "kneel_both",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Both-knees kneel \u2014 sitting on heels, hands resting on thighs, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 107,
+      "filename": "F_adult_3q_front_L_kneel_both_01.png",
+      "view": "3q_front_L",
+      "pose": "kneel_both",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Both-knees kneel \u2014 sitting on heels, hands resting on thighs, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 108,
+      "filename": "F_adult_3q_front_R_kneel_both_01.png",
+      "view": "3q_front_R",
+      "pose": "kneel_both",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Both-knees kneel \u2014 sitting on heels, hands resting on thighs, spine upright",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 109,
+      "filename": "F_adult_front_recline_prop_01.png",
+      "view": "front",
+      "pose": "recline_prop",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Reclining propped on elbow \u2014 lying on right side, torso raised at 30 degrees",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 110,
+      "filename": "F_adult_side_L_recline_prop_01.png",
+      "view": "side_L",
+      "pose": "recline_prop",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Reclining propped on elbow \u2014 lying on right side, torso raised at 30 degrees",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 111,
+      "filename": "F_adult_side_R_recline_prop_01.png",
+      "view": "side_R",
+      "pose": "recline_prop",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Reclining propped on elbow \u2014 lying on right side, torso raised at 30 degrees",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 112,
+      "filename": "F_adult_back_recline_prop_01.png",
+      "view": "back",
+      "pose": "recline_prop",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Reclining propped on elbow \u2014 lying on right side, torso raised at 30 degrees",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 113,
+      "filename": "F_adult_3q_front_L_recline_prop_01.png",
+      "view": "3q_front_L",
+      "pose": "recline_prop",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Reclining propped on elbow \u2014 lying on right side, torso raised at 30 degrees",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 114,
+      "filename": "F_adult_3q_front_R_recline_prop_01.png",
+      "view": "3q_front_R",
+      "pose": "recline_prop",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Reclining propped on elbow \u2014 lying on right side, torso raised at 30 degrees",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 115,
+      "filename": "F_adult_front_recline_flat_01.png",
+      "view": "front",
+      "pose": "recline_flat",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Flat recline \u2014 lying on back, one knee bent, arms at sides",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 116,
+      "filename": "F_adult_side_L_recline_flat_01.png",
+      "view": "side_L",
+      "pose": "recline_flat",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Flat recline \u2014 lying on back, one knee bent, arms at sides",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 117,
+      "filename": "F_adult_side_R_recline_flat_01.png",
+      "view": "side_R",
+      "pose": "recline_flat",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Flat recline \u2014 lying on back, one knee bent, arms at sides",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 118,
+      "filename": "F_adult_back_recline_flat_01.png",
+      "view": "back",
+      "pose": "recline_flat",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Flat recline \u2014 lying on back, one knee bent, arms at sides",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 119,
+      "filename": "F_adult_3q_front_L_recline_flat_01.png",
+      "view": "3q_front_L",
+      "pose": "recline_flat",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Flat recline \u2014 lying on back, one knee bent, arms at sides",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 120,
+      "filename": "F_adult_3q_front_R_recline_flat_01.png",
+      "view": "3q_front_R",
+      "pose": "recline_flat",
+      "category": "Sitting/Kneeling/Reclining",
+      "pose_description": "Flat recline \u2014 lying on back, one knee bent, arms at sides",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 121,
+      "filename": "F_adult_front_combat_ready_01.png",
+      "view": "front",
+      "pose": "combat_ready",
+      "category": "Combat & Action",
+      "pose_description": "Orthodox fighting stance \u2014 left foot forward, fists raised, weight on back foot",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 122,
+      "filename": "F_adult_side_L_combat_ready_01.png",
+      "view": "side_L",
+      "pose": "combat_ready",
+      "category": "Combat & Action",
+      "pose_description": "Orthodox fighting stance \u2014 left foot forward, fists raised, weight on back foot",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 123,
+      "filename": "F_adult_side_R_combat_ready_01.png",
+      "view": "side_R",
+      "pose": "combat_ready",
+      "category": "Combat & Action",
+      "pose_description": "Orthodox fighting stance \u2014 left foot forward, fists raised, weight on back foot",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 124,
+      "filename": "F_adult_back_combat_ready_01.png",
+      "view": "back",
+      "pose": "combat_ready",
+      "category": "Combat & Action",
+      "pose_description": "Orthodox fighting stance \u2014 left foot forward, fists raised, weight on back foot",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 125,
+      "filename": "F_adult_3q_front_L_combat_ready_01.png",
+      "view": "3q_front_L",
+      "pose": "combat_ready",
+      "category": "Combat & Action",
+      "pose_description": "Orthodox fighting stance \u2014 left foot forward, fists raised, weight on back foot",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 126,
+      "filename": "F_adult_3q_front_R_combat_ready_01.png",
+      "view": "3q_front_R",
+      "pose": "combat_ready",
+      "category": "Combat & Action",
+      "pose_description": "Orthodox fighting stance \u2014 left foot forward, fists raised, weight on back foot",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 127,
+      "filename": "F_adult_front_combat_punch_right_01.png",
+      "view": "front",
+      "pose": "combat_punch_right",
+      "category": "Combat & Action",
+      "pose_description": "Right cross punch \u2014 right arm fully extended, torso rotated, left guard up",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 128,
+      "filename": "F_adult_side_L_combat_punch_right_01.png",
+      "view": "side_L",
+      "pose": "combat_punch_right",
+      "category": "Combat & Action",
+      "pose_description": "Right cross punch \u2014 right arm fully extended, torso rotated, left guard up",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 129,
+      "filename": "F_adult_side_R_combat_punch_right_01.png",
+      "view": "side_R",
+      "pose": "combat_punch_right",
+      "category": "Combat & Action",
+      "pose_description": "Right cross punch \u2014 right arm fully extended, torso rotated, left guard up",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 130,
+      "filename": "F_adult_back_combat_punch_right_01.png",
+      "view": "back",
+      "pose": "combat_punch_right",
+      "category": "Combat & Action",
+      "pose_description": "Right cross punch \u2014 right arm fully extended, torso rotated, left guard up",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 131,
+      "filename": "F_adult_3q_front_L_combat_punch_right_01.png",
+      "view": "3q_front_L",
+      "pose": "combat_punch_right",
+      "category": "Combat & Action",
+      "pose_description": "Right cross punch \u2014 right arm fully extended, torso rotated, left guard up",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 132,
+      "filename": "F_adult_3q_front_R_combat_punch_right_01.png",
+      "view": "3q_front_R",
+      "pose": "combat_punch_right",
+      "category": "Combat & Action",
+      "pose_description": "Right cross punch \u2014 right arm fully extended, torso rotated, left guard up",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 133,
+      "filename": "F_adult_front_combat_kick_high_01.png",
+      "view": "front",
+      "pose": "combat_kick_high",
+      "category": "Combat & Action",
+      "pose_description": "High kick mid-motion \u2014 left leg planted, right leg extended high",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 134,
+      "filename": "F_adult_side_L_combat_kick_high_01.png",
+      "view": "side_L",
+      "pose": "combat_kick_high",
+      "category": "Combat & Action",
+      "pose_description": "High kick mid-motion \u2014 left leg planted, right leg extended high",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 135,
+      "filename": "F_adult_side_R_combat_kick_high_01.png",
+      "view": "side_R",
+      "pose": "combat_kick_high",
+      "category": "Combat & Action",
+      "pose_description": "High kick mid-motion \u2014 left leg planted, right leg extended high",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 136,
+      "filename": "F_adult_back_combat_kick_high_01.png",
+      "view": "back",
+      "pose": "combat_kick_high",
+      "category": "Combat & Action",
+      "pose_description": "High kick mid-motion \u2014 left leg planted, right leg extended high",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 137,
+      "filename": "F_adult_3q_front_L_combat_kick_high_01.png",
+      "view": "3q_front_L",
+      "pose": "combat_kick_high",
+      "category": "Combat & Action",
+      "pose_description": "High kick mid-motion \u2014 left leg planted, right leg extended high",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 138,
+      "filename": "F_adult_3q_front_R_combat_kick_high_01.png",
+      "view": "3q_front_R",
+      "pose": "combat_kick_high",
+      "category": "Combat & Action",
+      "pose_description": "High kick mid-motion \u2014 left leg planted, right leg extended high",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 139,
+      "filename": "F_adult_front_combat_block_01.png",
+      "view": "front",
+      "pose": "combat_block",
+      "category": "Combat & Action",
+      "pose_description": "Defensive block \u2014 forearms crossed at face level, weight centered, knees bent",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 140,
+      "filename": "F_adult_side_L_combat_block_01.png",
+      "view": "side_L",
+      "pose": "combat_block",
+      "category": "Combat & Action",
+      "pose_description": "Defensive block \u2014 forearms crossed at face level, weight centered, knees bent",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 141,
+      "filename": "F_adult_side_R_combat_block_01.png",
+      "view": "side_R",
+      "pose": "combat_block",
+      "category": "Combat & Action",
+      "pose_description": "Defensive block \u2014 forearms crossed at face level, weight centered, knees bent",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 142,
+      "filename": "F_adult_back_combat_block_01.png",
+      "view": "back",
+      "pose": "combat_block",
+      "category": "Combat & Action",
+      "pose_description": "Defensive block \u2014 forearms crossed at face level, weight centered, knees bent",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 143,
+      "filename": "F_adult_3q_front_L_combat_block_01.png",
+      "view": "3q_front_L",
+      "pose": "combat_block",
+      "category": "Combat & Action",
+      "pose_description": "Defensive block \u2014 forearms crossed at face level, weight centered, knees bent",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 144,
+      "filename": "F_adult_3q_front_R_combat_block_01.png",
+      "view": "3q_front_R",
+      "pose": "combat_block",
+      "category": "Combat & Action",
+      "pose_description": "Defensive block \u2014 forearms crossed at face level, weight centered, knees bent",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 145,
+      "filename": "F_adult_front_combat_sword_idle_01.png",
+      "view": "front",
+      "pose": "combat_sword_idle",
+      "category": "Combat & Action",
+      "pose_description": "Sword idle stance \u2014 right hand gripping implied sword at hip, left hand free",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 146,
+      "filename": "F_adult_side_L_combat_sword_idle_01.png",
+      "view": "side_L",
+      "pose": "combat_sword_idle",
+      "category": "Combat & Action",
+      "pose_description": "Sword idle stance \u2014 right hand gripping implied sword at hip, left hand free",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 147,
+      "filename": "F_adult_side_R_combat_sword_idle_01.png",
+      "view": "side_R",
+      "pose": "combat_sword_idle",
+      "category": "Combat & Action",
+      "pose_description": "Sword idle stance \u2014 right hand gripping implied sword at hip, left hand free",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 148,
+      "filename": "F_adult_back_combat_sword_idle_01.png",
+      "view": "back",
+      "pose": "combat_sword_idle",
+      "category": "Combat & Action",
+      "pose_description": "Sword idle stance \u2014 right hand gripping implied sword at hip, left hand free",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 149,
+      "filename": "F_adult_3q_front_L_combat_sword_idle_01.png",
+      "view": "3q_front_L",
+      "pose": "combat_sword_idle",
+      "category": "Combat & Action",
+      "pose_description": "Sword idle stance \u2014 right hand gripping implied sword at hip, left hand free",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 150,
+      "filename": "F_adult_3q_front_R_combat_sword_idle_01.png",
+      "view": "3q_front_R",
+      "pose": "combat_sword_idle",
+      "category": "Combat & Action",
+      "pose_description": "Sword idle stance \u2014 right hand gripping implied sword at hip, left hand free",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 151,
+      "filename": "F_adult_front_combat_sword_swing_01.png",
+      "view": "front",
+      "pose": "combat_sword_swing",
+      "category": "Combat & Action",
+      "pose_description": "Overhead sword swing \u2014 both arms raised above head, mid-downward arc",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 152,
+      "filename": "F_adult_side_L_combat_sword_swing_01.png",
+      "view": "side_L",
+      "pose": "combat_sword_swing",
+      "category": "Combat & Action",
+      "pose_description": "Overhead sword swing \u2014 both arms raised above head, mid-downward arc",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 153,
+      "filename": "F_adult_side_R_combat_sword_swing_01.png",
+      "view": "side_R",
+      "pose": "combat_sword_swing",
+      "category": "Combat & Action",
+      "pose_description": "Overhead sword swing \u2014 both arms raised above head, mid-downward arc",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 154,
+      "filename": "F_adult_back_combat_sword_swing_01.png",
+      "view": "back",
+      "pose": "combat_sword_swing",
+      "category": "Combat & Action",
+      "pose_description": "Overhead sword swing \u2014 both arms raised above head, mid-downward arc",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 155,
+      "filename": "F_adult_3q_front_L_combat_sword_swing_01.png",
+      "view": "3q_front_L",
+      "pose": "combat_sword_swing",
+      "category": "Combat & Action",
+      "pose_description": "Overhead sword swing \u2014 both arms raised above head, mid-downward arc",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 156,
+      "filename": "F_adult_3q_front_R_combat_sword_swing_01.png",
+      "view": "3q_front_R",
+      "pose": "combat_sword_swing",
+      "category": "Combat & Action",
+      "pose_description": "Overhead sword swing \u2014 both arms raised above head, mid-downward arc",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 157,
+      "filename": "F_adult_front_cast_spell_01.png",
+      "view": "front",
+      "pose": "cast_spell",
+      "category": "Combat & Action",
+      "pose_description": "Spellcasting pose \u2014 one arm extended forward palm-out, other arm at side channeling",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 158,
+      "filename": "F_adult_side_L_cast_spell_01.png",
+      "view": "side_L",
+      "pose": "cast_spell",
+      "category": "Combat & Action",
+      "pose_description": "Spellcasting pose \u2014 one arm extended forward palm-out, other arm at side channeling",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 159,
+      "filename": "F_adult_side_R_cast_spell_01.png",
+      "view": "side_R",
+      "pose": "cast_spell",
+      "category": "Combat & Action",
+      "pose_description": "Spellcasting pose \u2014 one arm extended forward palm-out, other arm at side channeling",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 160,
+      "filename": "F_adult_back_cast_spell_01.png",
+      "view": "back",
+      "pose": "cast_spell",
+      "category": "Combat & Action",
+      "pose_description": "Spellcasting pose \u2014 one arm extended forward palm-out, other arm at side channeling",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 161,
+      "filename": "F_adult_3q_front_L_cast_spell_01.png",
+      "view": "3q_front_L",
+      "pose": "cast_spell",
+      "category": "Combat & Action",
+      "pose_description": "Spellcasting pose \u2014 one arm extended forward palm-out, other arm at side channeling",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 162,
+      "filename": "F_adult_3q_front_R_cast_spell_01.png",
+      "view": "3q_front_R",
+      "pose": "cast_spell",
+      "category": "Combat & Action",
+      "pose_description": "Spellcasting pose \u2014 one arm extended forward palm-out, other arm at side channeling",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 163,
+      "filename": "F_adult_front_throw_object_01.png",
+      "view": "front",
+      "pose": "throw_object",
+      "category": "Combat & Action",
+      "pose_description": "Mid-throw \u2014 right arm back behind shoulder, left foot forward, torso coiled",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 164,
+      "filename": "F_adult_side_L_throw_object_01.png",
+      "view": "side_L",
+      "pose": "throw_object",
+      "category": "Combat & Action",
+      "pose_description": "Mid-throw \u2014 right arm back behind shoulder, left foot forward, torso coiled",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 165,
+      "filename": "F_adult_side_R_throw_object_01.png",
+      "view": "side_R",
+      "pose": "throw_object",
+      "category": "Combat & Action",
+      "pose_description": "Mid-throw \u2014 right arm back behind shoulder, left foot forward, torso coiled",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 166,
+      "filename": "F_adult_back_throw_object_01.png",
+      "view": "back",
+      "pose": "throw_object",
+      "category": "Combat & Action",
+      "pose_description": "Mid-throw \u2014 right arm back behind shoulder, left foot forward, torso coiled",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 167,
+      "filename": "F_adult_3q_front_L_throw_object_01.png",
+      "view": "3q_front_L",
+      "pose": "throw_object",
+      "category": "Combat & Action",
+      "pose_description": "Mid-throw \u2014 right arm back behind shoulder, left foot forward, torso coiled",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 168,
+      "filename": "F_adult_3q_front_R_throw_object_01.png",
+      "view": "3q_front_R",
+      "pose": "throw_object",
+      "category": "Combat & Action",
+      "pose_description": "Mid-throw \u2014 right arm back behind shoulder, left foot forward, torso coiled",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 169,
+      "filename": "F_adult_front_reach_up_01.png",
+      "view": "front",
+      "pose": "reach_up",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching upward \u2014 one arm fully extended overhead, stretching on toes",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 170,
+      "filename": "F_adult_side_L_reach_up_01.png",
+      "view": "side_L",
+      "pose": "reach_up",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching upward \u2014 one arm fully extended overhead, stretching on toes",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 171,
+      "filename": "F_adult_side_R_reach_up_01.png",
+      "view": "side_R",
+      "pose": "reach_up",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching upward \u2014 one arm fully extended overhead, stretching on toes",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 172,
+      "filename": "F_adult_back_reach_up_01.png",
+      "view": "back",
+      "pose": "reach_up",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching upward \u2014 one arm fully extended overhead, stretching on toes",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 173,
+      "filename": "F_adult_3q_front_L_reach_up_01.png",
+      "view": "3q_front_L",
+      "pose": "reach_up",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching upward \u2014 one arm fully extended overhead, stretching on toes",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 174,
+      "filename": "F_adult_3q_front_R_reach_up_01.png",
+      "view": "3q_front_R",
+      "pose": "reach_up",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching upward \u2014 one arm fully extended overhead, stretching on toes",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 175,
+      "filename": "F_adult_front_reach_forward_01.png",
+      "view": "front",
+      "pose": "reach_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching forward \u2014 arm extended, body leaning into reach, back foot lifting",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 176,
+      "filename": "F_adult_side_L_reach_forward_01.png",
+      "view": "side_L",
+      "pose": "reach_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching forward \u2014 arm extended, body leaning into reach, back foot lifting",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 177,
+      "filename": "F_adult_side_R_reach_forward_01.png",
+      "view": "side_R",
+      "pose": "reach_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching forward \u2014 arm extended, body leaning into reach, back foot lifting",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 178,
+      "filename": "F_adult_back_reach_forward_01.png",
+      "view": "back",
+      "pose": "reach_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching forward \u2014 arm extended, body leaning into reach, back foot lifting",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 179,
+      "filename": "F_adult_3q_front_L_reach_forward_01.png",
+      "view": "3q_front_L",
+      "pose": "reach_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching forward \u2014 arm extended, body leaning into reach, back foot lifting",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 180,
+      "filename": "F_adult_3q_front_R_reach_forward_01.png",
+      "view": "3q_front_R",
+      "pose": "reach_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Reaching forward \u2014 arm extended, body leaning into reach, back foot lifting",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 181,
+      "filename": "F_adult_front_point_01.png",
+      "view": "front",
+      "pose": "point",
+      "category": "Dynamic Gestures",
+      "pose_description": "Pointing forward \u2014 index finger extended, other hand on hip, slight lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 182,
+      "filename": "F_adult_side_L_point_01.png",
+      "view": "side_L",
+      "pose": "point",
+      "category": "Dynamic Gestures",
+      "pose_description": "Pointing forward \u2014 index finger extended, other hand on hip, slight lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 183,
+      "filename": "F_adult_side_R_point_01.png",
+      "view": "side_R",
+      "pose": "point",
+      "category": "Dynamic Gestures",
+      "pose_description": "Pointing forward \u2014 index finger extended, other hand on hip, slight lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 184,
+      "filename": "F_adult_back_point_01.png",
+      "view": "back",
+      "pose": "point",
+      "category": "Dynamic Gestures",
+      "pose_description": "Pointing forward \u2014 index finger extended, other hand on hip, slight lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 185,
+      "filename": "F_adult_3q_front_L_point_01.png",
+      "view": "3q_front_L",
+      "pose": "point",
+      "category": "Dynamic Gestures",
+      "pose_description": "Pointing forward \u2014 index finger extended, other hand on hip, slight lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 186,
+      "filename": "F_adult_3q_front_R_point_01.png",
+      "view": "3q_front_R",
+      "pose": "point",
+      "category": "Dynamic Gestures",
+      "pose_description": "Pointing forward \u2014 index finger extended, other hand on hip, slight lean",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 187,
+      "filename": "F_adult_front_lean_forward_01.png",
+      "view": "front",
+      "pose": "lean_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning forward from waist \u2014 back straight, arms hanging or braced on knees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 188,
+      "filename": "F_adult_side_L_lean_forward_01.png",
+      "view": "side_L",
+      "pose": "lean_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning forward from waist \u2014 back straight, arms hanging or braced on knees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 189,
+      "filename": "F_adult_side_R_lean_forward_01.png",
+      "view": "side_R",
+      "pose": "lean_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning forward from waist \u2014 back straight, arms hanging or braced on knees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 190,
+      "filename": "F_adult_back_lean_forward_01.png",
+      "view": "back",
+      "pose": "lean_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning forward from waist \u2014 back straight, arms hanging or braced on knees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 191,
+      "filename": "F_adult_3q_front_L_lean_forward_01.png",
+      "view": "3q_front_L",
+      "pose": "lean_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning forward from waist \u2014 back straight, arms hanging or braced on knees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 192,
+      "filename": "F_adult_3q_front_R_lean_forward_01.png",
+      "view": "3q_front_R",
+      "pose": "lean_forward",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning forward from waist \u2014 back straight, arms hanging or braced on knees",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 193,
+      "filename": "F_adult_front_lean_back_01.png",
+      "view": "front",
+      "pose": "lean_back",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning backward \u2014 arching spine, arms out for balance, weight on heels",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 194,
+      "filename": "F_adult_side_L_lean_back_01.png",
+      "view": "side_L",
+      "pose": "lean_back",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning backward \u2014 arching spine, arms out for balance, weight on heels",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 195,
+      "filename": "F_adult_side_R_lean_back_01.png",
+      "view": "side_R",
+      "pose": "lean_back",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning backward \u2014 arching spine, arms out for balance, weight on heels",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 196,
+      "filename": "F_adult_back_lean_back_01.png",
+      "view": "back",
+      "pose": "lean_back",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning backward \u2014 arching spine, arms out for balance, weight on heels",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 197,
+      "filename": "F_adult_3q_front_L_lean_back_01.png",
+      "view": "3q_front_L",
+      "pose": "lean_back",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning backward \u2014 arching spine, arms out for balance, weight on heels",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 198,
+      "filename": "F_adult_3q_front_R_lean_back_01.png",
+      "view": "3q_front_R",
+      "pose": "lean_back",
+      "category": "Dynamic Gestures",
+      "pose_description": "Leaning backward \u2014 arching spine, arms out for balance, weight on heels",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 199,
+      "filename": "F_adult_front_turn_look_01.png",
+      "view": "front",
+      "pose": "turn_look",
+      "category": "Dynamic Gestures",
+      "pose_description": "Mid-turn looking over shoulder \u2014 torso twisted, head turned back, feet planted",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 200,
+      "filename": "F_adult_side_L_turn_look_01.png",
+      "view": "side_L",
+      "pose": "turn_look",
+      "category": "Dynamic Gestures",
+      "pose_description": "Mid-turn looking over shoulder \u2014 torso twisted, head turned back, feet planted",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 201,
+      "filename": "F_adult_side_R_turn_look_01.png",
+      "view": "side_R",
+      "pose": "turn_look",
+      "category": "Dynamic Gestures",
+      "pose_description": "Mid-turn looking over shoulder \u2014 torso twisted, head turned back, feet planted",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 202,
+      "filename": "F_adult_back_turn_look_01.png",
+      "view": "back",
+      "pose": "turn_look",
+      "category": "Dynamic Gestures",
+      "pose_description": "Mid-turn looking over shoulder \u2014 torso twisted, head turned back, feet planted",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 203,
+      "filename": "F_adult_3q_front_L_turn_look_01.png",
+      "view": "3q_front_L",
+      "pose": "turn_look",
+      "category": "Dynamic Gestures",
+      "pose_description": "Mid-turn looking over shoulder \u2014 torso twisted, head turned back, feet planted",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 204,
+      "filename": "F_adult_3q_front_R_turn_look_01.png",
+      "view": "3q_front_R",
+      "pose": "turn_look",
+      "category": "Dynamic Gestures",
+      "pose_description": "Mid-turn looking over shoulder \u2014 torso twisted, head turned back, feet planted",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 205,
+      "filename": "F_adult_front_shrug_01.png",
+      "view": "front",
+      "pose": "shrug",
+      "category": "Dynamic Gestures",
+      "pose_description": "Shrugging \u2014 both shoulders raised, palms up, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 206,
+      "filename": "F_adult_side_L_shrug_01.png",
+      "view": "side_L",
+      "pose": "shrug",
+      "category": "Dynamic Gestures",
+      "pose_description": "Shrugging \u2014 both shoulders raised, palms up, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 207,
+      "filename": "F_adult_side_R_shrug_01.png",
+      "view": "side_R",
+      "pose": "shrug",
+      "category": "Dynamic Gestures",
+      "pose_description": "Shrugging \u2014 both shoulders raised, palms up, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 208,
+      "filename": "F_adult_back_shrug_01.png",
+      "view": "back",
+      "pose": "shrug",
+      "category": "Dynamic Gestures",
+      "pose_description": "Shrugging \u2014 both shoulders raised, palms up, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 209,
+      "filename": "F_adult_3q_front_L_shrug_01.png",
+      "view": "3q_front_L",
+      "pose": "shrug",
+      "category": "Dynamic Gestures",
+      "pose_description": "Shrugging \u2014 both shoulders raised, palms up, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 210,
+      "filename": "F_adult_3q_front_R_shrug_01.png",
+      "view": "3q_front_R",
+      "pose": "shrug",
+      "category": "Dynamic Gestures",
+      "pose_description": "Shrugging \u2014 both shoulders raised, palms up, slight head tilt",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 211,
+      "filename": "F_adult_front_wave_01.png",
+      "view": "front",
+      "pose": "wave",
+      "category": "Dynamic Gestures",
+      "pose_description": "Waving \u2014 one arm raised overhead with open hand, other at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 212,
+      "filename": "F_adult_side_L_wave_01.png",
+      "view": "side_L",
+      "pose": "wave",
+      "category": "Dynamic Gestures",
+      "pose_description": "Waving \u2014 one arm raised overhead with open hand, other at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 213,
+      "filename": "F_adult_side_R_wave_01.png",
+      "view": "side_R",
+      "pose": "wave",
+      "category": "Dynamic Gestures",
+      "pose_description": "Waving \u2014 one arm raised overhead with open hand, other at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 214,
+      "filename": "F_adult_back_wave_01.png",
+      "view": "back",
+      "pose": "wave",
+      "category": "Dynamic Gestures",
+      "pose_description": "Waving \u2014 one arm raised overhead with open hand, other at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 215,
+      "filename": "F_adult_3q_front_L_wave_01.png",
+      "view": "3q_front_L",
+      "pose": "wave",
+      "category": "Dynamic Gestures",
+      "pose_description": "Waving \u2014 one arm raised overhead with open hand, other at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 216,
+      "filename": "F_adult_3q_front_R_wave_01.png",
+      "view": "3q_front_R",
+      "pose": "wave",
+      "category": "Dynamic Gestures",
+      "pose_description": "Waving \u2014 one arm raised overhead with open hand, other at side",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 217,
+      "filename": "F_adult_front_low_angle_hero_01.png",
+      "view": "front",
+      "pose": "low_angle_hero",
+      "category": "Camera Angles",
+      "pose_description": "Low-angle hero shot \u2014 camera below knee height looking up, power stance",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 218,
+      "filename": "F_adult_front_high_angle_vulnerable_01.png",
+      "view": "front",
+      "pose": "high_angle_vulnerable",
+      "category": "Camera Angles",
+      "pose_description": "High-angle shot \u2014 camera above head looking down, power stance",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    },
+    {
+      "number": 219,
+      "filename": "F_adult_front_foreshortening_reach_01.png",
+      "view": "front",
+      "pose": "foreshortening_reach",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening \u2014 arm reaching toward camera, strong depth compression",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 220,
+      "filename": "F_adult_side_L_foreshortening_reach_01.png",
+      "view": "side_L",
+      "pose": "foreshortening_reach",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening \u2014 arm reaching toward camera, strong depth compression",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 221,
+      "filename": "F_adult_side_R_foreshortening_reach_01.png",
+      "view": "side_R",
+      "pose": "foreshortening_reach",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening \u2014 arm reaching toward camera, strong depth compression",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 222,
+      "filename": "F_adult_back_foreshortening_reach_01.png",
+      "view": "back",
+      "pose": "foreshortening_reach",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening \u2014 arm reaching toward camera, strong depth compression",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 223,
+      "filename": "F_adult_3q_front_L_foreshortening_reach_01.png",
+      "view": "3q_front_L",
+      "pose": "foreshortening_reach",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening \u2014 arm reaching toward camera, strong depth compression",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 224,
+      "filename": "F_adult_3q_front_R_foreshortening_reach_01.png",
+      "view": "3q_front_R",
+      "pose": "foreshortening_reach",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening \u2014 arm reaching toward camera, strong depth compression",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 225,
+      "filename": "F_adult_front_foreshortening_lying_01.png",
+      "view": "front",
+      "pose": "foreshortening_lying",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening lying \u2014 figure on ground, feet toward camera",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 226,
+      "filename": "F_adult_side_L_foreshortening_lying_01.png",
+      "view": "side_L",
+      "pose": "foreshortening_lying",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening lying \u2014 figure on ground, feet toward camera",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 227,
+      "filename": "F_adult_side_R_foreshortening_lying_01.png",
+      "view": "side_R",
+      "pose": "foreshortening_lying",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening lying \u2014 figure on ground, feet toward camera",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 228,
+      "filename": "F_adult_back_foreshortening_lying_01.png",
+      "view": "back",
+      "pose": "foreshortening_lying",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening lying \u2014 figure on ground, feet toward camera",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 229,
+      "filename": "F_adult_3q_front_L_foreshortening_lying_01.png",
+      "view": "3q_front_L",
+      "pose": "foreshortening_lying",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening lying \u2014 figure on ground, feet toward camera",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 230,
+      "filename": "F_adult_3q_front_R_foreshortening_lying_01.png",
+      "view": "3q_front_R",
+      "pose": "foreshortening_lying",
+      "category": "Camera Angles",
+      "pose_description": "Foreshortening lying \u2014 figure on ground, feet toward camera",
+      "orientation": "landscape",
+      "size": "1536x1024"
+    },
+    {
+      "number": 231,
+      "filename": "F_adult_front_dutch_angle_01.png",
+      "view": "front",
+      "pose": "dutch_angle",
+      "category": "Camera Angles",
+      "pose_description": "Dutch angle \u2014 tilted camera view, figure at diagonal",
+      "orientation": "portrait",
+      "size": "1024x1536"
+    }
+  ]
+}

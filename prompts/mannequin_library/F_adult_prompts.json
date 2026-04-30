@@ -1,0 +1,932 @@
+[
+  {
+    "number": 1,
+    "filename": "F_adult_front_contrapposto_classic_01.png",
+    "view": "front",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\n>>> THIS IS THE ARCHETYPE ANCHOR PROMPT — its successful output will become F_adu\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: standing & contrapposto\n\nSPECIFIC POSE: contrapposto_classic — left hand resting on left hip, right arm ha\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Weight planted on figure's right leg (viewer's left)\n\n- Right hip rises, left hip drops; right knee locked, left knee softly bent and t\n\n- Counter-rotation: right shoulder drops to balance the rising right hip, left sh\n\n- Left hand placed on left hip, elbow flared out\n\n- Right arm hangs relaxed at side, slight bend at elbow, fingers softly open\n\n- Head balanced over the weight-bearing right foot\n\n- Subtle ribcage tilt visible — torso pinches on the weight-bearing side\n\nLINE OF ACTION:\n\n- Gentle S-curve in red from crown of head, down through the spine following the \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 2,
+    "filename": "F_adult_side_L_contrapposto_classic_01.png",
+    "view": "side_L",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: standing & contrapposto\n\nSPECIFIC POSE: contrapposto_classic — left hand resting on left hip, right arm ha\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Viewer sees the figure's left side\n\n- Weight on the figure's right (far) leg, locked vertical; left (near) leg slight\n\n- Pelvis tilted (far hip higher); spine reads as a gentle profile S-curve\n\n- Left hand on left hip clearly visible to camera, elbow back\n\n- Right arm hangs behind the body silhouette, partially occluded\n\n- Head balanced over far foot; chin neutral\n\nLINE OF ACTION:\n\n- Soft S-curve in red from crown of head, down the spine's profile arc, through t\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 3,
+    "filename": "F_adult_side_R_contrapposto_classic_01.png",
+    "view": "side_R",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: standing & contrapposto\n\nSPECIFIC POSE: contrapposto_classic — left hand resting on left hip, right arm ha\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Viewer sees the figure's right side\n\n- Weight on the figure's right (near) leg, locked vertical; left (far) leg slight\n\n- Right hip pushed toward camera and raised; left hip dropped behind\n\n- Right arm hangs at side, fully visible against the body\n\n- Left hand on left hip is partially hidden behind the torso silhouette\n\n- Spine reads as a gentle profile S-curve\n\nLINE OF ACTION:\n\n- Soft S-curve in red from crown of head, down the spine's profile arc, through t\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 4,
+    "filename": "F_adult_back_contrapposto_classic_01.png",
+    "view": "back",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: standing & contrapposto\n\nSPECIFIC POSE: contrapposto_classic — left hand resting on left hip, right arm ha\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Viewer sees the figure's back; weight on the figure's right leg (now on viewer'\n\n- Right hip raised on viewer's right, left hip dropped; right shoulder drops coun\n\n- Left hand on left hip visible from behind, elbow flared out to viewer's left\n\n- Right arm hangs relaxed at the side\n\n- Glute on the weight-bearing side tensions; opposite glute relaxes — read this c\n\n- Spine reads as a soft S-curve descending to the weight-bearing right foot\n\nLINE OF ACTION:\n\n- Gentle reverse S-curve in red down the spinal channel, through the raised right\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 5,
+    "filename": "F_adult_3q_front_L_contrapposto_classic_01.png",
+    "view": "3q_front_L",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: standing & contrapposto\n\nSPECIFIC POSE: contrapposto_classic — left hand resting on left hip, right arm ha\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter front; figure's left side rotated toward camera, right side reced\n\n- Weight on figure's right (far) leg, locked; left (near) leg slightly bent, knee\n\n- Right hip rises in the back of the silhouette, left hip drops toward camera\n\n- Left hand on left hip prominent in the foreground, elbow flared\n\n- Right arm hangs at the far side, partially occluded by torso silhouette\n\n- Counter-rotation reads clearly: shoulder line opposes hip line\n\nLINE OF ACTION:\n\n- Diagonal S-curve in red from crown through the spine, into the far raised hip, \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 6,
+    "filename": "F_adult_3q_front_R_contrapposto_classic_01.png",
+    "view": "3q_front_R",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: standing & contrapposto\n\nSPECIFIC POSE: contrapposto_classic — left hand resting on left hip, right arm ha\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter front; figure's right side rotated toward camera, left side reced\n\n- Weight on figure's right (near) leg, locked; left (far) leg slightly bent and f\n\n- Right hip rises in foreground, left hip drops behind\n\n- Right arm hangs in the foreground, fully visible from shoulder to fingers\n\n- Left hand on left hip recedes into the silhouette behind the torso\n\n- Counter-rotation visible: shoulders rotate opposite to hips\n\nLINE OF ACTION:\n\n- Diagonal S-curve in red from crown through the spine, into the near raised hip,\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 7,
+    "filename": "F_adult_front_sit_chair_neutral_01.png",
+    "view": "front",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: sit_chair_neutral — seated upright on an implied chair (chair itse\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Seated upright on implied chair (not drawn)\n\n- Knees bent at ~90°, both feet flat on the ground plane, right foot slightly mor\n\n- Right hand resting palm-down on right thigh; left hand resting on left knee wit\n\n- Weight slightly favors left ischium (right hip a touch higher); torso tilts gen\n\n- Shoulders relaxed and level; subtle forward lean from hips\n\n- Chair height calibrated so thighs sit horizontal\n\nLINE OF ACTION:\n\n- Soft vertical line of action in red from crown of head through the cervical and\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 8,
+    "filename": "F_adult_side_L_sit_chair_neutral_01.png",
+    "view": "side_L",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: sit_chair_neutral — seated upright on an implied chair (chair itse\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile view of seated figure facing frame-right\n\n- Implied chair seat at marker ~4 (mid-thigh height equals seat); knees forward a\n\n- Near (left) leg foreground; far (right) leg subtly behind, foot slightly more f\n\n- Left hand visible resting on left knee in foreground; right hand on right thigh\n\n- Spine upright with subtle forward tilt at the hips; head balanced over pelvis\n\n- Subtle weight shift visible — far hip a touch higher\n\nLINE OF ACTION:\n\n- Soft C-curve in red from crown down the spine's profile, bending at the hip-fol\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 9,
+    "filename": "F_adult_side_R_sit_chair_neutral_01.png",
+    "view": "side_R",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: sit_chair_neutral — seated upright on an implied chair (chair itse\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile view of seated figure facing frame-left\n\n- Near (right) leg foreground; far (left) leg behind\n\n- Right hand visible on right thigh in foreground; left hand on left knee partial\n\n- Implied chair seat at marker ~4; knees at ~90°, shins vertical\n\n- Spine upright with subtle forward tilt at the hips\n\n- Head balanced over pelvis\n\nLINE OF ACTION:\n\n- Soft C-curve in red from crown down the spine's profile, bending at the hip-fol\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 10,
+    "filename": "F_adult_back_sit_chair_neutral_01.png",
+    "view": "back",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: sit_chair_neutral — seated upright on an implied chair (chair itse\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Back view of seated figure on implied chair\n\n- Spine upright, slight S-curve readable through scapulae and lower back\n\n- Hands rest on thighs/knees but only the back of the elbows is visible from this\n\n- Pelvis sits flat on implied seat at marker ~4; hips wider than shoulders from b\n\n- Subtle weight asymmetry — one glute tensions slightly more\n\n- Knees bent ~90° below the seat plane, calves visible in shadow\n\nLINE OF ACTION:\n\n- Soft vertical curve in red down the spinal channel, settling at the seated pelv\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 11,
+    "filename": "F_adult_3q_front_L_sit_chair_neutral_01.png",
+    "view": "3q_front_L",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: sit_chair_neutral — seated upright on an implied chair (chair itse\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter front of seated figure, left side rotated toward camera\n\n- Knees and shins angle toward viewer's lower-right; near leg (left) foreground\n\n- Left hand on left knee prominent in foreground, fingers visible\n\n- Right hand on right thigh recedes into mid-ground\n\n- Torso upright with subtle right-tilt; head counter-tilts back toward vertical\n\n- Implied chair seat at marker ~4\n\nLINE OF ACTION:\n\n- Soft S-curve in red from crown down the spine, into the rotated pelvis, then fo\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 12,
+    "filename": "F_adult_3q_front_R_sit_chair_neutral_01.png",
+    "view": "3q_front_R",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: sit_chair_neutral — seated upright on an implied chair (chair itse\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter front of seated figure, right side rotated toward camera\n\n- Knees and shins angle toward viewer's lower-left; near leg (right) foreground\n\n- Right hand on right thigh prominent in foreground\n\n- Left hand on left knee recedes into mid-ground\n\n- Torso upright; subtle weight shift through pelvis\n\n- Implied chair seat at marker ~4\n\nLINE OF ACTION:\n\n- Soft S-curve in red from crown down the spine, into the rotated pelvis, then fo\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 13,
+    "filename": "F_adult_front_walk_neutral_01.png",
+    "view": "front",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: walk_neutral — mid-stride casual walk: right leg forward (heel jus\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Mid-stride walking toward camera\n\n- Right leg forward, heel contacting ground, knee softly bent (~150° open); left \n\n- Pelvis rotated: right hip forward, left hip back (counter to legs)\n\n- Shoulders counter-rotate to hips: right shoulder back, left shoulder forward\n\n- Left arm swings forward, elbow bent ~100°, hand at hip-height\n\n- Right arm swings back, elbow bent ~100°, hand near outer thigh\n\n- Torso leans subtly forward (~5°); head tracks forward, chin neutral\n\nLINE OF ACTION:\n\n- Diagonal line of action in red from crown of head, leaning forward into the str\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 14,
+    "filename": "F_adult_side_L_walk_neutral_01.png",
+    "view": "side_L",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: walk_neutral — mid-stride casual walk: right leg forward (heel jus\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile view of mid-stride walk, figure walking toward frame-right\n\n- Front leg (right, far) is just landing — heel-strike, toe up\n\n- Back leg (left, near) is mid-push-off — ball of foot down, heel rising\n\n- Stride length about 1.5 head-heights at the feet\n\n- Far arm (left) swings forward, elbow bent ~100°\n\n- Near arm (right) swings back behind torso, elbow bent ~100°\n\n- Torso leans forward ~5°; pelvis tilts subtly with the stride\n\nLINE OF ACTION:\n\n- Forward-leaning curve in red from crown through the spine to the planted far fo\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 15,
+    "filename": "F_adult_side_R_walk_neutral_01.png",
+    "view": "side_R",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: walk_neutral — mid-stride casual walk: right leg forward (heel jus\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile view of mid-stride walk, figure walking toward frame-left\n\n- Front leg (right, near) is just landing — heel-strike, toe up\n\n- Back leg (left, far) is mid-push-off — ball of foot down, heel rising\n\n- Near arm (right) swings back behind torso\n\n- Far arm (left) swings forward in front of body\n\n- Stride length about 1.5 head-heights at the feet\n\n- Torso leans forward ~5°\n\nLINE OF ACTION:\n\n- Forward-leaning curve in red from crown through the spine to the planted near f\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 16,
+    "filename": "F_adult_back_walk_neutral_01.png",
+    "view": "back",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: walk_neutral — mid-stride casual walk: right leg forward (heel jus\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Back view of mid-stride walk, figure walking away from camera\n\n- Right leg forward, left leg back; from this angle, the right glute drops as the\n\n- Left glute tensions as it pushes off\n\n- Right shoulder back (toward viewer), left shoulder forward (rotated away)\n\n- Right arm swings back (visible to camera from behind), left arm swings forward \n\n- Pelvis rotation visible through hip dimples and glute asymmetry\n\nLINE OF ACTION:\n\n- Forward-leaning curve in red down the spine through the planted right leg to th\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 17,
+    "filename": "F_adult_3q_front_L_walk_neutral_01.png",
+    "view": "3q_front_L",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: walk_neutral — mid-stride casual walk: right leg forward (heel jus\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter front mid-stride; figure's left side rotated toward camera\n\n- Right (far) leg forward and landing; left (near) leg back and pushing off\n\n- Left arm swings forward in foreground; right arm swings back, partially occlude\n\n- Hip and shoulder counter-rotation reads clearly in 3/4\n\n- Torso leans forward ~5°\n\nLINE OF ACTION:\n\n- Diagonal forward-leaning S-curve in red from crown through the spine into the p\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 18,
+    "filename": "F_adult_3q_front_R_walk_neutral_01.png",
+    "view": "3q_front_R",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: walk_neutral — mid-stride casual walk: right leg forward (heel jus\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter front mid-stride; figure's right side rotated toward camera\n\n- Right (near) leg forward and landing; left (far) leg back and pushing off\n\n- Right arm swings back in near-ground; left arm swings forward and recedes\n\n- Hip and shoulder counter-rotation reads clearly in 3/4\n\n- Torso leans forward ~5°\n\nLINE OF ACTION:\n\n- Diagonal forward-leaning S-curve in red from crown through the spine into the p\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 19,
+    "filename": "F_adult_front_run_jog_01.png",
+    "view": "front",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: run_jog — jogging pace mid-stride: lead knee lifted high (~waist-h\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Mid-jog jogging toward camera\n\n- Lead knee (right) lifted high, thigh near horizontal, lower leg dangling forwar\n\n- Back leg (left) extended behind, foot still in contact or just leaving the grou\n\n- Arms bent at ~90°: left arm swings forward at chest height, right arm swings ba\n\n- Hands lightly closed (not clenched); shoulders relaxed\n\n- Torso leans forward ~10° from vertical\n\n- Pelvis-shoulder counter-rotation strong but not exaggerated\n\nLINE OF ACTION:\n\n- Forward-leaning diagonal curve in red from crown through the spine, leading int\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 20,
+    "filename": "F_adult_side_L_run_jog_01.png",
+    "view": "side_L",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: run_jog — jogging pace mid-stride: lead knee lifted high (~waist-h\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile mid-jog, figure jogging toward frame-right (LANDSCAPE orientation)\n\n- Lead leg (right, far) — knee lifted high, thigh near horizontal, shin dangling\n\n- Back leg (left, near) — extended behind, foot pushing off, heel high\n\n- Far arm (left) drives forward at ~chest height, elbow bent ~90°\n\n- Near arm (right) drives back, elbow bent ~90°, fist near hip\n\n- Torso leans forward ~10°; head tracks forward\n\n- Brief flight-phase suggestion — both feet barely touching\n\nLINE OF ACTION:\n\n- Strong forward-leaning C-curve in red from crown through the spine into the bac\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 21,
+    "filename": "F_adult_side_R_run_jog_01.png",
+    "view": "side_R",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: run_jog — jogging pace mid-stride: lead knee lifted high (~waist-h\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile mid-jog, figure jogging toward frame-left (LANDSCAPE orientation)\n\n- Lead leg (right, near) — knee lifted high, thigh near horizontal\n\n- Back leg (left, far) — extended behind, foot pushing off\n\n- Near arm (right) drives back, elbow bent ~90°\n\n- Far arm (left) drives forward, elbow bent ~90°\n\n- Torso leans forward ~10°\n\nLINE OF ACTION:\n\n- Strong forward-leaning C-curve in red from crown through the spine into the bac\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 22,
+    "filename": "F_adult_back_run_jog_01.png",
+    "view": "back",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: run_jog — jogging pace mid-stride: lead knee lifted high (~waist-h\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Back view of mid-jog jogging away from camera\n\n- Right leg lifted forward (knee visible flexing forward, glute on right side rai\n\n- Left leg extended behind, glute tensions on push-off\n\n- Left shoulder forward (occluded by torso), right shoulder back (visible from be\n\n- Right arm swings back, visible swinging out\n\n- Pelvis-shoulder counter-rotation reads through hip dimples and shoulder blade m\n\n- Torso leans forward ~10°\n\nLINE OF ACTION:\n\n- Forward-leaning curve in red down the spine into the pushing back leg, with lat\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 23,
+    "filename": "F_adult_3q_front_L_run_jog_01.png",
+    "view": "3q_front_L",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: run_jog — jogging pace mid-stride: lead knee lifted high (~waist-h\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter mid-jog; figure's left side rotated toward camera\n\n- Lead leg (right, far) knee lifted high\n\n- Back leg (left, near) extended back, foot lifting off\n\n- Far arm (left) drives forward; near arm (right) drives back into the foreground\n\n- Torso leans forward ~10°\n\nLINE OF ACTION:\n\n- Diagonal forward-leaning S-curve in red from crown through spine into the lead \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 24,
+    "filename": "F_adult_3q_front_R_run_jog_01.png",
+    "view": "3q_front_R",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: walking / running / sprinting\n\nSPECIFIC POSE: run_jog — jogging pace mid-stride: lead knee lifted high (~waist-h\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter mid-jog; figure's right side rotated toward camera\n\n- Lead leg (right, near) knee lifted high in the foreground\n\n- Back leg (left, far) extended back behind the silhouette\n\n- Near arm (right) drives back; far arm (left) drives forward\n\n- Torso leans forward ~10°\n\nLINE OF ACTION:\n\n- Diagonal forward-leaning S-curve in red from crown through spine into the lead \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 25,
+    "filename": "F_adult_front_kneel_one_01.png",
+    "view": "front",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: kneel_one — right knee on ground (shin flat, toe down), left knee \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Kneeling toward camera; right knee on ground (figure's right, viewer's left), s\n\n- Left knee up at ~90°, left foot flat on ground in front\n\n- Pelvis tilted slightly toward the down-knee side\n\n- Torso upright with subtle ~5° forward lean\n\n- Right hand resting palm-down on right thigh (which is now near-vertical)\n\n- Left hand resting on top of left knee, fingers curling lightly\n\n- Shoulders level; head balanced over the up-knee, chin neutral\n\nLINE OF ACTION:\n\n- Gentle vertical curve in red from crown through the spine into the seated pelvi\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 26,
+    "filename": "F_adult_side_L_kneel_one_01.png",
+    "view": "side_L",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: kneel_one — right knee on ground (shin flat, toe down), left knee \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile view, figure facing frame-right\n\n- Down knee (right, far) on ground; up knee (left, near) bent at ~90° in foregrou\n\n- Right shin flat behind, toe down on ground; left foot flat under bent knee\n\n- Left hand on left knee in foreground; right hand on right thigh recedes behind\n\n- Spine vertical with subtle forward lean; head balanced over hips\n\nLINE OF ACTION:\n\n- Soft forward-leaning curve in red from crown down the spine, bending at the pel\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 27,
+    "filename": "F_adult_side_R_kneel_one_01.png",
+    "view": "side_R",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: kneel_one — right knee on ground (shin flat, toe down), left knee \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile view, figure facing frame-left\n\n- Down knee (right, near) on ground in foreground; up knee (left, far) bent at ~9\n\n- Near shin (right) flat to ground, toe down\n\n- Right hand on right thigh in foreground; left hand on left knee recedes\n\n- Spine vertical with subtle forward lean\n\nLINE OF ACTION:\n\n- Soft forward-leaning curve in red from crown down the spine, bending at the pel\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 28,
+    "filename": "F_adult_back_kneel_one_01.png",
+    "view": "back",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: kneel_one — right knee on ground (shin flat, toe down), left knee \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Back view of kneeling pose; right knee on ground (now on viewer's right)\n\n- Left knee up at ~90° (on viewer's left), left foot flat\n\n- Glutes asymmetric — weight settled into the down-knee side\n\n- Hands rest on thighs/knees, partially visible at sides\n\n- Spine reads as gentle vertical with subtle forward lean\n\n- Sole of right foot visible behind (toe pointed down)\n\nLINE OF ACTION:\n\n- Gentle vertical curve in red down the spine, settling into the down-knee at the\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 29,
+    "filename": "F_adult_3q_front_L_kneel_one_01.png",
+    "view": "3q_front_L",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: kneel_one — right knee on ground (shin flat, toe down), left knee \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter kneel; figure's left side rotated toward camera\n\n- Up knee (left) prominent in foreground at ~90°, left foot flat\n\n- Down knee (right, far) recedes, shin flat behind\n\n- Left hand on left knee foreground; right hand on right thigh recedes\n\n- Subtle forward torso lean\n\nLINE OF ACTION:\n\n- Diagonal soft S-curve in red from crown through the spine into the kneeling pel\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 30,
+    "filename": "F_adult_3q_front_R_kneel_one_01.png",
+    "view": "3q_front_R",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: kneel_one — right knee on ground (shin flat, toe down), left knee \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter kneel; figure's right side rotated toward camera\n\n- Down knee (right, near) on ground in foreground\n\n- Up knee (left, far) bent at ~90° behind\n\n- Right hand on right thigh foreground; left hand on left knee recedes\n\n- Subtle forward torso lean\n\nLINE OF ACTION:\n\n- Diagonal soft S-curve in red from crown through the spine into the kneeling pel\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 31,
+    "filename": "F_adult_front_combat_ready_01.png",
+    "view": "front",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_ready — orthodox fighting stance: left foot forward, right \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Combat-ready stance facing camera\n\n- Left foot forward (figure's left, viewer's right), right foot back at ~45° pivo\n\n- Feet shoulder-width apart with stagger; both knees softly bent\n\n- Weight distribution ~55% back leg, ~45% front leg\n\n- Left (lead) hand raised, fist at chin-height, elbow ~90°, slightly forward\n\n- Right (rear) hand at chin, elbow tucked tight to ribs, fist near jawline\n\n- Shoulders raised slightly; chin tucked behind lead shoulder\n\n- Torso angled ~30° (leading shoulder back) — NOT square to camera\n\nLINE OF ACTION:\n\n- Subtle forward-leaning S-curve in red from crown through the spine, weighted to\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 32,
+    "filename": "F_adult_side_L_combat_ready_01.png",
+    "view": "side_L",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_ready — orthodox fighting stance: left foot forward, right \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile of combat stance, figure facing frame-right\n\n- Lead foot (left, near) forward; rear foot (right, far) back at ~45°\n\n- Both knees softly bent, weight slightly back\n\n- Lead hand (left, near) raised forward at chin-height, elbow ~90°\n\n- Rear hand (right, far) at chin, partially occluded by lead-side silhouette\n\n- Forward torso lean subtle; chin tucked\n\n- Stance length about 1.5 head-heights between feet\n\nLINE OF ACTION:\n\n- Forward-leaning curve in red from crown down the spine, weighted into the rear \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 33,
+    "filename": "F_adult_side_R_combat_ready_01.png",
+    "view": "side_R",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_ready — orthodox fighting stance: left foot forward, right \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile of combat stance, figure facing frame-left\n\n- Lead foot (left, far) forward; rear foot (right, near) back at ~45°\n\n- Lead hand (left, far) raised forward at chin-height, partially behind silhouett\n\n- Rear hand (right, near) at chin in foreground, elbow tucked\n\n- Both knees softly bent; weight slightly back\n\n- Stance length about 1.5 head-heights\n\nLINE OF ACTION:\n\n- Forward-leaning curve in red from crown down the spine, weighted into the rear \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 34,
+    "filename": "F_adult_back_combat_ready_01.png",
+    "view": "back",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_ready — orthodox fighting stance: left foot forward, right \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Back view of combat stance\n\n- Left foot forward (now on viewer's left), right foot back at ~45° (viewer's rig\n\n- Hands raised — only the back of the elbows and shoulders are visible from this \n\n- Lead shoulder (left) forward and down, rear shoulder (right) back and slightly \n\n- Torso angled ~30° to the side (not square back); spine angled with the stance\n\n- Weight visible through glute tension — rear glute holds more weight\n\nLINE OF ACTION:\n\n- Subtle forward-leaning curve in red down the spine, indicating the rear-leg-loa\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 35,
+    "filename": "F_adult_3q_front_L_combat_ready_01.png",
+    "view": "3q_front_L",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_ready — orthodox fighting stance: left foot forward, right \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter front combat stance; figure's left side rotated toward camera\n\n- Lead foot (left, near) forward; rear foot (right, far) back at ~45°\n\n- Lead hand (left) prominent in foreground at chin-height\n\n- Rear hand (right) tucked at chin, partially occluded by torso silhouette\n\n- Knees softly bent, weight ~55% rear\n\nLINE OF ACTION:\n\n- Diagonal forward-leaning S-curve in red from crown into the rear far foot\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 36,
+    "filename": "F_adult_3q_front_R_combat_ready_01.png",
+    "view": "3q_front_R",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_ready — orthodox fighting stance: left foot forward, right \n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter front combat stance; figure's right side rotated toward camera\n\n- Lead foot (left, far) forward; rear foot (right, near) back at ~45°\n\n- Rear hand (right, near) prominent in foreground at chin, elbow tucked tight\n\n- Lead hand (left, far) recedes, raised forward at chin-height\n\n- Knees softly bent\n\nLINE OF ACTION:\n\n- Diagonal forward-leaning S-curve in red from crown into the rear near foot\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 37,
+    "filename": "F_adult_front_recline_prop_01.png",
+    "view": "front",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: recline_prop — reclining on the figure's right side, propped on ri\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Figure lying on her right side, body horizontal across the frame\n\n- Right elbow on ground at viewer's left, propping the torso up at ~30°\n\n- Head on viewer's left side, feet on viewer's right\n\n- Right leg under, bent ~30° at knee; left leg on top, mostly straight, slightly \n\n- Left hand draped lightly on left thigh\n\n- Body turned ~3/4 toward camera so chest reads (not pure profile)\n\n- Subtle S-curve in the spine; soft hip and waist arc visible\n\nLINE OF ACTION:\n\n- Long horizontal C-curve in red from crown through the propped torso, down the s\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 landscape ratio"
+  },
+  {
+    "number": 38,
+    "filename": "F_adult_side_L_recline_prop_01.png",
+    "view": "side_L",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_L",
+      "front",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: recline_prop — reclining on the figure's right side, propped on ri\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Pure profile of recline; figure's left side toward camera (figure lying on righ\n\n- Body horizontal, head at viewer's left, feet at viewer's right\n\n- Right elbow at ground (far side, partially occluded), propping torso ~30° up\n\n- Left arm draped on left thigh in foreground\n\n- Left leg on top, straight; right leg under, bent ~30°\n\n- Spine arches in profile from raised head down to pelvis\n\nLINE OF ACTION:\n\n- Long horizontal C-curve in red from crown along the spine, dropping at the hip,\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 39,
+    "filename": "F_adult_side_R_recline_prop_01.png",
+    "view": "side_R",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_R",
+      "front",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: recline_prop — reclining on the figure's right side, propped on ri\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Profile of recline; figure's right side toward camera (figure lying on right si\n\n- Right elbow on ground in foreground propping torso up at ~30°\n\n- Body horizontal, head at viewer's left, feet at viewer's right (or reverse depe\n\n- Left arm draped over body, hand on left thigh visible\n\n- Left leg straight on top; right leg under, bent ~30°\n\n- Chest opens slightly toward camera\n\nLINE OF ACTION:\n\n- Long horizontal C-curve in red from crown along the spine, dropping at the hip,\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 40,
+    "filename": "F_adult_back_recline_prop_01.png",
+    "view": "back",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: recline_prop — reclining on the figure's right side, propped on ri\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Back view of reclined figure on her right side\n\n- Viewer sees the back; right elbow propping body up (visible at far side past th\n\n- Spine arches with the prop, head raised\n\n- Glute and hip silhouette dominant in the lower silhouette\n\n- Left leg straight on top, right leg under bent ~30°\n\n- Left arm visible draped over the hip/thigh from behind\n\nLINE OF ACTION:\n\n- Long horizontal C-curve in red from crown along the spine, through the hip, int\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 landscape ratio,"
+  },
+  {
+    "number": 41,
+    "filename": "F_adult_3q_front_L_recline_prop_01.png",
+    "view": "3q_front_L",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "3q_front_L",
+      "front",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: recline_prop — reclining on the figure's right side, propped on ri\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Three-quarter front recline, figure's left side rotated toward camera\n\n- Body horizontal; right elbow props torso up at ~30°\n\n- Chest and torso open toward camera at ~3/4\n\n- Left arm draped on left thigh in foreground\n\n- Left leg straight on top, right leg under bent ~30°\n\n- Soft S-curve through spine and waist visible from this angle\n\nLINE OF ACTION:\n\n- Long S-curve in red from crown along the propped spine, through the rotated hip\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 42,
+    "filename": "F_adult_3q_front_R_recline_prop_01.png",
+    "view": "3q_front_R",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "3q_front_R",
+      "front",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: sitting / kneeling / reclining\n\nSPECIFIC POSE: recline_prop — reclining on the figure's right side, propped on ri\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Three-quarter front recline, figure's right side rotated toward camera\n\n- Right elbow on ground props torso up at ~30°, near foreground\n\n- Chest and torso angle toward camera\n\n- Left arm draped over body with hand on left thigh\n\n- Left leg straight on top, right leg under bent ~30°\n\nLINE OF ACTION:\n\n- Long S-curve in red from crown along the propped spine, through the rotated hip\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 43,
+    "filename": "F_adult_front_jump_air_01.png",
+    "view": "front",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: dynamic gestures\n\nSPECIFIC POSE: jump_air — mid-air apex moment, both feet off ground, knees tucked\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Mid-air apex, jumping toward camera\n\n- Both feet off ground, knees tucked up toward chest at ~90° flexion (thighs near\n\n- Soles of feet visible from front, slightly tucked under\n\n- Right arm extended forward (toward camera) at shoulder height for balance, fing\n\n- Left arm extended back at shoulder height, slightly behind silhouette, fingers \n\n- Torso compact, slight forward lean\n\n- Head up, eye-line forward; chin neutral\n\n- No ground contact — figure floats above marker 0\n\nLINE OF ACTION:\n\n- Compressed C-curve in red from crown through the spine into the tucked knees, s\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 44,
+    "filename": "F_adult_side_L_jump_air_01.png",
+    "view": "side_L",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "front",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: dynamic gestures\n\nSPECIFIC POSE: jump_air — mid-air apex moment, both feet off ground, knees tucked\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile mid-air, figure jumping toward frame-right\n\n- Both feet off ground, knees tucked at ~90°, thighs near horizontal forward\n\n- Far arm (right) out forward at shoulder height\n\n- Near arm (left) out back behind silhouette\n\n- Torso compressed, slight forward lean\n\n- Head up, looking toward jump direction\n\n- Figure floats clearly above the ground plane\n\nLINE OF ACTION:\n\n- Compressed C-curve in red from crown through the spine into the tucked knees an\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 45,
+    "filename": "F_adult_side_R_jump_air_01.png",
+    "view": "side_R",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "front",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: dynamic gestures\n\nSPECIFIC POSE: jump_air — mid-air apex moment, both feet off ground, knees tucked\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Profile mid-air, figure jumping toward frame-left\n\n- Both feet off ground, knees tucked at ~90°\n\n- Near arm (right) out forward at shoulder height in foreground\n\n- Far arm (left) out back behind silhouette\n\n- Torso compressed, slight forward lean\n\n- Head up looking forward\n\nLINE OF ACTION:\n\n- Compressed C-curve in red from crown through the spine into the tucked knees an\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 46,
+    "filename": "F_adult_back_jump_air_01.png",
+    "view": "back",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: dynamic gestures\n\nSPECIFIC POSE: jump_air — mid-air apex moment, both feet off ground, knees tucked\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Back view of mid-air apex, figure facing away\n\n- Both feet off ground, knees tucked forward (visible from behind as raised heels\n\n- Right arm extended forward at shoulder height (visible past the right shoulder)\n\n- Left arm extended back at shoulder height (visible behind on viewer's left)\n\n- Torso compact, spine arched subtly\n\n- Glutes visible as silhouette, calves tucked up\n\nLINE OF ACTION:\n\n- Compressed C-curve in red down the spine into the raised tucked legs\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 47,
+    "filename": "F_adult_3q_front_L_jump_air_01.png",
+    "view": "3q_front_L",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "front",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: dynamic gestures\n\nSPECIFIC POSE: jump_air — mid-air apex moment, both feet off ground, knees tucked\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter mid-air apex; figure's left side rotated toward camera\n\n- Knees tucked to chest, both feet off ground\n\n- Right arm forward toward camera-right at shoulder height\n\n- Left arm back behind near-side silhouette\n\n- Torso compressed, head up looking forward\n\n- Strong dynamic compression visible from this angle\n\nLINE OF ACTION:\n\n- Compressed S-curve in red from crown through the spine into the tucked knees, w\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 48,
+    "filename": "F_adult_3q_front_R_jump_air_01.png",
+    "view": "3q_front_R",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "front",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: dynamic gestures\n\nSPECIFIC POSE: jump_air — mid-air apex moment, both feet off ground, knees tucked\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter mid-air apex; figure's right side rotated toward camera\n\n- Knees tucked forward, both feet off ground\n\n- Right arm extended forward at shoulder height in foreground\n\n- Left arm extended back behind silhouette\n\n- Torso compressed, head up\n\nLINE OF ACTION:\n\n- Compressed S-curve in red from crown through the spine into the tucked knees, w\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 49,
+    "filename": "F_adult_front_foreshortening_reach_01.png",
+    "view": "front",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: camera angles\n\nSPECIFIC POSE: foreshortening_reach — figure standing with right arm extended dir\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Right arm fully extended toward camera, hand at the picture plane: palm open, f\n\n- Forearm and upper arm receding sharply with foreshortening (segments compress: \n\n- Torso recedes behind the reaching arm, head visible above/beside the wrist\n\n- Left arm hangs relaxed at side or angled slightly back\n\n- Both feet planted, weight slightly forward into the reach\n\n- Strong overlap: arm overlaps face/torso to sell depth\n\n- Construction ovals at wrist, elbow, and shoulder become ellipses of varying com\n\nLINE OF ACTION:\n\n- Diagonal foreshortened line in red from the foreground hand back through the wr\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 landscape ratio"
+  },
+  {
+    "number": 50,
+    "filename": "F_adult_side_L_foreshortening_reach_01.png",
+    "view": "side_L",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_L",
+      "front",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: camera angles\n\nSPECIFIC POSE: foreshortening_reach — figure standing with right arm extended dir\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Figure in profile (left side toward camera) with right arm reaching diagonally \n\n- Right arm crosses across body and out toward viewer; hand large in foreground a\n\n- Forearm and upper arm compress with foreshortening but at an angle (3/4 foresho\n\n- Body weight shifts subtly toward the reach\n\n- Left arm at side, partially occluded\n\n- Construction ovals at wrist/elbow/shoulder show as compressed ellipses\n\nLINE OF ACTION:\n\n- Diagonal line of action in red from the foreground hand through the receding ar\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 51,
+    "filename": "F_adult_side_R_foreshortening_reach_01.png",
+    "view": "side_R",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_R",
+      "front",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: camera angles\n\nSPECIFIC POSE: foreshortening_reach — figure standing with right arm extended dir\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Figure in profile (right side toward camera) with right arm reaching toward cam\n\n- Right arm crosses out from the near side; hand huge in foreground at picture-le\n\n- Foreshortening angled — strong compression of forearm and upper arm\n\n- Body weight shifts subtly forward\n\n- Left arm at far side, partially occluded\n\nLINE OF ACTION:\n\n- Diagonal line of action in red from the foreground hand through the receding ar\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 52,
+    "filename": "F_adult_back_foreshortening_reach_01.png",
+    "view": "back",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: camera angles\n\nSPECIFIC POSE: foreshortening_reach — figure standing with right arm extended dir\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Figure facing away; right arm reaches BACK over right shoulder toward camera\n\n- Hand large in upper foreground, fingers spread; forearm and upper arm compress \n\n- Back of figure visible below the reaching arm; head turned slightly so chin/jaw\n\n- Left arm hangs at side from behind\n\n- Spine arches subtly to allow the over-shoulder reach\n\nLINE OF ACTION:\n\n- Curving line of action in red from the over-shoulder hand back through the arm \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 landscape ratio,"
+  },
+  {
+    "number": 53,
+    "filename": "F_adult_3q_front_L_foreshortening_reach_01.png",
+    "view": "3q_front_L",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "3q_front_L",
+      "front",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: camera angles\n\nSPECIFIC POSE: foreshortening_reach — figure standing with right arm extended dir\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Three-quarter front with right arm reaching toward camera at a diagonal\n\n- Right hand large in foreground at picture-right, forearm and upper arm compress\n\n- Body in 3/4 turn so left side rotated toward camera, but the reaching arm domin\n\n- Left arm hangs at far side\n\n- Subtle forward weight shift\n\nLINE OF ACTION:\n\n- Diagonal foreshortened line in red from the foreground hand through the recedin\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 54,
+    "filename": "F_adult_3q_front_R_foreshortening_reach_01.png",
+    "view": "3q_front_R",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "3q_front_R",
+      "front",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: camera angles\n\nSPECIFIC POSE: foreshortening_reach — figure standing with right arm extended dir\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Three-quarter front with right arm reaching toward camera at a diagonal\n\n- Right hand large in foreground (near side, picture-left), forearm and upper arm\n\n- Body in 3/4 turn, right side rotated toward camera\n\n- Left arm hangs at far side\n\nLINE OF ACTION:\n\n- Diagonal foreshortened line in red from the foreground hand through the recedin\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 55,
+    "filename": "F_adult_front_combat_kick_high_01.png",
+    "view": "front",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_kick_high — high kick mid-motion: left leg planted as suppo\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- High kick toward camera\n\n- Support leg (left) planted, knee softly bent ~10°, foot flat/toes gripping\n\n- Kicking leg (right) extended forward and high — thigh near horizontal, lower le\n\n- Pelvis tilted: kicking-side hip lifted high\n\n- Torso twisted slightly toward kicking leg\n\n- Left arm extends forward across body for counter-balance, hand at chest height\n\n- Right arm pulled back behind body, elbow bent ~90°\n\n- Head tracks the kick direction, eye-line forward and up\n\nLINE OF ACTION:\n\n- Strong diagonal C-curve in red from the planted support foot, up through the sp\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on front view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 56,
+    "filename": "F_adult_side_L_combat_kick_high_01.png",
+    "view": "side_L",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: left profile (viewer sees the figure's left side; figure faces frame-right)\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_kick_high — high kick mid-motion: left leg planted as suppo\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Profile high kick, figure facing frame-right, kick going up to viewer's right\n\n- Support leg (left, near) planted, knee softly bent\n\n- Kicking leg (right, far) extended high at ~head-height — thigh raised, knee sli\n\n- Torso leans back slightly to counter-balance the kick\n\n- Far arm (right) pulled back behind torso\n\n- Near arm (left) crosses forward for balance, hand at chest\n\n- Head tracks the kick\n\nLINE OF ACTION:\n\n- Sweeping arc in red from the planted support foot up through the spine and out \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body left profile (viewer sees the figure's left side; figu"
+  },
+  {
+    "number": 57,
+    "filename": "F_adult_side_R_combat_kick_high_01.png",
+    "view": "side_R",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_kick_high — high kick mid-motion: left leg planted as suppo\n\nORIENTATION: A4 landscape\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- LANDSCAPE orientation\n\n- Profile high kick, figure facing frame-left, kick going up to viewer's left\n\n- Support leg (left, far) planted, knee softly bent\n\n- Kicking leg (right, near) extended high at ~head-height in foreground, foot poi\n\n- Torso leans back slightly to counter-balance\n\n- Near arm (right) pulled back behind torso\n\n- Far arm (left) crosses forward for balance\n\nLINE OF ACTION:\n\n- Sweeping arc in red from the planted support foot up through the spine and out \n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body right profile (viewer sees the figure's right side; fi"
+  },
+  {
+    "number": 58,
+    "filename": "F_adult_back_combat_kick_high_01.png",
+    "view": "back",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on back view\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_kick_high — high kick mid-motion: left leg planted as suppo\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Back view of high kick\n\n- Support leg (left, viewer's left) planted; kicking leg (right, viewer's right) \n\n- Glute on support leg tensions; kicking-side glute lifts with the leg\n\n- Torso twisted: kicking-side shoulder rotates back\n\n- Left arm crosses forward (mostly occluded by torso); right arm pulled back, vis\n\n- Head tracks the kick over the right shoulder\n\nLINE OF ACTION:\n\n- Diagonal C-curve in red from the support foot up through the spine, then out al\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body straight-on back view mannequin in A4 portrait ratio,"
+  },
+  {
+    "number": 59,
+    "filename": "F_adult_3q_front_L_combat_kick_high_01.png",
+    "view": "3q_front_L",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_kick_high — high kick mid-motion: left leg planted as suppo\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter high kick; figure's left side rotated toward camera\n\n- Support leg (left, near) planted, knee softly bent\n\n- Kicking leg (right, far) extended high — strong perspective on the thigh and sh\n\n- Pelvis tilt and torso twist read clearly in 3/4\n\n- Near arm (left) crosses forward; far arm (right) pulled back\n\n- Head tracks the kick\n\nLINE OF ACTION:\n\n- Sweeping diagonal S-curve in red from the planted support foot up through the s\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its left side i"
+  },
+  {
+    "number": 60,
+    "filename": "F_adult_3q_front_R_combat_kick_high_01.png",
+    "view": "3q_front_R",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\n\nPOSE CATEGORY: combat & action\n\nSPECIFIC POSE: combat_kick_high — high kick mid-motion: left leg planted as suppo\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM:\n\n- Three-quarter high kick; figure's right side rotated toward camera\n\n- Kicking leg (right, near) extended high in foreground — foot pointed forward, f\n\n- Support leg (left, far) planted\n\n- Far arm (left) crosses forward across body for balance\n\n- Near arm (right) pulled back behind body\n\n- Strong torso twist visible\n\nLINE OF ACTION:\n\n- Sweeping diagonal S-curve in red from the planted support foot up through the s\n\n- Commit to the curve from the start — build the figure along it, not after\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\nOUTPUT: A single full-body three-quarter front, figure rotated so its right side"
+  },
+  {
+    "number": 61,
+    "filename": "F_adult_front_low_angle_hero_01.png",
+    "view": "front",
+    "pose": "low_angle_hero",
+    "category": "camera",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view with strong perspective camera angle\n\nPOSE CATEGORY: camera angles\n\nSPECIFIC POSE: power_stance — feet wide (just wider than shoulder-width), shoulde\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM & CAMERA ANGLE:\n\n- Camera placed below knee-height, looking up at the figure\n\n- Strong perspective: feet large in foreground, head smaller and receding upward\n\n- Feet planted shoulder-width apart, weight evenly distributed (or weight subtly \n\n- Both hands on hips, elbows flared out wide; biceps and lats appear broad from t\n\n- Shoulders squared toward camera, chin slightly raised — heroic chest-out readin\n\n- Pelvis tilts due to perspective: the bottom edge of the pelvis is visible\n\n- Underside of jaw visible; head reads smaller against the looming torso\n\n- Construction ovals at hips and shoulders show as compressed ellipses (foreshort\n\n- VIEW: front (3/4 hero shot — figure rotated subtly so it doesn't read as flat)\n\nLINE OF ACTION:\n\n- Strong vertical line of action in red from the feet upward through the spine to\n\n- Commit to the curve from the start — build the figure along it\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\n- IMPORTANT: head-height grid still numbered 1 through 8, but the FIGURE inside t\n\nOUTPUT: A single full-body mannequin with strong low_angle_hero (worm's-eye) came"
+  },
+  {
+    "number": 62,
+    "filename": "F_adult_front_high_angle_vulnerable_01.png",
+    "view": "front",
+    "pose": "high_angle_vulnerable",
+    "category": "camera",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library — treat th\n\nARCHETYPE: female adult, 8 head-heights\n\nVIEW: straight-on front view with strong perspective camera angle\n\nPOSE CATEGORY: camera angles\n\nSPECIFIC POSE: power_stance — same as low_angle: feet wide, shoulders squared, bo\n\nORIENTATION: A4 portrait\n\nLOCKED STYLE CONVENTIONS (match my references exactly):\n\n- Light blue pencil construction drawing\n\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n\n- Hands fully articulated with visible fingers\n\n- Feet with arch, heel, and toe definition\n\n- Soft pencil line quality, identical weight to references\n\n- Clean white background\n\nANATOMY (female adult, 8 heads):\n\n- 8 total head-heights from crown to sole (range 7.5–8)\n\n- Shoulders 2 head-widths across\n\n- Hip width slightly exceeds shoulder width (female emphasis)\n\n- Defined waist taper, visible iliac crest\n\n- Legs roughly 4 heads long (half total height)\n\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n\n- Maintain stylized anime construction throughout — do NOT drift toward realistic\n\nPOSE RHYTHM & CAMERA ANGLE:\n\n- Camera placed above head-height, looking down at the figure\n\n- Strong perspective: top of head and shoulders large in foreground, feet smaller\n\n- Feet planted shoulder-width apart on the ground\n\n- Both hands on hips, elbows flared out — visible from above as triangular silhou\n\n- Shoulders dominant in the silhouette; chin tucked subtly because of the looking\n\n- Pelvis recedes; legs compress in perspective\n\n- Top of head, shoulders, and the curves of the upper back/shoulders read promine\n\n- Construction ovals at shoulders show as flatter ellipses, ovals at hips and kne\n\n- VIEW: front (3/4 vulnerable shot — figure rotated subtly to break flatness)\n\nLINE OF ACTION:\n\n- Vertical line of action in red from crown down through the spine to the planted\n\n- Commit to the curve from the start — build the figure along it\n\nHEAD-HEIGHT GRID:\n\n- Numbered horizontal guidelines 1 through 8 along the left margin\n\n- Dashed line at the bottom marking the ground plane (marker 0)\n\n- Crown of head sits at marker 8, soles touch marker 0\n\n- Grid must match the 8-head adult count exactly — no drift\n\n- IMPORTANT: head-height grid still numbered 1 through 8, but the FIGURE inside t\n\nOUTPUT: A single full-body mannequin with strong high_angle_vulnerable (bird's-ey"
+  }
+]

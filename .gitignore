@@ -1,0 +1,66 @@
+# === SECRETS — NEVER COMMIT ===
+.env
+.env.local
+.env.*
+*.key
+secrets.json
+config/api_keys.json
+config/api_keys.*
+**/api_keys*
+**/credentials*
+**/.secrets/
+
+# === Python venv and bytecode ===
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+*.egg
+
+# === Generated AI outputs (regenerable, large, not source) ===
+output/
+characters/*/sketches/
+characters/*/extracted.json
+characters/*/source_sheet.png
+**/_previous/
+
+# === Cost logs (usage patterns + potentially sensitive) ===
+logs/
+*.log
+
+# === User-specific config (per-machine, not source) ===
+config/app_settings.json
+config/archetype_overrides.json
+
+# === Reference images (large, user-provided, not source) ===
+# Note: Keep these IF you want testers to have them out of the box.
+# Leave commented to ship references; uncomment to require testers to provide their own.
+# bases/csp_tvd/
+# bases/gpt_tvd/
+
+# === IDE / OS noise ===
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Build artifacts ===
+dist/
+build/
+*.spec
+
+# === Claude Code working files ===
+.claude/
+
+# === Backup folders ===
+archive/
+backups/
+*.bak

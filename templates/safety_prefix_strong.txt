@@ -1,0 +1,1 @@
+ART EDUCATION REFERENCE: this is a wooden artist's mannequin / construction-drawing dummy used for figure-drawing study. It is an inanimate artist's tool — not a person, not a human body, not a character. Output a featureless smooth-surface construction figure matching the attached mannequin reference exactly.

@@ -1,0 +1,932 @@
+[
+  {
+    "number": 1,
+    "filename": "F_adult_front_contrapposto_classic_01.png",
+    "view": "front",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\n>>> THIS IS THE ARCHETYPE ANCHOR PROMPT \u2014 its successful output will become F_adu\nARCHETYPE: female adult, 8 head-heights\nVIEW: straight-on front view\nPOSE CATEGORY: standing & contrapposto\nSPECIFIC POSE: contrapposto_classic \u2014 left hand resting on left hip, right arm ha\nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- Weight planted on figure's right leg (viewer's left)\n- Right hip rises, left hip drops; right knee locked, left knee softly bent and t\n- Counter-rotation: right shoulder drops to balance the rising right hip, left sh\n- Left hand placed on left hip, elbow flared out\n- Right arm hangs relaxed at side, slight bend at elbow, fingers softly open\n- Head balanced over the weight-bearing right foot\n- Subtle ribcage tilt visible \u2014 torso pinches on the weight-bearing side\nLINE OF ACTION:\n- Gentle S-curve in red from crown of head, down through the spine following the \n- Commit to the curve from the start \u2014 build the figure along it, not after\nHEAD-HEIGHT GRID:\n- Numbered horizontal guidelines 1 through 8 along the left margin\n- Dashed line at the bottom marking the ground plane (marker 0)\n- Crown of head sits at marker 8, soles touch marker 0\n- Grid must match the 8-head adult count exactly \u2014 no drift\n\nOUTPUT: A single full-body front_contrapposto_classic mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 2,
+    "filename": "F_adult_side_L_contrapposto_classic_01.png",
+    "view": "side_L",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_contrapposto_classic mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 3,
+    "filename": "F_adult_side_R_contrapposto_classic_01.png",
+    "view": "side_R",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_contrapposto_classic mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 4,
+    "filename": "F_adult_back_contrapposto_classic_01.png",
+    "view": "back",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body back_contrapposto_classic mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 5,
+    "filename": "F_adult_3q_front_L_contrapposto_classic_01.png",
+    "view": "3q_front_L",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_contrapposto_classic mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 6,
+    "filename": "F_adult_3q_front_R_contrapposto_classic_01.png",
+    "view": "3q_front_R",
+    "pose": "contrapposto_classic",
+    "category": "standing",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\nPOSE CATEGORY: standing & contrapposto\nSPECIFIC POSE: contrapposto_classic \u2014 left hand resting on left hip, right arm ha\nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- Three-quarter front; figure's right side rotated toward camera, left side reced\n- Weight on figure's right (near) leg, locked; left (far) leg slightly bent and f\n- Right hip rises in foreground, left hip drops behind\n- Right arm hangs in the foreground, fully visible from shoulder to fingers\n- Left hand on left hip recedes into the silhouette behind the torso\n- Counter-rotation visible: shoulders rotate opposite to hips\nLINE OF ACTION:\n- Diagonal S-curve in red from crown through the spine, into the near raised hip,\n\nOUTPUT: A single full-body 3q_front_R_contrapposto_classic mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 7,
+    "filename": "F_adult_front_sit_chair_neutral_01.png",
+    "view": "front",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_sit_chair_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 8,
+    "filename": "F_adult_side_L_sit_chair_neutral_01.png",
+    "view": "side_L",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_sit_chair_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 9,
+    "filename": "F_adult_side_R_sit_chair_neutral_01.png",
+    "view": "side_R",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_sit_chair_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 10,
+    "filename": "F_adult_back_sit_chair_neutral_01.png",
+    "view": "back",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: straight-on back view\nPOSE CATEGORY: sitting / kneeling / reclining\nSPECIFIC POSE: sit_chair_neutral \u2014 seated upright on an implied chair (chair itse\nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- Back view of seated figure on implied chair\n- Spine upright, slight S-curve readable through scapulae and lower back\n- Hands rest on thighs/knees but only the back of the elbows is visible from this\n- Pelvis sits flat on implied seat at marker ~4; hips wider than shoulders from b\n- Subtle weight asymmetry \u2014 one glute tensions slightly more\n- Knees bent ~90\u00b0 below the seat plane, calves visible in shadow\nLINE OF ACTION:\n- Soft vertical curve in red down the spinal channel, settling at the seated pelv\n- Commit to the curve from the start \u2014 build the figure along it, not after\nHEAD-HEIGHT GRID:\n- Numbered horizontal guidelines 1 through 8 along the left margin\n- Dashed line at the bottom marking the ground plane (marker 0)\n\nOUTPUT: A single full-body back_sit_chair_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 11,
+    "filename": "F_adult_3q_front_L_sit_chair_neutral_01.png",
+    "view": "3q_front_L",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_sit_chair_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 12,
+    "filename": "F_adult_3q_front_R_sit_chair_neutral_01.png",
+    "view": "3q_front_R",
+    "pose": "sit_chair_neutral",
+    "category": "sitting",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_R_sit_chair_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 13,
+    "filename": "F_adult_front_walk_neutral_01.png",
+    "view": "front",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_walk_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 14,
+    "filename": "F_adult_side_L_walk_neutral_01.png",
+    "view": "side_L",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_walk_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 15,
+    "filename": "F_adult_side_R_walk_neutral_01.png",
+    "view": "side_R",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_walk_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 16,
+    "filename": "F_adult_back_walk_neutral_01.png",
+    "view": "back",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body back_walk_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 17,
+    "filename": "F_adult_3q_front_L_walk_neutral_01.png",
+    "view": "3q_front_L",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_walk_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 18,
+    "filename": "F_adult_3q_front_R_walk_neutral_01.png",
+    "view": "3q_front_R",
+    "pose": "walk_neutral",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_R_walk_neutral mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 19,
+    "filename": "F_adult_front_run_jog_01.png",
+    "view": "front",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: straight-on front view\nPOSE CATEGORY: walking / running / sprinting\nSPECIFIC POSE: run_jog \u2014 jogging pace mid-stride: lead knee lifted high (~waist-h\nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- Mid-jog jogging toward camera\n- Lead knee (right) lifted high, thigh near horizontal, lower leg dangling forwar\n- Back leg (left) extended behind, foot still in contact or just leaving the grou\n- Arms bent at ~90\u00b0: left arm swings forward at chest height, right arm swings ba\n- Hands lightly closed (not clenched); shoulders relaxed\n- Torso leans forward ~10\u00b0 from vertical\n- Pelvis-shoulder counter-rotation strong but not exaggerated\nLINE OF ACTION:\n- Forward-leaning diagonal curve in red from crown through the spine, leading int\n- Commit to the curve from the start \u2014 build the figure along it, not after\nHEAD-HEIGHT GRID:\n- Numbered horizontal guidelines 1 through 8 along the left margin\n- Dashed line at the bottom marking the ground plane (marker 0)\n- Crown of head sits at marker 8, soles touch marker 0\n- Grid must match the 8-head adult count exactly \u2014 no drift\n\nOUTPUT: A single full-body front_run_jog mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 20,
+    "filename": "F_adult_side_L_run_jog_01.png",
+    "view": "side_L",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_run_jog mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 21,
+    "filename": "F_adult_side_R_run_jog_01.png",
+    "view": "side_R",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_run_jog mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 22,
+    "filename": "F_adult_back_run_jog_01.png",
+    "view": "back",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body back_run_jog mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 23,
+    "filename": "F_adult_3q_front_L_run_jog_01.png",
+    "view": "3q_front_L",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_run_jog mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 24,
+    "filename": "F_adult_3q_front_R_run_jog_01.png",
+    "view": "3q_front_R",
+    "pose": "run_jog",
+    "category": "walking",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\nPOSE CATEGORY: walking / running / sprinting\nSPECIFIC POSE: run_jog \u2014 jogging pace mid-stride: lead knee lifted high (~waist-h\nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- Three-quarter mid-jog; figure's right side rotated toward camera\n- Lead leg (right, near) knee lifted high in the foreground\n- Back leg (left, far) extended back behind the silhouette\n- Near arm (right) drives back; far arm (left) drives forward\n- Torso leans forward ~10\u00b0\nLINE OF ACTION:\n- Diagonal forward-leaning S-curve in red from crown through spine into the lead \n- Commit to the curve from the start \u2014 build the figure along it, not after\n\nOUTPUT: A single full-body 3q_front_R_run_jog mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 25,
+    "filename": "F_adult_front_kneel_one_01.png",
+    "view": "front",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_kneel_one mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 26,
+    "filename": "F_adult_side_L_kneel_one_01.png",
+    "view": "side_L",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_kneel_one mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 27,
+    "filename": "F_adult_side_R_kneel_one_01.png",
+    "view": "side_R",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_kneel_one mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 28,
+    "filename": "F_adult_back_kneel_one_01.png",
+    "view": "back",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: straight-on back view\nPOSE CATEGORY: sitting / kneeling / reclining\nSPECIFIC POSE: kneel_one \u2014 right knee on ground (shin flat, toe down), left knee \nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- Back view of kneeling pose; right knee on ground (now on viewer's right)\n- Left knee up at ~90\u00b0 (on viewer's left), left foot flat\n- Glutes asymmetric \u2014 weight settled into the down-knee side\n- Hands rest on thighs/knees, partially visible at sides\n- Spine reads as gentle vertical with subtle forward lean\n- Sole of right foot visible behind (toe pointed down)\nLINE OF ACTION:\n- Gentle vertical curve in red down the spine, settling into the down-knee at the\n- Commit to the curve from the start \u2014 build the figure along it, not after\nHEAD-HEIGHT GRID:\n- Numbered horizontal guidelines 1 through 8 along the left margin\n- Dashed line at the bottom marking the ground plane (marker 0)\n\nOUTPUT: A single full-body back_kneel_one mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 29,
+    "filename": "F_adult_3q_front_L_kneel_one_01.png",
+    "view": "3q_front_L",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_kneel_one mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 30,
+    "filename": "F_adult_3q_front_R_kneel_one_01.png",
+    "view": "3q_front_R",
+    "pose": "kneel_one",
+    "category": "kneeling",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_R_kneel_one mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 31,
+    "filename": "F_adult_front_combat_ready_01.png",
+    "view": "front",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_combat_ready mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 32,
+    "filename": "F_adult_side_L_combat_ready_01.png",
+    "view": "side_L",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_combat_ready mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 33,
+    "filename": "F_adult_side_R_combat_ready_01.png",
+    "view": "side_R",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: right profile (viewer sees the figure's right side; figure faces frame-left\nPOSE CATEGORY: combat & action\nSPECIFIC POSE: combat_ready \u2014 orthodox fighting stance: left foot forward, right \nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- Profile of combat stance, figure facing frame-left\n- Lead foot (left, far) forward; rear foot (right, near) back at ~45\u00b0\n- Lead hand (left, far) raised forward at chin-height, partially behind silhouett\n- Rear hand (right, near) at chin in foreground, elbow tucked\n- Both knees softly bent; weight slightly back\n- Stance length about 1.5 head-heights\nLINE OF ACTION:\n- Forward-leaning curve in red from crown down the spine, weighted into the rear\n\nOUTPUT: A single full-body side_R_combat_ready mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 34,
+    "filename": "F_adult_back_combat_ready_01.png",
+    "view": "back",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body back_combat_ready mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 35,
+    "filename": "F_adult_3q_front_L_combat_ready_01.png",
+    "view": "3q_front_L",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_combat_ready mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 36,
+    "filename": "F_adult_3q_front_R_combat_ready_01.png",
+    "view": "3q_front_R",
+    "pose": "combat_ready",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_R_combat_ready mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 37,
+    "filename": "F_adult_front_recline_prop_01.png",
+    "view": "front",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_recline_prop mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 38,
+    "filename": "F_adult_side_L_recline_prop_01.png",
+    "view": "side_L",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_L",
+      "front",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_recline_prop mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 39,
+    "filename": "F_adult_side_R_recline_prop_01.png",
+    "view": "side_R",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_R",
+      "front",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_recline_prop mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 40,
+    "filename": "F_adult_back_recline_prop_01.png",
+    "view": "back",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body back_recline_prop mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 41,
+    "filename": "F_adult_3q_front_L_recline_prop_01.png",
+    "view": "3q_front_L",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "3q_front_L",
+      "front",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_recline_prop mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 42,
+    "filename": "F_adult_3q_front_R_recline_prop_01.png",
+    "view": "3q_front_R",
+    "pose": "recline_prop",
+    "category": "sitting",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "3q_front_R",
+      "front",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: three-quarter front, figure rotated so its right side is more prominent tow\nPOSE CATEGORY: sitting / kneeling / reclining\nSPECIFIC POSE: recline_prop \u2014 reclining on the figure's right side, propped on ri\nORIENTATION: A4 landscape\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- LANDSCAPE orientation\n- Three-quarter front recline, figure's right side rotated toward camera\n- Right elbow on ground props torso up at ~30\u00b0, near foreground\n- Chest and torso angle toward camera\n- Left arm draped over body with hand on left thigh\n- Left leg straight on top, right leg under bent ~30\u00b0\nLINE OF ACTION:\n- Long S-curve in red from crown along the propped spine, through the rotated hip\n- Commit to the curve from the start \u2014 build the figure along it, not after\nHEAD-HEIGHT GRID:\n- Numbered horizontal guidelines 1 through 8 along the left margin\n- Dashed line at the bottom marking the ground plane (marker 0)\n\nOUTPUT: A single full-body 3q_front_R_recline_prop mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 43,
+    "filename": "F_adult_front_jump_air_01.png",
+    "view": "front",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_jump_air mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 44,
+    "filename": "F_adult_side_L_jump_air_01.png",
+    "view": "side_L",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_L",
+      "front",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_jump_air mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 45,
+    "filename": "F_adult_side_R_jump_air_01.png",
+    "view": "side_R",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "side_R",
+      "front",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_jump_air mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 46,
+    "filename": "F_adult_back_jump_air_01.png",
+    "view": "back",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body back_jump_air mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 47,
+    "filename": "F_adult_3q_front_L_jump_air_01.png",
+    "view": "3q_front_L",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "front",
+      "side_L"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: three-quarter front, figure rotated so its left side is more prominent towa\nPOSE CATEGORY: dynamic gestures\nSPECIFIC POSE: jump_air \u2014 mid-air apex moment, both feet off ground, knees tucked\nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- Three-quarter mid-air apex; figure's left side rotated toward camera\n- Knees tucked to chest, both feet off ground\n- Right arm forward toward camera-right at shoulder height\n- Left arm back behind near-side silhouette\n- Torso compressed, head up looking forward\n- Strong dynamic compression visible from this angle\nLINE OF ACTION:\n- Compressed S-curve in red from crown through the spine into the tucked knees, w\n- Commit to the curve from the start \u2014 build the figure along it, not after\n\nOUTPUT: A single full-body 3q_front_L_jump_air mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 48,
+    "filename": "F_adult_3q_front_R_jump_air_01.png",
+    "view": "3q_front_R",
+    "pose": "jump_air",
+    "category": "dynamic",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "front",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_R_jump_air mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 49,
+    "filename": "F_adult_front_foreshortening_reach_01.png",
+    "view": "front",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_foreshortening_reach mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 50,
+    "filename": "F_adult_side_L_foreshortening_reach_01.png",
+    "view": "side_L",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_L",
+      "front",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_foreshortening_reach mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 51,
+    "filename": "F_adult_side_R_foreshortening_reach_01.png",
+    "view": "side_R",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_R",
+      "front",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_foreshortening_reach mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 52,
+    "filename": "F_adult_back_foreshortening_reach_01.png",
+    "view": "back",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: straight-on back view\nPOSE CATEGORY: camera angles\nSPECIFIC POSE: foreshortening_reach \u2014 figure standing with right arm extended dir\nORIENTATION: A4 landscape\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM:\n- LANDSCAPE orientation\n- Figure facing away; right arm reaches BACK over right shoulder toward camera\n- Hand large in upper foreground, fingers spread; forearm and upper arm compress \n- Back of figure visible below the reaching arm; head turned slightly so chin/jaw\n- Left arm hangs at side from behind\n- Spine arches subtly to allow the over-shoulder reach\nLINE OF ACTION:\n- Curving line of action in red from the over-shoulder hand back through the arm \n- Commit to the curve from the start \u2014 build the figure along it, not after\n\nOUTPUT: A single full-body back_foreshortening_reach mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 53,
+    "filename": "F_adult_3q_front_L_foreshortening_reach_01.png",
+    "view": "3q_front_L",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "3q_front_L",
+      "front",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_foreshortening_reach mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 54,
+    "filename": "F_adult_3q_front_R_foreshortening_reach_01.png",
+    "view": "3q_front_R",
+    "pose": "foreshortening_reach",
+    "category": "camera",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "3q_front_R",
+      "front",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_R_foreshortening_reach mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 55,
+    "filename": "F_adult_front_combat_kick_high_01.png",
+    "view": "front",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "locked_anchor",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_combat_kick_high mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 56,
+    "filename": "F_adult_side_L_combat_kick_high_01.png",
+    "view": "side_L",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_L",
+      "locked_anchor",
+      "3q_front_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_L_combat_kick_high mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 57,
+    "filename": "F_adult_side_R_combat_kick_high_01.png",
+    "view": "side_R",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "reference_keys": [
+      "side_R",
+      "locked_anchor",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body side_R_combat_kick_high mannequin in A4 landscape ratio, light blue pencil on white."
+  },
+  {
+    "number": 58,
+    "filename": "F_adult_back_combat_kick_high_01.png",
+    "view": "back",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "back",
+      "side_L",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body back_combat_kick_high mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 59,
+    "filename": "F_adult_3q_front_L_combat_kick_high_01.png",
+    "view": "3q_front_L",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_L",
+      "locked_anchor",
+      "side_L"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_L_combat_kick_high mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 60,
+    "filename": "F_adult_3q_front_R_combat_kick_high_01.png",
+    "view": "3q_front_R",
+    "pose": "combat_kick_high",
+    "category": "combat",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "3q_front_R",
+      "locked_anchor",
+      "side_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body 3q_front_R_combat_kick_high mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 61,
+    "filename": "F_adult_front_low_angle_hero_01.png",
+    "view": "front",
+    "pose": "low_angle_hero",
+    "category": "camera",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "I'm attaching 3 reference templates from my 9LivesK9 Base Pose Library \u2014 treat th\nARCHETYPE: female adult, 8 head-heights\nVIEW: straight-on front view with strong perspective camera angle\nPOSE CATEGORY: camera angles\nSPECIFIC POSE: power_stance \u2014 feet wide (just wider than shoulder-width), shoulde\nORIENTATION: A4 portrait\nLOCKED STYLE CONVENTIONS (match my references exactly):\n- Light blue pencil construction drawing\n- Wireframe contour bands (Atari lines) wrapping around form to describe volume\n- Cross-section ovals at shoulder, elbow, wrist, hip, knee, and ankle joints\n- Bald, faceless head with center cross guideline (vertical and horizontal axis)\n- No hair, clothing, accessories, or fantasy features (no horns, ears, tails)\n- Hands fully articulated with visible fingers\n- Feet with arch, heel, and toe definition\n- Soft pencil line quality, identical weight to references\n- Clean white background\nANATOMY (female adult, 8 heads):\n- 8 total head-heights from crown to sole (range 7.5\u20138)\n- Shoulders 2 head-widths across\n- Hip width slightly exceeds shoulder width (female emphasis)\n- Defined waist taper, visible iliac crest\n- Legs roughly 4 heads long (half total height)\n- Ribcage as egg-shaped volume, pelvis as bucket volume\n- Sharp joint articulation at shoulder, elbow, wrist, hip, knee, ankle\n- Maintain stylized anime construction throughout \u2014 do NOT drift toward realistic\nPOSE RHYTHM & CAMERA ANGLE:\n- Camera placed below knee-height, looking up at the figure\n- Strong perspective: feet large in foreground, head smaller and receding upward\n- Feet planted shoulder-width apart, weight evenly distributed (or weight subtly \n- Both hands on hips, elbows flared out wide; biceps and lats appear broad from t\n\nOUTPUT: A single full-body front_low_angle_hero mannequin in A4 portrait ratio, light blue pencil on white."
+  },
+  {
+    "number": 62,
+    "filename": "F_adult_front_high_angle_vulnerable_01.png",
+    "view": "front",
+    "pose": "high_angle_vulnerable",
+    "category": "camera",
+    "orientation": "portrait",
+    "size": "1024x1536",
+    "reference_keys": [
+      "front",
+      "3q_front_L",
+      "3q_front_R"
+    ],
+    "prompt": "\n\nOUTPUT: A single full-body front_high_angle_vulnerable mannequin in A4 portrait ratio, light blue pencil on white."
+  }
+]
