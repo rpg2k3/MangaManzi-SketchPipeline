@@ -19,10 +19,10 @@ from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QPushButton,
     QPlainTextEdit, QTextEdit, QFileDialog, QGroupBox, QMessageBox,
     QScrollArea, QSizePolicy, QTabWidget, QCheckBox, QProgressBar,
-    QListWidget, QListWidgetItem, QFrame,
+    QListWidget, QListWidgetItem, QFrame, QRadioButton, QButtonGroup,
 )
 
-from app.api.chatgpt_prompt_engineer import ARCHETYPES, VIEWS
+from app.api.chatgpt_prompt_engineer import ARCHETYPES, GENDERS, VIEWS
 from app.api import chatgpt_pose_taxonomy
 from app.workers.chatgpt_base_worker import ChatGPTBaseWorker
 from app.workers.chatgpt_batch_worker import ChatGPTBatchWorker
@@ -38,6 +38,35 @@ def _default_output_dir() -> Path:
     if custom:
         return Path(custom)
     return APP_DIR / "output" / "chat_gpt_base"
+
+
+class _GenderSelector(QWidget):
+    """Female/Male radio pair, used by all three modes."""
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        layout = QHBoxLayout(self)
+        layout.setContentsMargins(0, 0, 0, 0)
+        self._group = QButtonGroup(self)
+        self._buttons: dict[str, QRadioButton] = {}
+        for key, meta in GENDERS.items():
+            rb = QRadioButton(meta["label"])
+            rb.setProperty("gender_key", key)
+            self._group.addButton(rb)
+            layout.addWidget(rb)
+            self._buttons[key] = rb
+        self._buttons["female"].setChecked(True)
+        layout.addStretch(1)
+
+    def value(self) -> str:
+        for key, rb in self._buttons.items():
+            if rb.isChecked():
+                return key
+        return "female"
+
+    def set_enabled(self, on: bool):
+        for rb in self._buttons.values():
+            rb.setEnabled(on)
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -94,7 +123,7 @@ class _SinglePreviewPanel(QWidget):
     def is_busy(self) -> bool:
         return self.worker is not None and self.worker.isRunning()
 
-    def start(self, archetype: str, view: str, pose_description: str,
+    def start(self, archetype: str, gender: str, view: str, pose_description: str,
               orientation: str, filename_hint: str):
         if self.is_busy():
             return
@@ -106,7 +135,7 @@ class _SinglePreviewPanel(QWidget):
         self.save_btn.setEnabled(False)
 
         self.worker = ChatGPTBaseWorker(
-            archetype=archetype, view=view,
+            archetype=archetype, gender=gender, view=view,
             pose_description=pose_description, orientation=orientation)
         self.worker.log.connect(self._append_log)
         self.worker.done.connect(self._on_done)
@@ -186,6 +215,8 @@ class _SingleMode(QWidget):
         gl = QVBoxLayout(controls)
 
         gl.addLayout(self._row("Archetype:", self._make_archetype_combo()))
+        self.gender = _GenderSelector()
+        gl.addLayout(self._row("Gender:", self.gender))
         gl.addLayout(self._row("View:", self._make_view_combo()))
         gl.addLayout(self._row("Pose:", self._make_pose_combo()))
 
@@ -262,14 +293,16 @@ class _SingleMode(QWidget):
             QMessageBox.information(self, "Pick a pose", "Please pick a pose.")
             return
         archetype = self.archetype_combo.currentData()
+        gender = self.gender.value()
         view = self.view_combo.currentData()
         pose_desc = entry.get("description") or entry["pose"].replace("_", " ")
-        hint = f"{archetype}_{view}_{entry['pose']}"
-        self.preview.start(archetype, view, pose_desc, "auto", hint)
+        prefix = GENDERS[gender]["filename_prefix"]
+        hint = f"{prefix}_{archetype}_{view}_{entry['pose']}"
+        self.preview.start(archetype, gender, view, pose_desc, "auto", hint)
 
 
 # ─────────────────────────────────────────────────────────────────────
-# Mode 2 — Batch Generate (LoRA dataset builder)
+# Mode 2 — Batch Generate (dataset builder)
 # ─────────────────────────────────────────────────────────────────────
 
 class _BatchMode(QWidget):
@@ -290,6 +323,16 @@ class _BatchMode(QWidget):
             self.archetype_combo.addItem(f"{meta['label']} — {meta['heads']} heads", key)
         arow.addWidget(self.archetype_combo, 1)
         layout.addLayout(arow)
+
+        # Gender (whole batch is one gender)
+        grow = QHBoxLayout()
+        grow.addWidget(QLabel("Gender:"))
+        self.gender = _GenderSelector()
+        grow.addWidget(self.gender, 1)
+        gnote = QLabel("(one batch = one gender; filenames are prefixed F_ or M_)")
+        gnote.setStyleSheet("color:#666;")
+        grow.addWidget(gnote)
+        layout.addLayout(grow)
 
         # View checklist
         view_box = QGroupBox("Views (8) — uncheck to skip")
@@ -436,6 +479,7 @@ class _BatchMode(QWidget):
                                 "Anthropic and OpenAI keys are required. Configure in Settings tab.")
             return
         archetype = self.archetype_combo.currentData()
+        gender = self.gender.value()
         views = self._selected_views()
         poses = self._selected_poses()
         if not views or not poses:
@@ -447,11 +491,13 @@ class _BatchMode(QWidget):
         quality = settings_manager.get_openai_quality()
         per = settings_manager.OPENAI_PRICING.get(quality, 0.042) + 0.005
         est = total * per
-        out_dir = _default_output_dir() / archetype
+        prefix = GENDERS[gender]["filename_prefix"]
+        out_dir = _default_output_dir() / f"{prefix}_{archetype}"
 
         reply = QMessageBox.question(
             self, "Start batch",
-            f"Generate {total} images for {archetype}?\n\n"
+            f"Generate {total} images for {prefix}_{archetype}?\n\n"
+            f"  Gender:   {gender}\n"
             f"  Views:    {len(views)}\n"
             f"  Poses:    {len(poses)}\n"
             f"  Quality:  {quality}\n"
@@ -463,10 +509,10 @@ class _BatchMode(QWidget):
         if reply != QMessageBox.StandardButton.Ok:
             return
 
-        self._start_worker(archetype, views, poses, out_dir)
+        self._start_worker(archetype, gender, views, poses, out_dir)
 
-    def _start_worker(self, archetype: str, views: list[str], poses: list[dict],
-                      out_dir: Path):
+    def _start_worker(self, archetype: str, gender: str, views: list[str],
+                      poses: list[dict], out_dir: Path):
         self.failure_list.clear()
         self.log.clear()
         self.cost_label.setText("Cost: $0.0000")
@@ -474,7 +520,8 @@ class _BatchMode(QWidget):
         self.progress_bar.setValue(0)
 
         self.worker = ChatGPTBatchWorker(
-            archetype=archetype, views=views, poses=poses, output_dir=out_dir)
+            archetype=archetype, gender=gender, views=views, poses=poses,
+            output_dir=out_dir)
         self.worker.log.connect(self._append_log)
         self.worker.progress.connect(self._on_progress)
         self.worker.item_done.connect(self._on_item_done)
@@ -484,6 +531,7 @@ class _BatchMode(QWidget):
         self._set_running_state(True)
         self._running_total_cost = 0.0
         self._running_archetype = archetype
+        self._running_gender = gender
         self._running_out_dir = out_dir
         self.worker.start()
 
@@ -492,6 +540,7 @@ class _BatchMode(QWidget):
         self.pause_btn.setEnabled(running)
         self.cancel_btn.setEnabled(running)
         self.archetype_combo.setEnabled(not running)
+        self.gender.set_enabled(not running)
         for cb in self.view_checks.values():
             cb.setEnabled(not running)
         self.pose_list.setEnabled(not running)
@@ -550,7 +599,8 @@ class _BatchMode(QWidget):
         # remove this row from the failure list and re-run as a 1-item batch
         row = self.failure_list.row(item)
         self.failure_list.takeItem(row)
-        self._start_worker(self._running_archetype, [view], [entry], self._running_out_dir)
+        self._start_worker(self._running_archetype, self._running_gender,
+                           [view], [entry], self._running_out_dir)
 
     def _on_finished(self, success: int, failed: int, total_cost: float):
         self._append_log(
@@ -585,6 +635,12 @@ class _CustomMode(QWidget):
             self.archetype_combo.addItem(f"{meta['label']} — {meta['heads']} heads", key)
         arow.addWidget(self.archetype_combo, 1)
         gl.addLayout(arow)
+
+        grow = QHBoxLayout()
+        grow.addWidget(QLabel("Gender:"))
+        self.gender = _GenderSelector()
+        grow.addWidget(self.gender, 1)
+        gl.addLayout(grow)
 
         vrow = QHBoxLayout()
         vrow.addWidget(QLabel("View:"))
@@ -630,10 +686,12 @@ class _CustomMode(QWidget):
                                     "Enter a plain-English pose description.")
             return
         archetype = self.archetype_combo.currentData()
+        gender = self.gender.value()
         view = self.view_combo.currentData()
         orientation = self.orientation_combo.currentData()
-        hint = f"{archetype}_{view}_custom"
-        self.preview.start(archetype, view, pose, orientation, hint)
+        prefix = GENDERS[gender]["filename_prefix"]
+        hint = f"{prefix}_{archetype}_{view}_custom"
+        self.preview.start(archetype, gender, view, pose, orientation, hint)
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -667,7 +725,7 @@ class ChatGPTBaseTab(QWidget):
         self.batch_mode = _BatchMode()
         self.custom_mode = _CustomMode()
         self.modes.addTab(self.single_mode, "1. Single")
-        self.modes.addTab(self.batch_mode, "2. Batch (LoRA dataset)")
+        self.modes.addTab(self.batch_mode, "2. Batch (dataset)")
         self.modes.addTab(self.custom_mode, "3. Custom Pose")
         layout.addWidget(self.modes, 1)
 

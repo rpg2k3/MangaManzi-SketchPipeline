@@ -1,25 +1,23 @@
-"""Settings tab — lane config, API keys, file locations, cumulative spend."""
+"""Settings tab — API keys, file locations, OpenAI quality, cumulative spend."""
 
 import os
 from pathlib import Path
 
-from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel,
     QPushButton, QGroupBox, QFormLayout, QMessageBox, QComboBox,
-    QPlainTextEdit, QFileDialog, QLineEdit,
+    QFileDialog, QLineEdit,
 )
-from PySide6.QtGui import QFont
 
 from app import keyring_store, settings_manager
+from app.api import key_tests
 from app.cost_logger import get_cumulative_spend, LOGS_DIR
-from app.api import claude_client, gemini_client, openai_client
 
 APP_DIR = Path(__file__).parent.parent.parent
 
 _ICONS = {
-    "ok": "\u2705", "invalid": "\u274C", "rate_limited": "\u26A0\uFE0F",
-    "warning": "\u26A0\uFE0F", "error": "\u2753", "untested": "\u2B55",
+    "ok": "✅", "invalid": "❌", "rate_limited": "⚠️",
+    "warning": "⚠️", "error": "❓", "untested": "⭕",
 }
 
 
@@ -33,49 +31,12 @@ class SettingsTab(QWidget):
         layout = QVBoxLayout(self)
         layout.setSpacing(12)
 
-        # ── Lane Configuration ──
-        lg = QGroupBox("Lane Configuration")
-        lf = QFormLayout(lg)
-
-        # Mannequin provider
-        self.mannequin_provider_combo = QComboBox()
-        self.mannequin_provider_combo.addItem("OpenAI \u2014 gpt-image-1", "openai")
-        self.mannequin_provider_combo.addItem("Gemini \u2014 gemini-2.5-flash-image", "gemini")
-        self.mannequin_provider_combo.currentIndexChanged.connect(self._on_mannequin_provider_changed)
-        lf.addRow("Mannequin Bases:", self.mannequin_provider_combo)
-
-        # Sketch provider
-        self.sketch_provider_combo = QComboBox()
-        self.sketch_provider_combo.addItem("Gemini \u2014 gemini-2.5-flash-image", "gemini")
-        self.sketch_provider_combo.addItem("OpenAI \u2014 gpt-image-1", "openai")
-        self.sketch_provider_combo.currentIndexChanged.connect(self._on_sketch_provider_changed)
-        lf.addRow("Sketch Overlay:", self.sketch_provider_combo)
-
-        # OpenAI quality
-        self.quality_combo = QComboBox()
-        self.quality_combo.addItem("low  \u2014  ~$0.011/image", "low")
-        self.quality_combo.addItem("medium  \u2014  ~$0.042/image", "medium")
-        self.quality_combo.addItem("high  \u2014  ~$0.167/image", "high")
-        self.quality_combo.currentIndexChanged.connect(self._on_quality_changed)
-        lf.addRow("OpenAI Quality:", self.quality_combo)
-
-        # Locked lanes (read-only)
-        lf.addRow("Character Extraction:", QLabel("Anthropic \u2014 claude-haiku-4-5-20251001 (locked)"))
-        lf.addRow("Prompt Assembly:", QLabel("Anthropic \u2014 claude-haiku-4-5-20251001 (locked)"))
-
-        # Info banner
-        self.lane_info_label = QLabel("")
-        self.lane_info_label.setStyleSheet("color: #0066CC; font-style: italic;")
-        self.lane_info_label.setWordWrap(True)
-        lf.addRow(self.lane_info_label)
-
-        layout.addWidget(lg)
-
         # ── API Keys ──
         kg = QGroupBox("API Keys")
         kf = QFormLayout(kg)
 
-        for provider, label in [("openai", "OpenAI"), ("anthropic", "Anthropic"), ("google", "Google")]:
+        for provider, label in [("openai", "OpenAI (required)"),
+                                 ("anthropic", "Anthropic (required)")]:
             row = QHBoxLayout()
             key_label = QLabel()
             setattr(self, f"{provider}_label", key_label)
@@ -129,6 +90,20 @@ class SettingsTab(QWidget):
 
         layout.addWidget(flg)
 
+        # ── OpenAI Quality ──
+        qg = QGroupBox("OpenAI Quality (affects image cost + fidelity)")
+        qf = QFormLayout(qg)
+        self.quality_combo = QComboBox()
+        self.quality_combo.addItem("low  —  ~$0.011 / image", "low")
+        self.quality_combo.addItem("medium  —  ~$0.042 / image", "medium")
+        self.quality_combo.addItem("high  —  ~$0.167 / image", "high")
+        self.quality_combo.currentIndexChanged.connect(self._on_quality_changed)
+        qf.addRow("Quality:", self.quality_combo)
+        self.info_label = QLabel("")
+        self.info_label.setStyleSheet("color:#0066CC; font-style: italic;")
+        qf.addRow(self.info_label)
+        layout.addWidget(qg)
+
         # ── Spend ──
         sg = QGroupBox("Cumulative Spend")
         sf = QFormLayout(sg)
@@ -139,75 +114,19 @@ class SettingsTab(QWidget):
         sf.addRow(rb)
         layout.addWidget(sg)
 
-        # ── Quality Tags ──
-        tg = QGroupBox("Quality Tags (prepended to prompts)")
-        tf = QFormLayout(tg)
-
-        self.mannequin_tag_edit = QPlainTextEdit()
-        self.mannequin_tag_edit.setMaximumHeight(60)
-        self.mannequin_tag_edit.setFont(QFont("Monospace", 9))
-        tf.addRow("Mannequin:", self.mannequin_tag_edit)
-
-        self.sketch_tag_edit = QPlainTextEdit()
-        self.sketch_tag_edit.setMaximumHeight(60)
-        self.sketch_tag_edit.setFont(QFont("Monospace", 9))
-        tf.addRow("Sketch:", self.sketch_tag_edit)
-
-        save_tags_btn = QPushButton("Save Quality Tags")
-        save_tags_btn.clicked.connect(self._save_tags)
-        tf.addRow(save_tags_btn)
-
-        layout.addWidget(tg)
-
-        # ── Master Prompt Knowledge ──
-        kg = QGroupBox("Master Prompt Knowledge")
-        kfl = QFormLayout(kg)
-
-        self.spec_status_label = QLabel()
-        self.spec_status_label.setWordWrap(True)
-        kfl.addRow("Spec file:", self.spec_status_label)
-
-        self.instr_status_label = QLabel()
-        self.instr_status_label.setWordWrap(True)
-        kfl.addRow("Instructions:", self.instr_status_label)
-
-        kbtn_row = QHBoxLayout()
-        open_know_btn = QPushButton("Open Knowledge Folder")
-        open_know_btn.clicked.connect(self._open_knowledge_folder)
-        kbtn_row.addWidget(open_know_btn)
-        reload_know_btn = QPushButton("Reload Knowledge Files")
-        reload_know_btn.clicked.connect(self._reload_knowledge)
-        kbtn_row.addWidget(reload_know_btn)
-        kfl.addRow(kbtn_row)
-
-        layout.addWidget(kg)
-
         layout.addStretch()
 
+    # ── Refresh / state ──
+
     def refresh(self):
-        self._set_combo(self.mannequin_provider_combo, settings_manager.get_mannequin_provider())
-        self._set_combo(self.sketch_provider_combo, settings_manager.get_sketch_provider())
         self._set_combo(self.quality_combo, settings_manager.get_openai_quality())
-
-        # Quality tags
-        self.mannequin_tag_edit.setPlainText(settings_manager.get("mannequin_quality_tag") or "")
-        self.sketch_tag_edit.setPlainText(settings_manager.get("sketch_quality_tag") or "")
-
-        # Knowledge file status
-        self._refresh_knowledge_status()
-
-        # Keys
         self.openai_label.setText(keyring_store.mask_key(keyring_store.get_openai_key()))
         self.anthropic_label.setText(keyring_store.mask_key(keyring_store.get_anthropic_key()))
-        self.google_label.setText(keyring_store.mask_key(keyring_store.get_google_key()))
-
-        # File locations
         self.output_dir_edit.setText(settings_manager.get("chatgpt_output_dir") or "")
-
         self._refresh_spend()
-        self.lane_info_label.setText("")
+        self.info_label.setText("")
 
-    def _set_combo(self, combo, value):
+    def _set_combo(self, combo: QComboBox, value):
         combo.blockSignals(True)
         for i in range(combo.count()):
             if combo.itemData(i) == value:
@@ -215,34 +134,16 @@ class SettingsTab(QWidget):
                 break
         combo.blockSignals(False)
 
-    def _on_mannequin_provider_changed(self):
-        val = self.mannequin_provider_combo.currentData()
-        settings_manager.set_value("mannequin_provider", val)
-        model = settings_manager.PROVIDER_MODELS.get(val, val)
-        self.lane_info_label.setText(
-            f"Mannequin provider changed to {val.title()} ({model}). "
-            f"New generations will use this provider. Existing files unaffected.")
-
-    def _on_sketch_provider_changed(self):
-        val = self.sketch_provider_combo.currentData()
-        settings_manager.set_value("sketch_provider", val)
-        model = settings_manager.PROVIDER_MODELS.get(val, val)
-        self.lane_info_label.setText(
-            f"Sketch provider changed to {val.title()} ({model}). "
-            f"New generations will use this provider. Existing files unaffected.")
+    # ── Quality ──
 
     def _on_quality_changed(self):
         val = self.quality_combo.currentData()
         settings_manager.set_value("openai_quality", val)
         price = settings_manager.OPENAI_PRICING.get(val, 0.042)
-        self.lane_info_label.setText(
-            f"OpenAI quality set to {val} (~${price:.3f}/image). "
-            f"Affects both lanes when OpenAI is the selected provider.")
+        self.info_label.setText(
+            f"OpenAI quality set to {val} (~${price:.3f}/image).")
 
-    def _save_tags(self):
-        settings_manager.set_value("mannequin_quality_tag", self.mannequin_tag_edit.toPlainText().strip())
-        settings_manager.set_value("sketch_quality_tag", self.sketch_tag_edit.toPlainText().strip())
-        self.lane_info_label.setText("Quality tags saved.")
+    # ── File locations ──
 
     def _on_browse_output(self):
         start = self.output_dir_edit.text().strip() or str(APP_DIR / "output")
@@ -253,12 +154,14 @@ class SettingsTab(QWidget):
     def _on_save_output(self):
         path = self.output_dir_edit.text().strip()
         settings_manager.set_value("chatgpt_output_dir", path)
-        self.lane_info_label.setText(
+        self.info_label.setText(
             f"Chat_GPT output folder set to: {path or '(default)'}")
 
     def _on_open_cost_log_folder(self):
         LOGS_DIR.mkdir(parents=True, exist_ok=True)
         os.system(f'xdg-open "{LOGS_DIR}" &')
+
+    # ── Spend ──
 
     def _refresh_spend(self):
         spend = get_cumulative_spend()
@@ -273,6 +176,8 @@ class SettingsTab(QWidget):
         else:
             self.spend_label.setText("No API calls logged yet.")
 
+    # ── Keys ──
+
     def _set_status(self, provider, status, msg):
         icon = _ICONS.get(status, _ICONS["error"])
         getattr(self, f"{provider}_status_label").setText(f"{icon} {msg}")
@@ -284,12 +189,11 @@ class SettingsTab(QWidget):
         self.refresh()
 
     def _test_key(self, provider, bypass=False):
-        key_fns = {
-            "openai": (keyring_store.get_openai_key, openai_client.test_connection),
-            "anthropic": (keyring_store.get_anthropic_key, claude_client.test_connection),
-            "google": (keyring_store.get_google_key, gemini_client.test_connection),
+        get_fns = {
+            "openai": (keyring_store.get_openai_key, key_tests.test_openai),
+            "anthropic": (keyring_store.get_anthropic_key, key_tests.test_anthropic),
         }
-        get_fn, test_fn = key_fns[provider]
+        get_fn, test_fn = get_fns[provider]
         key = get_fn()
         if not key:
             self._set_status(provider, "untested", "Key not set.")
@@ -305,44 +209,6 @@ class SettingsTab(QWidget):
             "Remove all API keys from secure storage?")
         if reply == QMessageBox.StandardButton.Yes:
             keyring_store.clear_all()
-            for p in ("openai", "anthropic", "google"):
+            for p in ("openai", "anthropic"):
                 self._set_status(p, "untested", "Cleared")
             self.refresh()
-
-    # ── Knowledge files ──
-
-    def _refresh_knowledge_status(self):
-        from app.knowledge_loader import get_spec_info, get_instructions_info, SPEC_FILE, INSTRUCTIONS_FILE
-
-        spec = get_spec_info()
-        instr = get_instructions_info()
-
-        if spec["exists"]:
-            self.spec_status_label.setText(
-                f"\u2705 Loaded ({spec['size']:,} chars, modified: {spec['mtime_str']})\n"
-                f"{SPEC_FILE}")
-        else:
-            self.spec_status_label.setText(
-                f"\u274C MISSING: {SPEC_FILE}\n"
-                f"Mannequin generation will fail until this file is restored.")
-
-        if instr["exists"]:
-            self.instr_status_label.setText(
-                f"\u2705 Loaded ({instr['size']:,} chars, modified: {instr['mtime_str']})\n"
-                f"{INSTRUCTIONS_FILE}")
-        else:
-            self.instr_status_label.setText(
-                f"\u274C MISSING: {INSTRUCTIONS_FILE}\n"
-                f"Mannequin generation will fail until this file is restored.")
-
-    def _open_knowledge_folder(self):
-        from app.knowledge_loader import KNOWLEDGE_DIR
-        import os
-        if KNOWLEDGE_DIR.exists():
-            os.system(f'xdg-open "{KNOWLEDGE_DIR}" &')
-
-    def _reload_knowledge(self):
-        from app.knowledge_loader import force_reload
-        reloaded = force_reload()
-        self._refresh_knowledge_status()
-        self.lane_info_label.setText(f"Reloaded: {', '.join(reloaded) if reloaded else 'no files found'}")

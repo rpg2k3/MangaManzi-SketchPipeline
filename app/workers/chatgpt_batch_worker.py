@@ -14,10 +14,17 @@ from app.keyring_store import get_anthropic_key, get_openai_key
 from app import settings_manager
 
 
-def filename_for(archetype: str, view: str, pose_slug: str, index: int = 1) -> str:
-    """9LivesK9-style filename: <archetype>_<view-slug>_<pose>_<NN>.png"""
+def filename_for(archetype: str, gender: str, view: str, pose_slug: str,
+                 index: int = 1) -> str:
+    """9LivesK9-style filename: <gender-prefix>_<archetype>_<view-slug>_<pose>_<NN>.png
+
+    e.g. F_adult_front_contrapposto_classic_01.png (female)
+         M_adult_front_contrapposto_classic_01.png (male)
+    """
     view_slug = chatgpt_prompt_engineer.VIEW_LIBRARY_SLUGS.get(view, view)
-    return f"{archetype}_{view_slug}_{pose_slug}_{index:02d}.png"
+    prefix = chatgpt_prompt_engineer.GENDERS.get(
+        gender, {"filename_prefix": "X"})["filename_prefix"]
+    return f"{prefix}_{archetype}_{view_slug}_{pose_slug}_{index:02d}.png"
 
 
 class ChatGPTBatchWorker(QThread):
@@ -28,11 +35,12 @@ class ChatGPTBatchWorker(QThread):
     progress = Signal(int, int)                     # current, total
     finished_batch = Signal(int, int, float)        # success, failed, total_cost
 
-    def __init__(self, archetype: str, views: list[str], poses: list[dict],
-                 output_dir: Path, parent=None):
+    def __init__(self, archetype: str, gender: str, views: list[str],
+                 poses: list[dict], output_dir: Path, parent=None):
         """`poses` is a list of {"pose", "category", "description"} dicts."""
         super().__init__(parent)
         self.archetype = archetype
+        self.gender = gender
         self.views = list(views)
         self.poses = list(poses)
         self.output_dir = Path(output_dir)
@@ -78,7 +86,7 @@ class ChatGPTBatchWorker(QThread):
 
             self.progress.emit(i, total)
             pose_slug = pose["pose"]
-            filename = filename_for(self.archetype, view, pose_slug)
+            filename = filename_for(self.archetype, self.gender, view, pose_slug)
             output_path = self.output_dir / filename
             self.item_started.emit(filename)
 
@@ -98,7 +106,9 @@ class ChatGPTBatchWorker(QThread):
             self.log.emit(f"  [{i+1}/{total}] {filename} — Claude...")
             engineered = chatgpt_prompt_engineer.build_base_prompt(
                 api_key=anthropic_key,
-                archetype=self.archetype, view=view,
+                archetype=self.archetype,
+                gender=self.gender,
+                view=view,
                 pose_description=description,
             )
             if not engineered["success"]:

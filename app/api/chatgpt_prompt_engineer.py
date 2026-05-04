@@ -23,6 +23,11 @@ ARCHETYPES = {
     "baby":         {"label": "Baby (0-1)",          "heads": 3.5},
 }
 
+GENDERS = {
+    "female": {"label": "Female", "filename_prefix": "F"},
+    "male":   {"label": "Male",   "filename_prefix": "M"},
+}
+
 VIEWS = {
     "front":                  "Front view — character facing the viewer directly.",
     "side_l":                 "Side view (left profile) — character facing screen-left.",
@@ -62,11 +67,29 @@ STYLE_GUIDE = """
 10. ABSOLUTE: Construction-stage drawing only. No clothing, no muscle rendering, no detail beyond wireframe + joints + line of action.
 """.strip()
 
+GENDER_RULES = """
+GENDER PROPORTION RULES (apply on top of archetype rules; head-count is identical for both genders):
+
+- FEMALE:
+    * Shoulders: 2 head-widths across (narrower than male).
+    * Defined waist taper — clear narrowing at the natural waist.
+    * Wider hip ratio — pelvis silhouette as wide as or wider than the shoulders.
+    * Softer ribcage volume; chest volume implied at upper torso.
+- MALE:
+    * Shoulders: 2.5 head-widths across (athletic, broader than female).
+    * Less pronounced waist taper — more of a straight or V-shaped torso.
+    * Narrower hips relative to shoulders — V-tapered torso.
+    * Broader chest volume; squarer ribcage.
+
+For pre-teen / child / toddler / baby archetypes, gender silhouette differences
+should be subtle but still applied at the indicated head-width values.
+""".strip()
+
 PROPORTION_RULES = """
 ARCHETYPE PROPORTION RULES (head-count = total figure height in head units):
 
 - adult (8.0 heads, 25+):
-    * Female: shoulders 2 head-widths, Male: shoulders 2.5 head-widths.
+    * Use gender shoulder rule (Female 2hw / Male 2.5hw).
     * Legs occupy 4 heads (half the figure).
     * Sharp, fully-defined joint articulation. Adult anatomical landmarks visible.
 - young_adult (7.5 heads, 18-24):
@@ -106,37 +129,46 @@ You are the prompt engineer for the 9LivesK9 base mannequin pipeline. Your job i
 
 {STYLE_GUIDE}
 
+{GENDER_RULES}
+
 {PROPORTION_RULES}
 
-For each request (archetype, view, pose description), you must:
+For each request (archetype, gender, view, pose description), you must:
 1. State the archetype, exact head-count, and visible age range.
-2. Apply the per-archetype proportion rules above (shoulder width in head-widths, leg length, joint softness, head dominance, belly/baby rules) — explicitly mention each rule that is relevant to this archetype.
-3. State the camera view explicitly.
-4. Describe the pose precisely, anatomically grounded, with the line of action implied.
-5. Restate every rule from the style guide so the image model cannot drift.
-6. Decide A4 portrait vs landscape using the orientation heuristic above, and state your choice.
-7. End with: "Output: clean white background, A4 [portrait|landscape], 9LivesK9 base mannequin construction sheet."
+2. State the gender and apply its silhouette rule (shoulder width, waist taper, hip ratio, chest volume).
+3. Apply the per-archetype proportion rules above (leg length, joint softness, head dominance, belly/baby rules) — explicitly mention each rule that is relevant.
+4. State the camera view explicitly.
+5. Describe the pose precisely, anatomically grounded, with the line of action implied.
+6. Restate every rule from the style guide so the image model cannot drift.
+7. Decide A4 portrait vs landscape using the orientation heuristic above, and state your choice.
+8. End with: "Output: clean white background, A4 [portrait|landscape], 9LivesK9 base mannequin construction sheet."
 
 OUTPUT FORMAT: Return ONLY the final image-generation prompt as plain text. No preamble, no markdown, no quotes — just the prompt the image API will receive.
 """.strip()
 
 
-def build_base_prompt(api_key: str, archetype: str, view: str, pose_description: str) -> dict:
+def build_base_prompt(api_key: str, archetype: str, gender: str, view: str,
+                      pose_description: str) -> dict:
     """Call Claude to expand simple inputs into a full gpt-image-1 prompt.
 
     Returns {"success": bool, "prompt": str, "cost": float, "error": str}.
     """
     arch = ARCHETYPES.get(archetype)
     view_desc = VIEWS.get(view)
+    gender_meta = GENDERS.get(gender)
     if not arch:
         return {"success": False, "prompt": "", "cost": 0.0,
                 "error": f"Unknown archetype: {archetype}"}
     if not view_desc:
         return {"success": False, "prompt": "", "cost": 0.0,
                 "error": f"Unknown view: {view}"}
+    if not gender_meta:
+        return {"success": False, "prompt": "", "cost": 0.0,
+                "error": f"Unknown gender: {gender}"}
 
     user_message = (
         f"Archetype: {archetype} — {arch['label']} — {arch['heads']} heads tall\n"
+        f"Gender: {gender} ({gender_meta['label']})\n"
         f"View: {view} — {view_desc}\n"
         f"Pose: {pose_description.strip() or 'neutral standing pose, contrapposto'}"
     )

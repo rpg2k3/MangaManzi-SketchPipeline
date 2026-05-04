@@ -15,10 +15,11 @@ class ChatGPTBaseWorker(QThread):
     done = Signal(bytes, str, float)         # image_bytes, prompt, total_cost
     failed = Signal(str)                     # error message
 
-    def __init__(self, archetype: str, view: str, pose_description: str,
-                 orientation: str, parent=None):
+    def __init__(self, archetype: str, gender: str, view: str,
+                 pose_description: str, orientation: str, parent=None):
         super().__init__(parent)
         self.archetype = archetype
+        self.gender = gender
         self.view = view
         self.pose_description = pose_description
         self.orientation = orientation
@@ -34,10 +35,11 @@ class ChatGPTBaseWorker(QThread):
             return
 
         self.log.emit(f"[Base] Asking Claude to engineer prompt "
-                      f"({self.archetype} / {self.view})...")
+                      f"({self.gender} {self.archetype} / {self.view})...")
         engineered = chatgpt_prompt_engineer.build_base_prompt(
             api_key=anthropic_key,
             archetype=self.archetype,
+            gender=self.gender,
             view=self.view,
             pose_description=self.pose_description,
         )
