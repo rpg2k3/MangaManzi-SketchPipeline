@@ -6,7 +6,7 @@ Originally built for the **9LivesK9** IP universe, designed to scale to any mang
 
 ## What It Does
 
-Take a character reference sheet (PixAI, manual scan, etc.) → generate dozens of anatomically consistent pose sketches that align with a fixed library of mannequin templates. Print, light-box, hand-trace. The pipeline handles the proportional and pose construction work so the artist focuses on character details, expression, and inking.
+Take a character reference sheet → generate dozens of anatomically consistent pose sketches that align with a fixed library of mannequin templates. Print, light-box, hand-trace. The pipeline handles the proportional and pose construction work so the artist focuses on character details, expression, and inking.
 
 ## Architecture
 

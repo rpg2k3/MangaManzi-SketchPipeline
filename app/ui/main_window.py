@@ -7,6 +7,8 @@ from app.ui.mannequin_tab import MannequinTab
 from app.ui.sketch_tab import SketchTab
 from app.ui.library_tab import LibraryTab
 from app.ui.comparison_tab import ComparisonTab
+from app.ui.chatgpt_base_tab import ChatGPTBaseTab
+from app.ui.chatgpt_sketch_tab import ChatGPTSketchTab
 
 
 class MainWindow(QMainWindow):
@@ -26,11 +28,15 @@ class MainWindow(QMainWindow):
         self.sketch_tab = SketchTab()
         self.library_tab = LibraryTab()
         self.comparison_tab = ComparisonTab()
+        self.chatgpt_base_tab = ChatGPTBaseTab()
+        self.chatgpt_sketch_tab = ChatGPTSketchTab()
 
         self.tabs.addTab(self.mannequin_tab, "Mannequin Generation")
         self.tabs.addTab(self.sketch_tab, "Sketch Generation")
         self.tabs.addTab(self.library_tab, "Library")
         self.tabs.addTab(self.comparison_tab, "Comparison")
+        self.tabs.addTab(self.chatgpt_base_tab, "Chat_GPT — Base")
+        self.tabs.addTab(self.chatgpt_sketch_tab, "Chat_GPT — Sketch")
         self.tabs.addTab(self.settings_tab, "Settings")
 
         self.setCentralWidget(self.tabs)
@@ -41,7 +47,12 @@ class MainWindow(QMainWindow):
             self.library_tab.refresh()
 
     def _is_any_busy(self):
-        return self.mannequin_tab.is_busy() or self.sketch_tab.is_busy()
+        return (
+            self.mannequin_tab.is_busy()
+            or self.sketch_tab.is_busy()
+            or self.chatgpt_base_tab.is_busy()
+            or self.chatgpt_sketch_tab.is_busy()
+        )
 
     def closeEvent(self, event):
         if self._is_any_busy():

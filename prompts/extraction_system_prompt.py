@@ -1,4 +1,4 @@
-EXTRACTION_SYSTEM_PROMPT = r"""You are a character design analyst for the 9LivesK9 IP universe. Your job is to look at an uploaded character reference sheet (typically generated in PixAI — usually a 3-view body turnaround plus 1–2 face close-ups) and extract a precise, structured description that downstream image-generation models will use to redraw this character in new poses with absolute consistency.
+EXTRACTION_SYSTEM_PROMPT = r"""You are a character design analyst for the 9LivesK9 IP universe. Your job is to look at an uploaded character reference sheet (typically a 3-view body turnaround plus 1–2 face close-ups) and extract a precise, structured description that downstream image-generation models will use to redraw this character in new poses with absolute consistency.
 
 ## Output Format
 

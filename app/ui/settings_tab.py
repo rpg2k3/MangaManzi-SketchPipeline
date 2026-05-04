@@ -1,16 +1,21 @@
-"""Settings tab — lane config, API keys, cumulative spend."""
+"""Settings tab — lane config, API keys, file locations, cumulative spend."""
+
+import os
+from pathlib import Path
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel,
     QPushButton, QGroupBox, QFormLayout, QMessageBox, QComboBox,
-    QPlainTextEdit,
+    QPlainTextEdit, QFileDialog, QLineEdit,
 )
 from PySide6.QtGui import QFont
 
 from app import keyring_store, settings_manager
-from app.cost_logger import get_cumulative_spend
+from app.cost_logger import get_cumulative_spend, LOGS_DIR
 from app.api import claude_client, gemini_client, openai_client
+
+APP_DIR = Path(__file__).parent.parent.parent
 
 _ICONS = {
     "ok": "\u2705", "invalid": "\u274C", "rate_limited": "\u26A0\uFE0F",
@@ -97,6 +102,33 @@ class SettingsTab(QWidget):
         kf.addRow(clear_btn)
         layout.addWidget(kg)
 
+        # ── File Locations ──
+        flg = QGroupBox("File Locations")
+        flf = QFormLayout(flg)
+
+        out_row = QHBoxLayout()
+        self.output_dir_edit = QLineEdit()
+        self.output_dir_edit.setPlaceholderText(str(APP_DIR / "output" / "chat_gpt_base"))
+        out_row.addWidget(self.output_dir_edit, 1)
+        out_browse = QPushButton("Browse…")
+        out_browse.clicked.connect(self._on_browse_output)
+        out_row.addWidget(out_browse)
+        out_save = QPushButton("Save")
+        out_save.clicked.connect(self._on_save_output)
+        out_row.addWidget(out_save)
+        flf.addRow("Chat_GPT output folder:", out_row)
+
+        log_row = QHBoxLayout()
+        self.cost_log_label = QLabel(str(LOGS_DIR))
+        self.cost_log_label.setStyleSheet("color:#444;")
+        log_row.addWidget(self.cost_log_label, 1)
+        log_open = QPushButton("Open Folder")
+        log_open.clicked.connect(self._on_open_cost_log_folder)
+        log_row.addWidget(log_open)
+        flf.addRow("Cost log location:", log_row)
+
+        layout.addWidget(flg)
+
         # ── Spend ──
         sg = QGroupBox("Cumulative Spend")
         sf = QFormLayout(sg)
@@ -168,6 +200,10 @@ class SettingsTab(QWidget):
         self.openai_label.setText(keyring_store.mask_key(keyring_store.get_openai_key()))
         self.anthropic_label.setText(keyring_store.mask_key(keyring_store.get_anthropic_key()))
         self.google_label.setText(keyring_store.mask_key(keyring_store.get_google_key()))
+
+        # File locations
+        self.output_dir_edit.setText(settings_manager.get("chatgpt_output_dir") or "")
+
         self._refresh_spend()
         self.lane_info_label.setText("")
 
@@ -207,6 +243,22 @@ class SettingsTab(QWidget):
         settings_manager.set_value("mannequin_quality_tag", self.mannequin_tag_edit.toPlainText().strip())
         settings_manager.set_value("sketch_quality_tag", self.sketch_tag_edit.toPlainText().strip())
         self.lane_info_label.setText("Quality tags saved.")
+
+    def _on_browse_output(self):
+        start = self.output_dir_edit.text().strip() or str(APP_DIR / "output")
+        path = QFileDialog.getExistingDirectory(self, "Select Chat_GPT output folder", start)
+        if path:
+            self.output_dir_edit.setText(path)
+
+    def _on_save_output(self):
+        path = self.output_dir_edit.text().strip()
+        settings_manager.set_value("chatgpt_output_dir", path)
+        self.lane_info_label.setText(
+            f"Chat_GPT output folder set to: {path or '(default)'}")
+
+    def _on_open_cost_log_folder(self):
+        LOGS_DIR.mkdir(parents=True, exist_ok=True)
+        os.system(f'xdg-open "{LOGS_DIR}" &')
 
     def _refresh_spend(self):
         spend = get_cumulative_spend()
