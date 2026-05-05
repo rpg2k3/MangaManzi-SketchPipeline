@@ -3,13 +3,19 @@
 Iterates every base-mannequin image in a chosen folder and overlays the
 same single character reference onto each one. Mirrors the base batch
 worker's pause/resume/cancel/per-item retry pattern.
+
+The archetype + gender selected in the UI are baked into the gpt-image-1
+instruction so the character drawing conforms to the head-count and
+proportion rules of the underlying base.
 """
 
+from datetime import datetime
 from pathlib import Path
 
 from PySide6.QtCore import QThread, Signal
 
 from app.api import chatgpt_image_client
+from app.api.chatgpt_prompt_engineer import build_sketch_instruction
 from app.keyring_store import get_openai_key
 from app import settings_manager
 
@@ -27,9 +33,11 @@ def list_base_files(base_dir: Path) -> list[Path]:
     )
 
 
-def output_filename_for(base_path: Path) -> str:
-    """Stable output filename so skip-if-exists works across re-runs."""
-    return f"sketch_{base_path.stem}.png"
+def output_filename_for(base_path: Path, timestamp: str) -> str:
+    """Output filename for one batch run.
+    Format: sketch_[base_stem]_[timestamp].png — deterministic within a run
+    so skip-if-exists and retry can both look the file up by name."""
+    return f"sketch_{base_path.stem}_{timestamp}.png"
 
 
 class ChatGPTSketchBatchWorker(QThread):
@@ -41,12 +49,16 @@ class ChatGPTSketchBatchWorker(QThread):
     finished_batch = Signal(int, int, float)    # success, failed, total_cost
 
     def __init__(self, base_dir: Path, character_image_path: Path,
-                 orientation: str, output_dir: Path, parent=None):
+                 orientation: str, output_dir: Path,
+                 archetype: str, gender: str, parent=None):
         super().__init__(parent)
         self.base_dir = Path(base_dir)
         self.character_image_path = Path(character_image_path)
         self.orientation = orientation
         self.output_dir = Path(output_dir)
+        self.archetype = archetype
+        self.gender = gender
+        self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         self._stop = False
         self._paused = False
 
@@ -84,7 +96,8 @@ class ChatGPTSketchBatchWorker(QThread):
         self.log.emit(
             f"[Batch] Starting — {total} base file(s), character "
             f"{self.character_image_path.name}, orientation={self.orientation}, "
-            f"q={quality}")
+            f"archetype={self.archetype}, gender={self.gender}, q={quality}, "
+            f"timestamp={self.timestamp}")
 
         for i, base in enumerate(bases):
             if self._stop:
@@ -97,7 +110,7 @@ class ChatGPTSketchBatchWorker(QThread):
                 break
 
             self.progress.emit(i, total)
-            out_name = output_filename_for(base)
+            out_name = output_filename_for(base, self.timestamp)
             output_path = self.output_dir / out_name
             self.item_started.emit(base.name)
 
@@ -109,6 +122,8 @@ class ChatGPTSketchBatchWorker(QThread):
 
             resolved = chatgpt_image_client.resolve_orientation(
                 self.orientation, base)
+            instruction = build_sketch_instruction(
+                self.archetype, self.gender, resolved)
             self.log.emit(
                 f"  [{i+1}/{total}] {base.name} — A4 {resolved}"
                 f"{' (auto)' if self.orientation == 'auto' else ''}")
@@ -117,8 +132,9 @@ class ChatGPTSketchBatchWorker(QThread):
                 api_key=openai_key,
                 base_image_path=base,
                 character_image_path=self.character_image_path,
-                orientation=self.orientation,
+                orientation=resolved,
                 quality=quality,
+                instruction=instruction,
             )
             if not result["success"]:
                 err = result["error"]

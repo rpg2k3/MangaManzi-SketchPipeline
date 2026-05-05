@@ -9,6 +9,7 @@ from pathlib import Path
 from PySide6.QtCore import QThread, Signal
 
 from app.api import chatgpt_image_client
+from app.api.chatgpt_prompt_engineer import build_sketch_instruction
 from app.keyring_store import get_openai_key
 from app import settings_manager
 
@@ -19,11 +20,15 @@ class ChatGPTSketchWorker(QThread):
     failed = Signal(str)                     # error message
 
     def __init__(self, base_image_path: Path, character_image_path: Path,
-                 orientation: str = "auto", parent=None):
+                 orientation: str = "auto",
+                 archetype: str | None = None, gender: str | None = None,
+                 parent=None):
         super().__init__(parent)
         self.base_image_path = Path(base_image_path)
         self.character_image_path = Path(character_image_path)
         self.orientation = orientation
+        self.archetype = archetype
+        self.gender = gender
 
     def run(self):
         openai_key = get_openai_key()
@@ -44,12 +49,17 @@ class ChatGPTSketchWorker(QThread):
             f"(A4 {resolved}{' — auto-detected' if self.orientation == 'auto' else ''})...")
 
         quality = settings_manager.get_openai_quality()
+        instruction = None
+        if self.archetype and self.gender:
+            instruction = build_sketch_instruction(
+                self.archetype, self.gender, resolved)
         result = chatgpt_image_client.sketch_over_base(
             api_key=openai_key,
             base_image_path=self.base_image_path,
             character_image_path=self.character_image_path,
-            orientation=self.orientation,
+            orientation=resolved if instruction else self.orientation,
             quality=quality,
+            instruction=instruction,
         )
 
         if not result["success"]:

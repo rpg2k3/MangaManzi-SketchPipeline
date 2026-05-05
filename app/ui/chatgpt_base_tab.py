@@ -13,7 +13,7 @@ the full 9LivesK9 prompt before OpenAI gpt-image-1 renders the image.
 from datetime import datetime
 from pathlib import Path
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QFont, QPixmap
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QPushButton,
@@ -53,6 +53,8 @@ class _GenderSelector(QWidget):
     by archetype.
     """
 
+    changed = Signal()
+
     def __init__(self, parent=None):
         super().__init__(parent)
         layout = QHBoxLayout(self)
@@ -65,10 +67,15 @@ class _GenderSelector(QWidget):
             self._group.addButton(rb)
             layout.addWidget(rb)
             self._buttons[key] = rb
+            rb.toggled.connect(self._on_toggled)
         self._buttons["female"].setChecked(True)
         layout.addStretch(1)
         self._archetype_locked = False
         self._busy_locked = False
+
+    def _on_toggled(self, checked: bool):
+        if checked:
+            self.changed.emit()
 
     def value(self) -> str:
         for key, rb in self._buttons.items():

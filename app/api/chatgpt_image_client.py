@@ -126,11 +126,18 @@ def generate_base(api_key: str, prompt: str, orientation: str = "portrait",
 
 
 def sketch_over_base(api_key: str, base_image_path: Path, character_image_path: Path,
-                     orientation: str = "auto", quality: str = "high") -> dict:
-    """Two-image overlay via images.edit. Auto orientation reads the base file."""
+                     orientation: str = "auto", quality: str = "high",
+                     instruction: str | None = None) -> dict:
+    """Two-image overlay via images.edit. Auto orientation reads the base file.
+
+    If `instruction` is provided it is sent verbatim to gpt-image-1; the caller
+    is responsible for any orientation interpolation. When None (default) the
+    legacy SKETCH_OVER_BASE_INSTRUCTION is used.
+    """
     resolved = resolve_orientation(orientation, base_image_path)
     size = size_for(resolved)
-    instruction = SKETCH_OVER_BASE_INSTRUCTION.format(orientation=resolved)
+    if instruction is None:
+        instruction = SKETCH_OVER_BASE_INSTRUCTION.format(orientation=resolved)
     image_files = []
     try:
         client = openai.OpenAI(api_key=api_key)

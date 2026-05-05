@@ -28,6 +28,10 @@ from app.workers.chatgpt_sketch_batch_worker import (
     ChatGPTSketchBatchWorker, list_base_files, output_filename_for,
 )
 from app.workers.chatgpt_freeform_worker import ChatGPTFreeformWorker
+from app.api.chatgpt_prompt_engineer import (
+    ARCHETYPES, GENDERS, is_neutral_archetype,
+)
+from app.ui.chatgpt_base_tab import _GenderSelector
 from app.keyring_store import get_anthropic_key, get_openai_key
 from app import settings_manager
 
@@ -277,7 +281,7 @@ class _BatchMode(QWidget):
         layout = QVBoxLayout(self)
         layout.setSpacing(6)
 
-        # Base folder selector
+        # Base folder selector + proportion-context summary
         bg = QGroupBox("Base mannequin folder")
         bl = QVBoxLayout(bg)
         brow = QHBoxLayout()
@@ -291,6 +295,9 @@ class _BatchMode(QWidget):
         self.count_label = QLabel("")
         self.count_label.setStyleSheet("color:#444;")
         bl.addWidget(self.count_label)
+        self.context_label = QLabel("")
+        self.context_label.setStyleSheet("color:#0369a1;font-weight:bold;")
+        bl.addWidget(self.context_label)
         layout.addWidget(bg)
         self.base_dir: Path | None = None
 
@@ -306,6 +313,28 @@ class _BatchMode(QWidget):
         orow.addWidget(self.orientation_combo, 1)
         self.orientation_combo.currentIndexChanged.connect(self._update_count)
         layout.addLayout(orow)
+
+        # Archetype + gender — bake proportion rules into every prompt
+        arch_row = QHBoxLayout()
+        arch_row.addWidget(QLabel("Archetype:"))
+        self.archetype_combo = QComboBox()
+        for key, meta in ARCHETYPES.items():
+            self.archetype_combo.addItem(
+                f"{meta['label']} — {meta['heads']} heads", key)
+        arch_row.addWidget(self.archetype_combo, 1)
+        layout.addLayout(arch_row)
+
+        gender_row = QHBoxLayout()
+        gender_row.addWidget(QLabel("Gender:"))
+        self.gender = _GenderSelector()
+        gender_row.addWidget(self.gender, 1)
+        layout.addLayout(gender_row)
+
+        self.archetype_combo.currentIndexChanged.connect(self._sync_gender_lock)
+        self.archetype_combo.currentIndexChanged.connect(self._update_context_label)
+        self.gender.changed.connect(self._update_context_label)
+        self._sync_gender_lock()
+        self._update_context_label()
 
         arow = QHBoxLayout()
         self.start_btn = QPushButton("Start Batch")
@@ -357,6 +386,27 @@ class _BatchMode(QWidget):
     def is_busy(self) -> bool:
         return self.worker is not None and self.worker.isRunning()
 
+    def _sync_gender_lock(self):
+        archetype = self.archetype_combo.currentData()
+        self.gender.set_archetype_locked(is_neutral_archetype(archetype))
+        self._update_context_label()
+
+    def _update_context_label(self):
+        archetype = self.archetype_combo.currentData()
+        if not archetype:
+            self.context_label.setText("")
+            return
+        meta = ARCHETYPES[archetype]
+        if is_neutral_archetype(archetype):
+            descriptor = f"N_{archetype} (neutral)"
+        else:
+            prefix = GENDERS[self.gender.value()]["filename_prefix"]
+            descriptor = f"{prefix}_{archetype}"
+        heads = meta["heads"]
+        heads_str = f"{int(heads)}" if heads == int(heads) else f"{heads}"
+        self.context_label.setText(
+            f"Batch will apply: {descriptor} proportions ({heads_str} heads)")
+
     def _on_browse_dir(self):
         start = str(self.base_dir) if self.base_dir else str(Path.home())
         path = QFileDialog.getExistingDirectory(
@@ -387,6 +437,8 @@ class _BatchMode(QWidget):
         self.cancel_btn.setEnabled(busy)
         self.char_slot.set_enabled(not busy)
         self.orientation_combo.setEnabled(not busy)
+        self.archetype_combo.setEnabled(not busy)
+        self.gender.set_busy_locked(busy)
         self.pause_btn.setText("Pause")
 
         if not keys_ok:
@@ -420,11 +472,16 @@ class _BatchMode(QWidget):
         per = settings_manager.OPENAI_PRICING.get(quality, 0.042)
         est = len(bases) * per
         out_dir = SKETCH_OUTPUT_DIR
+        archetype = self.archetype_combo.currentData()
+        gender = self.gender.value()
+        arch_meta = ARCHETYPES[archetype]
 
         reply = QMessageBox.question(
             self, "Start sketch batch",
             f"Sketch {len(bases)} base(s) over "
             f"{self.char_slot.path.name}?\n\n"
+            f"  Archetype:   {arch_meta['label']} ({arch_meta['heads']} heads)\n"
+            f"  Gender:      {'neutral' if is_neutral_archetype(archetype) else gender}\n"
             f"  Orientation: {self.orientation_combo.currentData()}\n"
             f"  Quality:     {quality}\n"
             f"  Estimate:    ${est:.2f}\n\n"
@@ -437,10 +494,12 @@ class _BatchMode(QWidget):
 
         self._start_worker(self.base_dir, self.char_slot.path,
                            self.orientation_combo.currentData(), out_dir,
-                           total=len(bases))
+                           total=len(bases),
+                           archetype=archetype, gender=gender)
 
     def _start_worker(self, base_dir: Path, char_path: Path, orientation: str,
-                      out_dir: Path, total: int):
+                      out_dir: Path, total: int,
+                      archetype: str, gender: str):
         self.failure_list.clear()
         self.log.clear()
         self.cost_label.setText("Cost: $0.0000")
@@ -452,10 +511,14 @@ class _BatchMode(QWidget):
         self._running_char_path = char_path
         self._running_orientation = orientation
         self._running_out_dir = out_dir
+        self._running_archetype = archetype
+        self._running_gender = gender
 
         self.worker = ChatGPTSketchBatchWorker(
             base_dir=base_dir, character_image_path=char_path,
-            orientation=orientation, output_dir=out_dir)
+            orientation=orientation, output_dir=out_dir,
+            archetype=archetype, gender=gender)
+        self._running_timestamp = self.worker.timestamp
         self.worker.log.connect(self._append_log)
         self.worker.progress.connect(self._on_progress)
         self.worker.item_done.connect(self._on_item_done)
@@ -488,26 +551,28 @@ class _BatchMode(QWidget):
         base_path = Path(data.get("base_path", ""))
         if not base_path.exists():
             return
-        # Re-run as a one-base "batch" by pointing the worker at the parent dir
-        # but only after deleting any partial output so it actually retries.
-        out = self._running_out_dir / output_filename_for(base_path)
+        ts = self._running_timestamp
+        out = self._running_out_dir / output_filename_for(base_path, ts)
         if out.exists():
             try:
                 out.unlink()
             except Exception:
                 pass
         # The worker iterates the whole folder; retrying one file is more
-        # complex. Cleanest fix: temporarily run the single-sketch worker.
+        # complex. Cleanest fix: temporarily run the single-sketch worker
+        # with the same archetype/gender context as the original batch.
         from app.workers.chatgpt_sketch_worker import ChatGPTSketchWorker as _W
         self._retry_worker = _W(
             base_image_path=base_path,
             character_image_path=self._running_char_path,
-            orientation=self._running_orientation)
+            orientation=self._running_orientation,
+            archetype=self._running_archetype,
+            gender=self._running_gender)
         row = self.failure_list.row(item)
         self.failure_list.takeItem(row)
 
         def _on_done(image_bytes, cost):
-            out_path = self._running_out_dir / output_filename_for(base_path)
+            out_path = self._running_out_dir / output_filename_for(base_path, ts)
             self._running_out_dir.mkdir(parents=True, exist_ok=True)
             out_path.write_bytes(image_bytes)
             self._running_total_cost += cost

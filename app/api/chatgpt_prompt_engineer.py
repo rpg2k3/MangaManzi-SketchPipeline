@@ -366,6 +366,62 @@ def build_user_message(archetype: str, gender: str, view: str,
     )
 
 
+def build_sketch_instruction(archetype: str, gender: str, orientation: str) -> str:
+    """Image-edit instruction for the Batch sketch-over-base flow.
+
+    Encodes the head-count and proportion rules of the selected archetype
+    so gpt-image-1 conforms the character drawing to the underlying base
+    figure's proportions. Reuses ARCHETYPES rules + GENDERS silhouettes +
+    NEUTRAL_BODY_BLOCK — no duplicate proportion logic.
+
+    Archetypes below NEUTRAL_HEAD_THRESHOLD silently ignore the gender
+    argument and use the anatomically neutral construction block.
+    """
+    if archetype not in ARCHETYPES:
+        raise ValueError(f"Unknown archetype: {archetype}")
+
+    arch = ARCHETYPES[archetype]
+    rules_block = "\n".join(f"- {r}" for r in arch["rules"])
+
+    if is_neutral_archetype(archetype):
+        body_text = NEUTRAL_BODY_BLOCK
+        extra = NEUTRAL_BODY_EXTRAS.get(archetype)
+        if extra:
+            body_text = f"{body_text} {extra}"
+        body_label = "Body construction (anatomically neutral — gender not applied)"
+    else:
+        if gender not in GENDERS:
+            raise ValueError(f"Unknown gender: {gender}")
+        body_text = GENDERS[gender]["silhouette"]
+        body_label = "Gender silhouette"
+
+    if orientation not in ("landscape", "portrait"):
+        orientation = "portrait"
+
+    return (
+        "Draw the character from the second reference image over the blue "
+        "construction base figure shown in the first image.\n\n"
+        f"The figure must be exactly {arch['heads']} head-heights tall — "
+        f"a {arch['size_class']}.\n\n"
+        f"Proportion rules:\n{rules_block}\n\n"
+        f"{body_label}: {body_text}\n\n"
+        "Match the pose of the blue base figure EXACTLY — every joint angle, "
+        "weight shift, and limb position must align with the underlying "
+        "construction.\n"
+        "Keep the light blue construction lines, wireframe contour bands, "
+        "joint ovals, head-height grid, and red line of action visible "
+        "underneath the new line art.\n"
+        "Line art only — clean black ink lines, varied line weight. "
+        "No color fill, no shading, no rendering.\n"
+        "Preserve the character's design features (hair, face, clothing "
+        "silhouette, accessories) from the second reference image, but "
+        "conform them to the head-count and proportion rules above.\n"
+        f"Pure white background, A4 {orientation} orientation, print-friendly "
+        "at maximum resolution.\n"
+        "Do not redraw or alter the blue base figure — overlay only."
+    )
+
+
 def lint_for_banned_terms(text: str) -> list[str]:
     """Return any banned words that appear in `text` (case-insensitive,
     word-boundary aware). Used by the offline smoke test."""
