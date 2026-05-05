@@ -124,22 +124,171 @@ GENDERS = {
     "female": {
         "label": "Female",
         "filename_prefix": "F",
-        "silhouette": (
-            "Female silhouette: shoulders 2 head-widths across; defined waist taper; "
-            "wider hip ratio with the pelvis as wide as or wider than the shoulders; "
-            "softer ribcage volume."
-        ),
     },
     "male": {
         "label": "Male",
         "filename_prefix": "M",
-        "silhouette": (
-            "Male silhouette: shoulders 2.5 head-widths across; less pronounced waist taper; "
-            "narrower hips relative to shoulders producing a V-tapered torso; "
-            "broader chest volume; squarer ribcage."
-        ),
     },
 }
+
+# ─────────────────────────────────────────────────────────────────────
+# Gender anatomy blocks
+#
+# Per-archetype scaling: figures from pre-teen (6H) up get a gendered
+# anatomy block whose intensity scales with the archetype's tier so a
+# pre-teen reads as a slim hourglass beginning while an adult reads as
+# fully gendered. Child / toddler / baby (< NEUTRAL_HEAD_THRESHOLD) skip
+# this entirely and use NEUTRAL_BODY_BLOCK instead.
+#
+# A closing override line is also appended to every non-neutral prompt
+# to prevent gpt-image-1 from drifting into androgynous output.
+# ─────────────────────────────────────────────────────────────────────
+
+CONSTRUCTION_SUFFIX = (
+    "All volumes are construction shapes only — wireframe ovals and spheres, "
+    "no skin, no rendering."
+)
+
+FEMALE_ANATOMY = (
+    "Clearly defined female anatomical construction. "
+    "Shoulders narrow at 2 head-widths across, visibly narrower than hips. "
+    "Chest: two distinct hemisphere volumes sitting on the upper ribcage, "
+    "clearly separated, construction sphere shapes only — no detail, just "
+    "volume indication. "
+    "Ribcage egg-shape tapers into a pronounced waist noticeably narrower "
+    "than both shoulders and hips. "
+    "Pelvis bucket volume is wider than shoulders, creating a clear hourglass "
+    "rhythm through torso. "
+    "Hip curve is the widest point of the silhouette below the shoulders. "
+    "Thighs wider relative to lower leg. "
+    "Overall silhouette: hourglass — wider at chest, narrower at waist, "
+    "wider at hips. " + CONSTRUCTION_SUFFIX
+)
+
+MALE_ANATOMY = (
+    "Clearly defined male anatomical construction. "
+    "Shoulders wide at 2.5 head-widths across, visibly wider than hips — "
+    "this is the defining male silhouette. "
+    "Chest: broad rectangular ribcage volume, wider across the top, two "
+    "pectoral sphere volumes side by side sitting flat and wide on the chest, "
+    "clearly larger and flatter than female chest volumes. "
+    "Waist taper is present but subtle — less pronounced than female, torso "
+    "reads as a tapered rectangle not an hourglass. "
+    "Pelvis bucket is narrower than shoulders — opposite ratio to female. "
+    "Hip width does not exceed shoulder width. "
+    "Thighs and calves are more cylindrical and uniform. "
+    "Overall silhouette: inverted triangle — widest at shoulders, tapering "
+    "to hips. " + CONSTRUCTION_SUFFIX
+)
+
+# Scaled-down anatomy blocks for the slimmer minor tiers. These keep the
+# directional gender markers (hourglass for F, inverted triangle for M)
+# but soften the volumes appropriately for the archetype's head-count.
+GENDER_SCALED = {
+    "female": {
+        "pre_teen": (
+            "Female anatomical construction at the slim pre-adult tier. "
+            "Subtle hourglass beginning — torso rhythm just starting to read "
+            "as gendered. "
+            "Slight chest volume suggestion only — modest paired sphere "
+            "indications on the upper ribcage, not full volumes. "
+            "Hips slightly wider than shoulders. "
+            "Waist taper present but understated. "
+            + CONSTRUCTION_SUFFIX
+        ),
+        "teen_young": (
+            "Female anatomical construction at the slim sub-adult tier. "
+            "Clearer hourglass rhythm through the torso. "
+            "More defined chest volumes — paired construction sphere shapes "
+            "on the upper ribcage, clearly separated. "
+            "Hips clearly wider than shoulders. "
+            "Waist taper between chest and hips is readable. "
+            + CONSTRUCTION_SUFFIX
+        ),
+        "teen_mature": (
+            "Female anatomical construction approaching adult proportions. "
+            "Adult hourglass proportions throughout the torso. "
+            "Clearly defined chest volumes — paired construction spheres "
+            "sitting on the upper ribcage, clearly separated. "
+            "Clearly defined hip volumes — pelvis bucket wider than shoulders. "
+            "Pronounced waist taper between chest and hips. "
+            + CONSTRUCTION_SUFFIX
+        ),
+        "young_adult": FEMALE_ANATOMY,
+        "adult": FEMALE_ANATOMY,
+    },
+    "male": {
+        "pre_teen": (
+            "Male anatomical construction at the slim pre-adult tier. "
+            "Slightly wider shoulders than hips. "
+            "Flat chest — no pectoral volume yet, ribcage reads as a plain "
+            "rectangle. "
+            "No waist curve yet. "
+            "Pelvis bucket narrower than shoulders. "
+            + CONSTRUCTION_SUFFIX
+        ),
+        "teen_young": (
+            "Male anatomical construction at the slim sub-adult tier. "
+            "Noticeably wider shoulders than hips — inverted triangle "
+            "rhythm beginning to read clearly. "
+            "Flat chest with minimal pectoral indication. "
+            "Minimal waist taper. "
+            "Pelvis bucket narrower than shoulders. "
+            + CONSTRUCTION_SUFFIX
+        ),
+        "teen_mature": (
+            "Male anatomical construction approaching adult proportions. "
+            "Clear inverted triangle rhythm — shoulders clearly dominant "
+            "over hips. "
+            "Defined pectoral volumes — paired sphere shapes sitting flat "
+            "on the upper ribcage. "
+            "Subtle waist taper. "
+            "Pelvis bucket narrower than shoulders. "
+            + CONSTRUCTION_SUFFIX
+        ),
+        "young_adult": MALE_ANATOMY,
+        "adult": MALE_ANATOMY,
+    },
+}
+
+FEMALE_OVERRIDE = (
+    "IMPORTANT: This figure must read as unambiguously female in silhouette. "
+    "The hourglass torso rhythm — narrow waist between wider chest and wider "
+    "hips — must be clearly visible in the construction volumes. "
+    "Do not generate a neutral or androgynous silhouette."
+)
+
+MALE_OVERRIDE = (
+    "IMPORTANT: This figure must read as unambiguously male in silhouette. "
+    "The inverted triangle torso — wide shoulders tapering to narrower hips — "
+    "must be clearly visible in the construction volumes. "
+    "Do not generate a neutral or androgynous silhouette."
+)
+
+
+def gender_block_for(gender: str, archetype: str) -> str:
+    """Return the gender anatomy block scaled to the archetype's tier.
+
+    Caller is responsible for handling the neutral path — this function
+    assumes archetype is at or above NEUTRAL_HEAD_THRESHOLD.
+    """
+    if gender not in GENDER_SCALED:
+        raise ValueError(f"Unknown gender: {gender}")
+    tier = GENDER_SCALED[gender].get(archetype)
+    if tier is None:
+        raise ValueError(
+            f"No gender block defined for archetype '{archetype}' — "
+            f"is_neutral_archetype() should have caught this.")
+    return tier
+
+
+def gender_override_for(gender: str) -> str:
+    """Closing override line appended to every non-neutral prompt."""
+    if gender == "female":
+        return FEMALE_OVERRIDE
+    if gender == "male":
+        return MALE_OVERRIDE
+    raise ValueError(f"Unknown gender: {gender}")
 
 VIEWS = {
     "front":                  "Front view — figure facing the viewer directly.",
@@ -287,8 +436,11 @@ ORIENTATION HEURISTIC:
 
 BODY-CONSTRUCTION SWITCH:
 The request body block is one of two forms — handle both:
-- "Gender silhouette: ..."  → describe the gendered silhouette (shoulder head-widths, waist taper, hip ratio, chest volume).
+- "Gender anatomy: ..."  → use the supplied gendered anatomy block. It already encodes the shoulder head-widths, chest volumes, waist taper, hip ratio, and overall silhouette appropriate to the archetype tier. Use that language directly — do not soften it, do not paraphrase away the specific volume descriptions.
 - "Body construction (anatomically neutral — gender not applied): ..." → use the neutral text VERBATIM. Do NOT add any chest volume, breast definition, pectoral mass, waist curve, hip flare, shoulder broadening, or muscle mass language. The figure is a tubular, undifferentiated form. Gender is irrelevant for this request.
+
+CLOSING OVERRIDE:
+If the request includes a "Closing override" line, the output prompt MUST end with that exact text — copy it verbatim, on its own line, after the "Output: ..." line. If no closing override is supplied (neutral path), do not invent one.
 
 For each request you must produce a single plain-text prompt that:
 1. Begins with the safe lead phrase exactly (plus the minor-extra line and the neutral-extra line when applicable).
@@ -343,6 +495,7 @@ def build_user_message(archetype: str, gender: str, view: str,
     safe_lead = _safe_lead_for(archetype)
     is_minor = "yes" if arch.get("is_minor") else "no"
 
+    closing_override = ""
     if is_neutral_archetype(archetype):
         body_label = "Body construction (anatomically neutral — gender not applied)"
         body_text = NEUTRAL_BODY_BLOCK
@@ -350,11 +503,11 @@ def build_user_message(archetype: str, gender: str, view: str,
         if extra:
             body_text = f"{body_text} {extra}"
     else:
-        gender_meta = GENDERS[gender]
-        body_label = "Gender silhouette"
-        body_text = gender_meta["silhouette"]
+        body_label = "Gender anatomy"
+        body_text = gender_block_for(gender, archetype)
+        closing_override = gender_override_for(gender)
 
-    return (
+    msg = (
         f"Begin the output prompt with EXACTLY this text:\n"
         f'  "{safe_lead}"\n\n'
         f"is_minor: {is_minor}\n"
@@ -364,6 +517,9 @@ def build_user_message(archetype: str, gender: str, view: str,
         f"View: {view_desc}\n"
         f"Pose: {pose_description.strip() or 'neutral standing pose, contrapposto'}"
     )
+    if closing_override:
+        msg += f"\nClosing override: {closing_override}"
+    return msg
 
 
 def build_sketch_instruction(archetype: str, gender: str, orientation: str) -> str:
@@ -383,6 +539,7 @@ def build_sketch_instruction(archetype: str, gender: str, orientation: str) -> s
     arch = ARCHETYPES[archetype]
     rules_block = "\n".join(f"- {r}" for r in arch["rules"])
 
+    closing_override = ""
     if is_neutral_archetype(archetype):
         body_text = NEUTRAL_BODY_BLOCK
         extra = NEUTRAL_BODY_EXTRAS.get(archetype)
@@ -392,13 +549,14 @@ def build_sketch_instruction(archetype: str, gender: str, orientation: str) -> s
     else:
         if gender not in GENDERS:
             raise ValueError(f"Unknown gender: {gender}")
-        body_text = GENDERS[gender]["silhouette"]
-        body_label = "Gender silhouette"
+        body_text = gender_block_for(gender, archetype)
+        body_label = "Gender anatomy"
+        closing_override = gender_override_for(gender)
 
     if orientation not in ("landscape", "portrait"):
         orientation = "portrait"
 
-    return (
+    instruction = (
         "Draw the character from the second reference image over the blue "
         "construction base figure shown in the first image.\n\n"
         f"The figure must be exactly {arch['heads']} head-heights tall — "
@@ -420,6 +578,9 @@ def build_sketch_instruction(archetype: str, gender: str, orientation: str) -> s
         "at maximum resolution.\n"
         "Do not redraw or alter the blue base figure — overlay only."
     )
+    if closing_override:
+        instruction += f"\n\n{closing_override}"
+    return instruction
 
 
 def lint_for_banned_terms(text: str) -> list[str]:
