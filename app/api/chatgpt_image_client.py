@@ -10,6 +10,8 @@ for displaying and saving — this module never touches disk.
 """
 
 import base64
+import os
+import sys
 from pathlib import Path
 
 import openai
@@ -19,19 +21,43 @@ from app import settings_manager
 
 MODEL = "gpt-image-1"
 
-# The substantive line-art-over-blue instruction is preserved verbatim;
-# only the orientation token at the end is parametrised so the same
-# instruction works for portrait or landscape generation.
+# DRAFT mode — keep the blue construction lines visible under the inked
+# character so the artist can verify pose alignment. {orientation} is the
+# only template token.
 SKETCH_OVER_BASE_INSTRUCTION = """
-Draw the character from the second reference image over the blue construction base figure shown in the first image.
+You are a professional manga artist.
+Image 1 is a blue construction base drawing showing a figure pose with Atari wireframe bands and joint ovals.
+Image 2 is a character design reference sheet.
 
-CRITICAL RULES:
-- Match the pose of the blue base figure EXACTLY — every joint angle, weight shift, and limb position must align with the underlying construction.
-- Keep the light blue construction lines, wireframe contour bands, joint ovals, head-height grid, and red line of action visible underneath the new line art.
-- Render the character as line art only — clean black ink lines, varied line weight. No color fill, no shading, no rendering.
-- Preserve the character's design features (hair, face, clothing silhouette, accessories, body proportions) from the second reference image.
-- Pure white background, A4 {orientation} orientation, print-friendly at maximum resolution.
-- Do not redraw or alter the blue base figure — overlay only.
+Draw the character from Image 2 dressed in their exact outfit and with their exact features, placed precisely over the blue figure in Image 1.
+Match the pose of the blue figure exactly — every limb position, every angle, every weight shift.
+Keep the blue construction lines visible underneath as a transparent guide layer showing through the black ink character.
+
+Output requirements:
+- Clean confident black ink manga lineart
+- Professional line weight variation — thicker on silhouette edges, thinner on interior detail
+- Accurate anatomy matching the pose reference
+- Detailed outfit reproduction from the character sheet
+- A4 {orientation} format, print ready
+- White background only
+""".strip()
+
+# RENDER mode — finished illustration, no construction lines retained.
+SKETCH_OVER_BASE_RENDER_INSTRUCTION = """
+You are a professional manga artist.
+Image 1 is a blue construction base drawing — use it as a pose reference only, do not reproduce the blue lines in the output.
+Image 2 is a character design reference sheet.
+
+Draw the character from Image 2 in their exact outfit in the pose shown by the blue figure in Image 1.
+Output a finished professional manga illustration:
+- No construction lines, no wireframe, no blue guide lines
+- Polished ink linework with confident line weight variation
+- Thick silhouette lines, fine interior detail lines
+- Accurate proportions and anatomy
+- Complete outfit detail reproduction
+- Expressive face matching the character's design
+- A4 {orientation} format, print ready
+- Clean white background
 """.strip()
 
 
@@ -64,6 +90,30 @@ def _auto_orientation_from_image(path: Path) -> str:
         return "landscape" if w > h else "portrait"
     except Exception:
         return "portrait"
+
+
+def _log_sketch_inputs(base_path: Path, character_path: Path,
+                       size: str, quality: str) -> None:
+    """Print the exact pixel dimensions, file sizes and API params being
+    sent to gpt-image-1. Lets us verify nothing is downsampling input
+    images before they hit the API. Output goes to stdout (terminal) so
+    it survives even when the Qt log panel is not visible."""
+    try:
+        from PIL import Image
+        for idx, p in ((1, base_path), (2, character_path)):
+            try:
+                with Image.open(p) as img:
+                    w, h = img.size
+                kb = os.path.getsize(p) / 1024.0
+                print(f"[Sketch] Input image {idx} size: {w}x{h} px, "
+                      f"{kb:.1f} KB — {p}", flush=True)
+            except Exception as e:
+                print(f"[Sketch] Input image {idx} probe failed for {p}: {e}",
+                      flush=True)
+    except Exception as e:
+        print(f"[Sketch] PIL unavailable for input probe: {e}", flush=True)
+    print(f"[Sketch] API params: model={MODEL} quality={quality} size={size}",
+          flush=True)
 
 
 def resolve_orientation(orientation: str, base_image_path: Path | None = None) -> str:
@@ -138,9 +188,13 @@ def sketch_over_base(api_key: str, base_image_path: Path, character_image_path: 
     size = size_for(resolved)
     if instruction is None:
         instruction = SKETCH_OVER_BASE_INSTRUCTION.format(orientation=resolved)
+    _log_sketch_inputs(base_image_path, character_image_path, size, quality)
     image_files = []
     try:
         client = openai.OpenAI(api_key=api_key)
+        # Open both reference images in binary mode and forward the raw
+        # file bytes to gpt-image-1. No resize, no recompression — the
+        # SDK reads the files as-is and uploads them via multipart form.
         image_files.append(open(base_image_path, "rb"))
         image_files.append(open(character_image_path, "rb"))
         response = client.images.edit(
