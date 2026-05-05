@@ -192,6 +192,49 @@ SAFE_LEAD_BASE = (
 
 SAFE_LEAD_MINOR_EXTRA = " Stylized anime proportion study reference."
 
+# Archetypes with strictly fewer than this many head-heights are
+# anatomically neutralised: gender selection is silently ignored and
+# the body construction is forced to a tubular, undifferentiated form.
+# Threshold value 6.0 → child (5.5), toddler (4.5), baby (3.5) all hit
+# the neutral path; pre-teen (6.0) keeps gender silhouette.
+NEUTRAL_HEAD_THRESHOLD = 6.0
+
+NEUTRAL_TOOLTIP = "Gender not applicable below pre-teen tier"
+
+SAFE_LEAD_NEUTRAL_EXTRA = (
+    " Neutral proportion study for animation reference, "
+    "undifferentiated figure construction, "
+    "no anatomical gender markers, "
+    "pure geometric volume shapes only."
+)
+
+NEUTRAL_BODY_BLOCK = (
+    "Completely neutral tubular torso construction. "
+    "No chest volume, no breast definition, no pectoral mass, no waist curve, "
+    "no hip flare, no shoulder broadening. "
+    "Torso is a simple tapered cylinder, wider at top than bottom. "
+    "All limbs are soft uniform tubes with no muscle mass or gender-defining contours. "
+    "Joints are rounded and soft with minimal articulation. "
+    "Silhouette reads as neutral and undifferentiated. "
+    "Construction lines only — no anatomical detail beyond basic volume shapes."
+)
+
+# Per-archetype refinements appended to the neutral body block.
+NEUTRAL_BODY_EXTRAS = {
+    "toddler": (
+        "Slight belly protrusion on lower torso cylinder. "
+        "Very short lower limb tubes approximately 1.5 head-lengths. "
+        "Pudgy uniform limb tubes throughout."
+    ),
+    "baby": (
+        "Extremely short limb tubes. "
+        "Minimal separation between limb segments. "
+        "Large head volume relative to entire figure. "
+        "Rounded soft silhouette throughout. "
+        "No visible joint definition anywhere."
+    ),
+}
+
 # Words that must NEVER appear in the prompt sent to gpt-image-1.
 # Used both by the system prompt (to instruct Claude) and by an offline
 # linter to catch slippage at build time.
@@ -242,11 +285,16 @@ ORIENTATION HEURISTIC:
 - A4 PORTRAIT for: standing, sitting, kneeling, jumping, action stance, contrapposto.
 - A4 LANDSCAPE only for: reclining/lying, prone, full-extension sprint, horizontal flying or diving, or any pose where the figure's longest axis is horizontal.
 
+BODY-CONSTRUCTION SWITCH:
+The request body block is one of two forms — handle both:
+- "Gender silhouette: ..."  → describe the gendered silhouette (shoulder head-widths, waist taper, hip ratio, chest volume).
+- "Body construction (anatomically neutral — gender not applied): ..." → use the neutral text VERBATIM. Do NOT add any chest volume, breast definition, pectoral mass, waist curve, hip flare, shoulder broadening, or muscle mass language. The figure is a tubular, undifferentiated form. Gender is irrelevant for this request.
+
 For each request you must produce a single plain-text prompt that:
-1. Begins with the safe lead phrase exactly (plus the minor-extra line when applicable).
+1. Begins with the safe lead phrase exactly (plus the minor-extra line and the neutral-extra line when applicable).
 2. States the head-count and the size_class descriptor (no age words).
 3. Applies each listed proportion rule, mentioning each rule that's relevant.
-4. States the gender silhouette (shoulder head-widths, waist taper, hip ratio, chest volume).
+4. States the body construction the request specifies — the gender silhouette OR the neutral construction block. When the request is neutral, copy its language verbatim and do not introduce gender markers.
 5. States the camera view.
 6. Describes the pose precisely, anatomically grounded, with line of action implied.
 7. Restates every rule from the style guide so the image model cannot drift.
@@ -261,31 +309,58 @@ OUTPUT FORMAT: Return ONLY the final image-generation prompt as plain text. No p
 # Helpers
 # ─────────────────────────────────────────────────────────────────────
 
+def is_neutral_archetype(archetype: str) -> bool:
+    """True if the archetype's head-count puts it in the gender-neutralised tier
+    (child 5.5, toddler 4.5, baby 3.5). Pre-teen (6.0) and above keep gender."""
+    arch = ARCHETYPES.get(archetype, {})
+    return arch.get("heads", 99.0) < NEUTRAL_HEAD_THRESHOLD
+
+
 def _safe_lead_for(arch_key: str) -> str:
     arch = ARCHETYPES.get(arch_key, {})
-    return SAFE_LEAD_BASE + (SAFE_LEAD_MINOR_EXTRA if arch.get("is_minor") else "")
+    lead = SAFE_LEAD_BASE
+    if arch.get("is_minor"):
+        lead += SAFE_LEAD_MINOR_EXTRA
+    if is_neutral_archetype(arch_key):
+        lead += SAFE_LEAD_NEUTRAL_EXTRA
+    return lead
 
 
 def build_user_message(archetype: str, gender: str, view: str,
                        pose_description: str) -> str:
     """Construct the sanitized user message that's sent to Claude.
 
+    For archetypes below NEUTRAL_HEAD_THRESHOLD, the gender argument is
+    silently ignored and the body block is replaced with the anatomically
+    neutral tubular construction.
+
     Exposed (no leading underscore) so a smoke test can verify it contains
     no banned terms without having to call the Anthropic API.
     """
     arch = ARCHETYPES[archetype]
-    gender_meta = GENDERS[gender]
     view_desc = VIEWS[view]
     rules_block = "\n".join(f"  - {r}" for r in arch["rules"])
     safe_lead = _safe_lead_for(archetype)
     is_minor = "yes" if arch.get("is_minor") else "no"
+
+    if is_neutral_archetype(archetype):
+        body_label = "Body construction (anatomically neutral — gender not applied)"
+        body_text = NEUTRAL_BODY_BLOCK
+        extra = NEUTRAL_BODY_EXTRAS.get(archetype)
+        if extra:
+            body_text = f"{body_text} {extra}"
+    else:
+        gender_meta = GENDERS[gender]
+        body_label = "Gender silhouette"
+        body_text = gender_meta["silhouette"]
+
     return (
         f"Begin the output prompt with EXACTLY this text:\n"
         f'  "{safe_lead}"\n\n'
         f"is_minor: {is_minor}\n"
         f"Mannequin spec: {arch['size_class']} ({arch['heads']}H total height).\n"
         f"Proportion rules:\n{rules_block}\n"
-        f"Gender silhouette: {gender_meta['silhouette']}\n"
+        f"{body_label}: {body_text}\n"
         f"View: {view_desc}\n"
         f"Pose: {pose_description.strip() or 'neutral standing pose, contrapposto'}"
     )

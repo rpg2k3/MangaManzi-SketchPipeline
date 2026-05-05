@@ -22,7 +22,9 @@ from PySide6.QtWidgets import (
     QListWidget, QListWidgetItem, QFrame, QRadioButton, QButtonGroup,
 )
 
-from app.api.chatgpt_prompt_engineer import ARCHETYPES, GENDERS, VIEWS
+from app.api.chatgpt_prompt_engineer import (
+    ARCHETYPES, GENDERS, VIEWS, NEUTRAL_TOOLTIP, is_neutral_archetype,
+)
 from app.api import chatgpt_pose_taxonomy
 from app.workers.chatgpt_base_worker import ChatGPTBaseWorker
 from app.workers.chatgpt_batch_worker import ChatGPTBatchWorker
@@ -41,7 +43,15 @@ def _default_output_dir() -> Path:
 
 
 class _GenderSelector(QWidget):
-    """Female/Male radio pair, used by all three modes."""
+    """Female/Male radio pair, used by all three modes.
+
+    Two independent reasons can disable the selector:
+    - `archetype_locked` — current archetype is below pre-teen tier, gender
+      is being silently neutralised; we show a tooltip to make this clear.
+    - `busy_locked` — a batch is currently running.
+    Either reason disables the radios. The tooltip is shown when locked
+    by archetype.
+    """
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -57,6 +67,8 @@ class _GenderSelector(QWidget):
             self._buttons[key] = rb
         self._buttons["female"].setChecked(True)
         layout.addStretch(1)
+        self._archetype_locked = False
+        self._busy_locked = False
 
     def value(self) -> str:
         for key, rb in self._buttons.items():
@@ -64,9 +76,21 @@ class _GenderSelector(QWidget):
                 return key
         return "female"
 
-    def set_enabled(self, on: bool):
+    def _apply_state(self):
+        locked = self._archetype_locked or self._busy_locked
+        tooltip = NEUTRAL_TOOLTIP if self._archetype_locked else ""
         for rb in self._buttons.values():
-            rb.setEnabled(on)
+            rb.setEnabled(not locked)
+            rb.setToolTip(tooltip)
+        self.setToolTip(tooltip)
+
+    def set_archetype_locked(self, locked: bool):
+        self._archetype_locked = locked
+        self._apply_state()
+
+    def set_busy_locked(self, locked: bool):
+        self._busy_locked = locked
+        self._apply_state()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -217,6 +241,8 @@ class _SingleMode(QWidget):
         gl.addLayout(self._row("Archetype:", self._make_archetype_combo()))
         self.gender = _GenderSelector()
         gl.addLayout(self._row("Gender:", self.gender))
+        self.archetype_combo.currentIndexChanged.connect(self._sync_gender_lock)
+        self._sync_gender_lock()
         gl.addLayout(self._row("View:", self._make_view_combo()))
         gl.addLayout(self._row("Pose:", self._make_pose_combo()))
 
@@ -278,6 +304,10 @@ class _SingleMode(QWidget):
         else:
             self.pose_help.setText("")
 
+    def _sync_gender_lock(self):
+        archetype = self.archetype_combo.currentData()
+        self.gender.set_archetype_locked(is_neutral_archetype(archetype))
+
     def is_busy(self) -> bool:
         return self.preview.is_busy()
 
@@ -333,6 +363,8 @@ class _BatchMode(QWidget):
         gnote.setStyleSheet("color:#666;")
         grow.addWidget(gnote)
         layout.addLayout(grow)
+        self.archetype_combo.currentIndexChanged.connect(self._sync_gender_lock)
+        self._sync_gender_lock()
 
         # View checklist
         view_box = QGroupBox("Views (8) — uncheck to skip")
@@ -540,11 +572,15 @@ class _BatchMode(QWidget):
         self.pause_btn.setEnabled(running)
         self.cancel_btn.setEnabled(running)
         self.archetype_combo.setEnabled(not running)
-        self.gender.set_enabled(not running)
+        self.gender.set_busy_locked(running)
         for cb in self.view_checks.values():
             cb.setEnabled(not running)
         self.pose_list.setEnabled(not running)
         self.pause_btn.setText("Pause")
+
+    def _sync_gender_lock(self):
+        archetype = self.archetype_combo.currentData()
+        self.gender.set_archetype_locked(is_neutral_archetype(archetype))
 
     def _on_pause(self):
         if not self.worker:
@@ -641,6 +677,8 @@ class _CustomMode(QWidget):
         self.gender = _GenderSelector()
         grow.addWidget(self.gender, 1)
         gl.addLayout(grow)
+        self.archetype_combo.currentIndexChanged.connect(self._sync_gender_lock)
+        self._sync_gender_lock()
 
         vrow = QHBoxLayout()
         vrow.addWidget(QLabel("View:"))
@@ -672,6 +710,10 @@ class _CustomMode(QWidget):
 
     def is_busy(self) -> bool:
         return self.preview.is_busy()
+
+    def _sync_gender_lock(self):
+        archetype = self.archetype_combo.currentData()
+        self.gender.set_archetype_locked(is_neutral_archetype(archetype))
 
     def _on_generate(self):
         if self.is_busy():
