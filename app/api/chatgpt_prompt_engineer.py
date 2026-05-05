@@ -557,33 +557,49 @@ def build_sketch_instruction(archetype: str, gender: str, orientation: str) -> s
         orientation = "portrait"
 
     instruction = (
-        "You are a professional manga artist.\n"
-        "Image 1 is a blue construction base drawing showing a figure pose "
-        "with Atari wireframe bands and joint ovals.\n"
-        "Image 2 is a character design reference sheet.\n\n"
-        "Draw the character from Image 2 dressed in their exact outfit and "
-        "with their exact features, placed precisely over the blue figure "
-        "in Image 1.\n"
-        "Match the pose of the blue figure exactly — every limb position, "
-        "every angle, every weight shift.\n"
+        # Section 1 — character sheet is highest priority.
+        "The character design in Image 2 is the absolute source of truth. "
+        "Reproduce every detail exactly:\n"
+        "- Face structure, eye shape, expression style\n"
+        "- Hair texture, volume, and style precisely as drawn\n"
+        "- Every outfit element: garments, accessories, straps, belts, "
+        "boots, gloves, stockings\n"
+        "- Body proportions as shown in the reference\n"
+        "- Any unique features: ears, tail, markings\n"
+        "Do not invent, simplify, or substitute any character detail. "
+        "If it is in the reference, it must appear in the output.\n\n"
+        # Section 2 — pose reference.
+        "Image 1 defines the pose only.\n"
+        "Match every limb position, angle, and weight distribution exactly "
+        "as shown.\n"
         "Keep the blue construction lines visible underneath as a "
         "transparent guide layer showing through the black ink character.\n\n"
-        "Proportion conformance:\n"
-        f"- The figure must be exactly {arch['heads']} head-heights tall — "
-        f"a {arch['size_class']}.\n"
-        f"{rules_block}\n"
-        f"- {body_label}: {body_text}\n\n"
-        "Output requirements:\n"
-        "- Clean confident black ink manga lineart\n"
-        "- Professional line weight variation — thicker on silhouette edges, "
-        "thinner on interior detail\n"
-        "- Accurate anatomy matching the pose reference\n"
-        "- Detailed outfit reproduction from the character sheet\n"
+        # Section 3 — style and quality tags, explicitly subordinate.
+        "Apply these style qualities without overriding the character "
+        "design:\n"
+        "- Professional manga artist treatment — clean confident black ink "
+        "manga lineart\n"
+        "- Professional line weight variation — thicker on silhouette "
+        "edges, thinner on interior detail\n"
         f"- A4 {orientation} format, print ready\n"
-        "- White background only"
+        "- White background only\n\n"
+        # Proportion guidance lives inside the style block — subordinate
+        # to the character sheet so the model does not redraw the
+        # character's body to hit a head-count if the reference shows
+        # different proportions.
+        "Proportion guidance (subordinate to the character sheet — apply "
+        "only where the character design allows):\n"
+        f"- The figure should read as approximately {arch['heads']} "
+        f"head-heights tall — a {arch['size_class']}.\n"
+        f"{rules_block}\n"
+        f"- {body_label}: {body_text}"
     )
     if closing_override:
         instruction += f"\n\n{closing_override}"
+    instruction += (
+        "\n\nIf style instructions conflict with the character sheet, "
+        "always follow the character sheet."
+    )
     return instruction
 
 

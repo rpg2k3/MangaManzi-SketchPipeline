@@ -21,43 +21,62 @@ from app import settings_manager
 
 MODEL = "gpt-image-1"
 
+# Sketch prompts are built in three priority sections, highest first:
+#   1) Character sheet (Image 2) — absolute source of truth.
+#   2) Pose reference (Image 1).
+#   3) Style and quality tags — explicitly subordinate.
+# Every prompt ends with the conflict-resolution line so gpt-image-1
+# falls back to the character sheet whenever style instructions
+# disagree with what's drawn in the reference.
+
 # DRAFT mode — keep the blue construction lines visible under the inked
 # character so the artist can verify pose alignment. {orientation} is the
 # only template token.
 SKETCH_OVER_BASE_INSTRUCTION = """
-You are a professional manga artist.
-Image 1 is a blue construction base drawing showing a figure pose with Atari wireframe bands and joint ovals.
-Image 2 is a character design reference sheet.
+The character design in Image 2 is the absolute source of truth. Reproduce every detail exactly:
+- Face structure, eye shape, expression style
+- Hair texture, volume, and style precisely as drawn
+- Every outfit element: garments, accessories, straps, belts, boots, gloves, stockings
+- Body proportions as shown in the reference
+- Any unique features: ears, tail, markings
+Do not invent, simplify, or substitute any character detail. If it is in the reference, it must appear in the output.
 
-Draw the character from Image 2 dressed in their exact outfit and with their exact features, placed precisely over the blue figure in Image 1.
-Match the pose of the blue figure exactly — every limb position, every angle, every weight shift.
+Image 1 defines the pose only.
+Match every limb position, angle, and weight distribution exactly as shown.
 Keep the blue construction lines visible underneath as a transparent guide layer showing through the black ink character.
 
-Output requirements:
-- Clean confident black ink manga lineart
+Apply these style qualities without overriding the character design:
+- Professional manga artist treatment — clean confident black ink manga lineart
 - Professional line weight variation — thicker on silhouette edges, thinner on interior detail
-- Accurate anatomy matching the pose reference
-- Detailed outfit reproduction from the character sheet
 - A4 {orientation} format, print ready
 - White background only
+
+If style instructions conflict with the character sheet, always follow the character sheet.
 """.strip()
 
 # RENDER mode — finished illustration, no construction lines retained.
 SKETCH_OVER_BASE_RENDER_INSTRUCTION = """
-You are a professional manga artist.
-Image 1 is a blue construction base drawing — use it as a pose reference only, do not reproduce the blue lines in the output.
-Image 2 is a character design reference sheet.
+The character design in Image 2 is the absolute source of truth. Reproduce every detail exactly:
+- Face structure, eye shape, expression style
+- Hair texture, volume, and style precisely as drawn
+- Every outfit element: garments, accessories, straps, belts, boots, gloves, stockings
+- Body proportions as shown in the reference
+- Any unique features: ears, tail, markings
+Do not invent, simplify, or substitute any character detail. If it is in the reference, it must appear in the output.
 
-Draw the character from Image 2 in their exact outfit in the pose shown by the blue figure in Image 1.
-Output a finished professional manga illustration:
-- No construction lines, no wireframe, no blue guide lines
+Image 1 defines the pose only.
+Match every limb position, angle, and weight distribution exactly as shown.
+Use the blue figure as a pose reference only — do not reproduce the blue lines in the output.
+
+Apply these style qualities without overriding the character design:
+- Professional manga artist treatment — finished illustration, no construction lines, no wireframe, no blue guide lines
 - Polished ink linework with confident line weight variation
 - Thick silhouette lines, fine interior detail lines
-- Accurate proportions and anatomy
-- Complete outfit detail reproduction
 - Expressive face matching the character's design
 - A4 {orientation} format, print ready
 - Clean white background
+
+If style instructions conflict with the character sheet, always follow the character sheet.
 """.strip()
 
 
