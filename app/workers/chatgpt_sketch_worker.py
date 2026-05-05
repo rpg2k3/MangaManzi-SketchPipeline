@@ -1,7 +1,7 @@
-"""Background thread for the Chat_GPT sketch-over-base tab.
+"""Background thread for the Chat_GPT Single sketch-over-base mode.
 
 Pipeline: OpenAI gpt-image-1 image-edit using two reference images
-(base mannequin + character sheet) with a fixed line-art instruction.
+(base mannequin + character sheet) with the line-art instruction.
 """
 
 from pathlib import Path
@@ -18,10 +18,12 @@ class ChatGPTSketchWorker(QThread):
     done = Signal(bytes, float)              # image_bytes, cost
     failed = Signal(str)                     # error message
 
-    def __init__(self, base_image_path: Path, character_image_path: Path, parent=None):
+    def __init__(self, base_image_path: Path, character_image_path: Path,
+                 orientation: str = "auto", parent=None):
         super().__init__(parent)
         self.base_image_path = Path(base_image_path)
         self.character_image_path = Path(character_image_path)
+        self.orientation = orientation
 
     def run(self):
         openai_key = get_openai_key()
@@ -35,12 +37,18 @@ class ChatGPTSketchWorker(QThread):
             self.failed.emit(f"Character image not found: {self.character_image_path}")
             return
 
-        self.log.emit("[Sketch] Sending base + character to gpt-image-1 (A4 landscape)...")
+        resolved = chatgpt_image_client.resolve_orientation(
+            self.orientation, self.base_image_path)
+        self.log.emit(
+            f"[Sketch] Sending base + character to gpt-image-1 "
+            f"(A4 {resolved}{' — auto-detected' if self.orientation == 'auto' else ''})...")
+
         quality = settings_manager.get_openai_quality()
         result = chatgpt_image_client.sketch_over_base(
             api_key=openai_key,
             base_image_path=self.base_image_path,
             character_image_path=self.character_image_path,
+            orientation=self.orientation,
             quality=quality,
         )
 
