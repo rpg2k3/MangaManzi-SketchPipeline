@@ -8,7 +8,7 @@ Result shown in-app with a save button.
 from datetime import datetime
 from pathlib import Path
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QFont, QPixmap
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QFileDialog,
@@ -26,6 +26,8 @@ IMAGE_FILTER = "Image (*.png *.jpg *.jpeg *.webp)"
 
 class _UploadSlot(QGroupBox):
     """One labelled image slot with a Browse button and small thumbnail."""
+
+    path_changed = Signal()
 
     def __init__(self, label: str, parent=None):
         super().__init__(label, parent)
@@ -68,6 +70,7 @@ class _UploadSlot(QGroupBox):
             self.thumb.setText("")
         else:
             self.thumb.setText("(could not preview)")
+        self.path_changed.emit()
 
     def set_enabled(self, on: bool):
         self.browse_btn.setEnabled(on)
@@ -96,6 +99,8 @@ class ChatGPTSketchTab(QWidget):
         slots = QHBoxLayout()
         self.base_slot = _UploadSlot("Image 1 — Base mannequin")
         self.char_slot = _UploadSlot("Image 2 — Character reference sheet")
+        self.base_slot.path_changed.connect(self._update_ui)
+        self.char_slot.path_changed.connect(self._update_ui)
         slots.addWidget(self.base_slot, 1)
         slots.addWidget(self.char_slot, 1)
         layout.addLayout(slots)
