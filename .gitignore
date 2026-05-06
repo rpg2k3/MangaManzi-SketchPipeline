@@ -28,6 +28,10 @@ characters/*/sketches/
 characters/*/extracted.json
 characters/*/source_sheet.png
 **/_previous/
+data/outputs/
+data/history/
+data/sheets/*.json
+data/debug/
 
 # === Cost logs (usage patterns + potentially sensitive) ===
 logs/

@@ -3,7 +3,7 @@
 from pathlib import Path
 from PySide6.QtCore import QThread, Signal
 
-from app.api import claude_client
+from app.claude import extraction as claude_client
 from app.keyring_store import get_anthropic_key
 
 

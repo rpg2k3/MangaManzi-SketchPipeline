@@ -4,8 +4,7 @@ import keyring
 
 SERVICE_NAME = "9LivesK9"
 ANTHROPIC_KEY = "anthropic_api_key"
-GOOGLE_KEY = "google_api_key"
-OPENAI_KEY = "openai_api_key"
+PIXAI_KEY = "pixai_api_key"
 
 
 def store_key(provider: str, api_key: str):
@@ -32,20 +31,12 @@ def set_anthropic_key(key: str):
     store_key(ANTHROPIC_KEY, key)
 
 
-def get_google_key() -> str | None:
-    return get_key(GOOGLE_KEY)
+def get_pixai_key() -> str | None:
+    return get_key(PIXAI_KEY)
 
 
-def set_google_key(key: str):
-    store_key(GOOGLE_KEY, key)
-
-
-def get_openai_key() -> str | None:
-    return get_key(OPENAI_KEY)
-
-
-def set_openai_key(key: str):
-    store_key(OPENAI_KEY, key)
+def set_pixai_key(key: str):
+    store_key(PIXAI_KEY, key)
 
 
 def mask_key(key: str | None) -> str:
@@ -58,5 +49,4 @@ def mask_key(key: str | None) -> str:
 
 def clear_all():
     delete_key(ANTHROPIC_KEY)
-    delete_key(GOOGLE_KEY)
-    delete_key(OPENAI_KEY)
+    delete_key(PIXAI_KEY)

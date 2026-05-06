@@ -14,10 +14,8 @@ COLUMNS = [
 
 # Pricing constants (verify against provider docs)
 PRICING = {
-    "claude_haiku_input": 1.00 / 1_000_000,    # $1/M input tokens
-    "claude_haiku_output": 5.00 / 1_000_000,    # $5/M output tokens
-    "gemini_batch_image": 0.0195,                # per image (batch)
-    "gemini_standard_image": 0.039,              # per image (standard fallback)
+    "claude_haiku_input": 1.00 / 1_000_000,
+    "claude_haiku_output": 5.00 / 1_000_000,
 }
 
 
@@ -58,11 +56,6 @@ def log_api_call(
 def estimate_claude_cost(input_tokens: int, output_tokens: int) -> float:
     return (input_tokens * PRICING["claude_haiku_input"]
             + output_tokens * PRICING["claude_haiku_output"])
-
-
-def estimate_gemini_cost(image_count: int, batch: bool = True) -> float:
-    rate = PRICING["gemini_batch_image"] if batch else PRICING["gemini_standard_image"]
-    return image_count * rate
 
 
 def get_cumulative_spend() -> dict[str, float]:
