@@ -707,6 +707,33 @@ class _FreeformMode(QWidget):
         orow.addWidget(self.orientation_combo, 1)
         layout.addLayout(orow)
 
+        # Archetype + gender — same controls as Single and Batch so the
+        # proportion rules thread through Claude's freeform prompt.
+        arch_row = QHBoxLayout()
+        arch_row.addWidget(QLabel("Archetype:"))
+        self.archetype_combo = QComboBox()
+        for key, meta in ARCHETYPES.items():
+            self.archetype_combo.addItem(
+                f"{meta['label']} — {meta['heads']} heads", key)
+        arch_row.addWidget(self.archetype_combo, 1)
+        layout.addLayout(arch_row)
+
+        gender_row = QHBoxLayout()
+        gender_row.addWidget(QLabel("Gender:"))
+        self.gender = _GenderSelector()
+        gender_row.addWidget(self.gender, 1)
+        layout.addLayout(gender_row)
+
+        self.context_label = QLabel("")
+        self.context_label.setStyleSheet("color:#0369a1;font-weight:bold;")
+        layout.addWidget(self.context_label)
+
+        self.archetype_combo.currentIndexChanged.connect(self._sync_gender_lock)
+        self.archetype_combo.currentIndexChanged.connect(self._update_context_label)
+        self.gender.changed.connect(self._update_context_label)
+        self._sync_gender_lock()
+        self._update_context_label()
+
         arow = QHBoxLayout()
         self.generate_btn = QPushButton("Generate")
         self.generate_btn.setMinimumHeight(38)
@@ -742,6 +769,27 @@ class _FreeformMode(QWidget):
     def is_busy(self) -> bool:
         return self.worker is not None and self.worker.isRunning()
 
+    def _sync_gender_lock(self):
+        archetype = self.archetype_combo.currentData()
+        self.gender.set_archetype_locked(is_neutral_archetype(archetype))
+        self._update_context_label()
+
+    def _update_context_label(self):
+        archetype = self.archetype_combo.currentData()
+        if not archetype:
+            self.context_label.setText("")
+            return
+        meta = ARCHETYPES[archetype]
+        if is_neutral_archetype(archetype):
+            descriptor = f"N_{archetype} (neutral)"
+        else:
+            prefix = GENDERS[self.gender.value()]["filename_prefix"]
+            descriptor = f"{prefix}_{archetype}"
+        heads = meta["heads"]
+        heads_str = f"{int(heads)}" if heads == int(heads) else f"{heads}"
+        self.context_label.setText(
+            f"Applying: {descriptor} proportions ({heads_str} heads)")
+
     def _update_ui(self):
         busy = self.is_busy()
         keys_ok = bool(get_anthropic_key()) and bool(get_openai_key())
@@ -751,6 +799,8 @@ class _FreeformMode(QWidget):
         self.char_slot.set_enabled(not busy)
         self.orientation_combo.setEnabled(not busy)
         self.desc_edit.setEnabled(not busy)
+        self.archetype_combo.setEnabled(not busy)
+        self.gender.set_busy_locked(busy)
 
         if not keys_ok:
             self.generate_btn.setToolTip(
@@ -779,6 +829,8 @@ class _FreeformMode(QWidget):
         self.worker = ChatGPTFreeformWorker(
             description=desc,
             orientation=self.orientation_combo.currentData(),
+            archetype=self.archetype_combo.currentData(),
+            gender=self.gender.value(),
             character_image_path=self.char_slot.path)
         self.worker.log.connect(self._append_log)
         self.worker.done.connect(self._on_done)

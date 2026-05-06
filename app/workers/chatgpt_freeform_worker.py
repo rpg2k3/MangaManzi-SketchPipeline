@@ -23,10 +23,13 @@ class ChatGPTFreeformWorker(QThread):
     failed = Signal(str)                     # error message
 
     def __init__(self, description: str, orientation: str,
+                 archetype: str, gender: str,
                  character_image_path: Path | None = None, parent=None):
         super().__init__(parent)
         self.description = description
         self.orientation = orientation
+        self.archetype = archetype
+        self.gender = gender
         self.character_image_path = (
             Path(character_image_path) if character_image_path else None
         )
@@ -46,12 +49,15 @@ class ChatGPTFreeformWorker(QThread):
 
         self.log.emit(
             f"[Freeform] Asking Claude to engineer prompt "
-            f"(A4 {self.orientation}, character_ref={'yes' if has_ref else 'no'})...")
+            f"(A4 {self.orientation}, character_ref={'yes' if has_ref else 'no'}, "
+            f"archetype={self.archetype}, gender={self.gender})...")
         engineered = chatgpt_freeform_engineer.build_freeform_prompt(
             api_key=anthropic_key,
             description=self.description,
             orientation=self.orientation,
             has_character_reference=has_ref,
+            archetype=self.archetype,
+            gender=self.gender,
         )
         if not engineered["success"]:
             self.log.emit(f"[Freeform] Prompt engineering failed: {engineered['error']}")

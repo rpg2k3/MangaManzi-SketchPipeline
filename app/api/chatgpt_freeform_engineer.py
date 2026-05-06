@@ -12,6 +12,10 @@ sketch, not a construction drawing.
 import anthropic
 
 from app.cost_logger import log_api_call, estimate_claude_cost
+from app.api.chatgpt_prompt_engineer import (
+    ARCHETYPES, GENDERS, NEUTRAL_BODY_BLOCK, NEUTRAL_BODY_EXTRAS,
+    gender_block_for, gender_override_for, is_neutral_archetype,
+)
 
 MODEL = "claude-sonnet-4-20250514"
 
@@ -49,12 +53,25 @@ mode the character reference is the only image attached, so it is "Image 1".
    Then list the style and technical requirements (line art, line weight,
    A4 orientation, white background, print-ready, etc.).
 
+PROPORTION GUIDANCE BLOCK:
+The request always contains a "Proportion guidance" block describing the
+archetype's head-count and silhouette rules. You MUST include it inside
+section 3, after the style/quality bullets, prefixed verbatim with this
+subheader on its own line:
+"Proportion guidance (subordinate to the character sheet — apply only where the character design allows):"
+Copy the block content verbatim under that subheader. Do not paraphrase
+the head-count number, size class, or anatomy descriptions.
+
+If the request includes a "Closing override" line, append its content
+verbatim on its own line just before the final conflict-resolution line.
+
 End the prompt with this exact line on its own:
 "If style instructions conflict with the character sheet, always follow the character sheet."
 
 If the request says "has_character_reference: no", omit section 1 and the
 final conflict-resolution line. Describe the pose / scene first, then the
-style/quality tags last.
+style/quality tags last, and still include the Proportion guidance block
+inside section 3 with the same subheader.
 
 THE OUTPUT PROMPT MUST ALWAYS INCLUDE THESE RULES (place them in section 3):
 - Line art only — clean black ink lines, varied line weight.
@@ -75,8 +92,44 @@ no markdown, no quotes — just the prompt the image API will receive.
 """.strip()
 
 
+def _proportion_guidance_block(archetype: str, gender: str) -> tuple[str, str]:
+    """Return (guidance_text, closing_override) for the requested archetype/gender.
+
+    Reuses the same anatomy/head-count rules as build_sketch_instruction so
+    Single, Batch, and Freeform all draw from one source of truth. Returns
+    closing_override = "" for archetypes below the neutral threshold.
+    """
+    if archetype not in ARCHETYPES:
+        raise ValueError(f"Unknown archetype: {archetype}")
+    arch = ARCHETYPES[archetype]
+    rules_block = "\n".join(f"- {r}" for r in arch["rules"])
+
+    if is_neutral_archetype(archetype):
+        body_text = NEUTRAL_BODY_BLOCK
+        extra = NEUTRAL_BODY_EXTRAS.get(archetype)
+        if extra:
+            body_text = f"{body_text} {extra}"
+        body_label = "Body construction (anatomically neutral — gender not applied)"
+        closing_override = ""
+    else:
+        if gender not in GENDERS:
+            raise ValueError(f"Unknown gender: {gender}")
+        body_text = gender_block_for(gender, archetype)
+        body_label = "Gender anatomy"
+        closing_override = gender_override_for(gender)
+
+    guidance = (
+        f"- The figure should read as approximately {arch['heads']} "
+        f"head-heights tall — a {arch['size_class']}.\n"
+        f"{rules_block}\n"
+        f"- {body_label}: {body_text}"
+    )
+    return guidance, closing_override
+
+
 def build_freeform_prompt(api_key: str, description: str, orientation: str,
-                          has_character_reference: bool) -> dict:
+                          has_character_reference: bool,
+                          archetype: str, gender: str) -> dict:
     """Call Claude to expand a freeform user description into a gpt-image-1 prompt.
 
     Returns {"success": bool, "prompt": str, "cost": float, "error": str}.
@@ -84,11 +137,16 @@ def build_freeform_prompt(api_key: str, description: str, orientation: str,
     if orientation not in ("portrait", "landscape"):
         orientation = "portrait"
 
+    guidance, closing_override = _proportion_guidance_block(archetype, gender)
+
     user_message = (
         f"Orientation: A4 {orientation}\n"
         f"has_character_reference: {'yes' if has_character_reference else 'no'}\n"
-        f"Description: {description.strip()}"
+        f"Description: {description.strip()}\n\n"
+        f"Proportion guidance:\n{guidance}"
     )
+    if closing_override:
+        user_message += f"\n\nClosing override: {closing_override}"
 
     try:
         client = anthropic.Anthropic(api_key=api_key)
