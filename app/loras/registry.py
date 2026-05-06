@@ -69,7 +69,10 @@ NINEK9BASE = LoRA(
         "9k9base, light blue pencil construction, atari bands, "
         "joint ovals, faceless bald head, head height grid"
     ),
-    weight=1.0,
+    # Phase 1B baseline: 0.9 (down from 1.0). The Illustrious base does
+    # most of the work; full LoRA strength was over-applying the pencil
+    # construction style.
+    weight=0.9,
     # Training base per the LoRA's PixAI page. Illustrious-XL-v1.0 — SDXL LoRA,
     # must be paired with its native base or output is degraded. The
     # API-callable id is taken from a known-working web-UI reference task
@@ -124,3 +127,14 @@ def all_loras() -> dict[str, LoRA]:
 
 def stage_loras(stage: int) -> list[LoRA]:
     return [l for l in _REGISTRY.values() if l.used_in_stage == stage]
+
+
+def find_by_pixai_id(pixai_id: str) -> LoRA | None:
+    """Reverse-lookup: registry-name is the dict key, but Stage 3 only knows
+    the PixAI model id (from sheet.linkedLoraId). Returns None if no LoRA
+    in the registry has that id.
+    """
+    for lora in _REGISTRY.values():
+        if lora.pixai_model_id == pixai_id:
+            return lora
+    return None

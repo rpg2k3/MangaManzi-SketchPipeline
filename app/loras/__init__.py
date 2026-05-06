@@ -5,12 +5,23 @@ via register() once their PixAI model IDs are provided.
 """
 
 from .registry import (
+    LORA_ARCHITECTURES,
     NINEK9BASE,
     LoRA,
     all_loras,
+    find_by_pixai_id,
     get,
     register,
     stage_loras,
 )
 
-__all__ = ["LoRA", "NINEK9BASE", "all_loras", "get", "register", "stage_loras"]
+__all__ = [
+    "LORA_ARCHITECTURES",
+    "LoRA",
+    "NINEK9BASE",
+    "all_loras",
+    "find_by_pixai_id",
+    "get",
+    "register",
+    "stage_loras",
+]

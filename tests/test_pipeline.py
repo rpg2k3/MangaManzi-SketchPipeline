@@ -34,6 +34,27 @@ def sketch_lora_registered():
     yield sketch
 
 
+@pytest.fixture
+def char_lora_registered():
+    """Phase 1B: Stage 3 looks up the character LoRA by linkedLoraId via
+    loras.find_by_pixai_id(). Tests that exercise Stage 3 must register a
+    LoRA whose pixai_model_id matches the sample_sheet's linkedLoraId.
+    """
+    char = LoRA(
+        name="test_char_lora",
+        pixai_model_id="char_lora_id_12345",
+        purpose="test character finalization",
+        trigger_words="test_char_trigger",
+        weight=0.75,
+        base_model="Illustrious-XL-v1.0",
+        base_model_id="1844843519625072849",
+        used_in_stage=3,
+        architecture="illustrious",
+    )
+    loras.register(char)
+    yield char
+
+
 def test_stage_1_runs_free_with_no_skeleton_or_depth(
     respx_pixai, fake_pixai_responses, tmp_data_root,
 ):
@@ -56,7 +77,8 @@ def test_stage_1_runs_free_with_no_skeleton_or_depth(
     ]
     assert len(create_calls) == 1
     params = json.loads(create_calls[0].request.content)["variables"]["parameters"]
-    assert params["lora"] == {"2006655610114208859": 1.0}
+    # Phase 1B: 9k9base weight tapered 1.0 -> 0.9.
+    assert params["lora"] == {"2006655610114208859": 0.9}
     assert "controlNets" not in params
     # Pinned base model — Illustrious-XL-v1.0 API-callable id (taken from
     # reference task 2006996847850078063 where both parameters.modelId and
@@ -170,7 +192,8 @@ def test_stage_1_uses_controlnet_when_skeleton_provided(
         if c.request.method == "POST" and "createGenerationTask" in json.loads(c.request.content)["query"]
     ]
     params = json.loads(create_calls[0].request.content)["variables"]["parameters"]
-    assert params["lora"] == {"2006655610114208859": 1.0}
+    # Phase 1B: 9k9base weight tapered 1.0 -> 0.9.
+    assert params["lora"] == {"2006655610114208859": 0.9}
     assert any(cn["type"] == "openpose" for cn in params["controlNets"])
 
 
@@ -202,7 +225,8 @@ def test_stage_2_attaches_controlnet_from_base_media_id(
 
 
 def test_stage_3_attaches_controlnet_from_sketch_media_id(
-    respx_pixai, fake_pixai_responses, sample_sheet, tmp_data_root, patched_claude,
+    respx_pixai, fake_pixai_responses, sample_sheet, tmp_data_root,
+    patched_claude, char_lora_registered,
 ):
     sketch_media = "stage2-sketch-media-ABC"
     with PixAIClient(api_key="sk-test") as client:
@@ -220,8 +244,19 @@ def test_stage_3_attaches_controlnet_from_sketch_media_id(
     ]
     params = json.loads(create_calls[0].request.content)["variables"]["parameters"]
     assert params["mediaId"] == sketch_media
-    types_to_media = {cn["type"]: cn["mediaId"] for cn in params["controlNets"]}
-    assert types_to_media == {"openpose": sketch_media, "depth": sketch_media}
+    # Phase 1B: ControlNet weights tapered to 0.7/0.5 in Stage 3.
+    by_type = {cn["type"]: cn for cn in params["controlNets"]}
+    assert set(by_type) == {"openpose", "depth"}
+    assert by_type["openpose"]["mediaId"] == sketch_media
+    assert by_type["depth"]["mediaId"] == sketch_media
+    assert by_type["openpose"]["weight"] == 0.7
+    assert by_type["depth"]["weight"] == 0.5
+    # Phase 1B: char LoRA at sheet.loraWeight (0.9 in this fixture).
+    assert params["lora"] == {"char_lora_id_12345": 0.9}
+    # Phase 1B: Stage 3 CFG/steps/strength.
+    assert params["cfgScale"] == 6.5
+    assert params["samplingSteps"] == 28
+    assert params["strength"] == 0.6
 
 
 @pytest.mark.skip(reason="Phase 1A: sketch_lora was never trained (confirmed by "

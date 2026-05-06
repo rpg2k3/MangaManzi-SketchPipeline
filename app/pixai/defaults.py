@@ -18,10 +18,14 @@ DEFAULT_BASE_MODEL = "Haruka-v2"
 # drift if the account default changes upstream.
 DEFAULT_BASE_MODEL_ID = "1648918127446573124"
 DEFAULT_SAMPLING_METHOD = "DPM++ 2M Karras"
-DEFAULT_SAMPLING_STEPS = 28
-DEFAULT_CFG_SCALE = 7.1
-DEFAULT_WIDTH = 768
-DEFAULT_HEIGHT = 1280
+# Phase 1B baseline: SDXL-native portrait bucket 832x1216. The previous
+# 768x1280 was an off-bucket size for SDXL training data and produced
+# softer output. CFG 6.0 / 26 steps is Stage 1's value; Stage 2 and 3
+# override these explicitly per the per-stage spec.
+DEFAULT_SAMPLING_STEPS = 26
+DEFAULT_CFG_SCALE = 6.0
+DEFAULT_WIDTH = 832
+DEFAULT_HEIGHT = 1216
 DEFAULT_HIGH_PRIORITY = False
 DEFAULT_BATCH_SIZE = 1
 

@@ -22,10 +22,11 @@ def test_taskparameters_to_pixai_dict_uses_camelcase():
     assert d["prompts"] == "hello world"
     assert d["negativePrompts"] == "bad"
     assert d["samplingMethod"] == "DPM++ 2M Karras"
-    assert d["samplingSteps"] == 28
-    assert d["cfgScale"] == 7.1
-    assert d["width"] == 768
-    assert d["height"] == 1280
+    # Phase 1B baseline: 832x1216 portrait, CFG 6.0, 26 steps.
+    assert d["samplingSteps"] == 26
+    assert d["cfgScale"] == 6.0
+    assert d["width"] == 832
+    assert d["height"] == 1216
     # PixAI's lora field is an object keyed by model id, not an array.
     assert d["lora"] == {"lora-1": 0.8}
     assert d["controlNets"] == [{"type": "openpose", "mediaId": "m-1", "weight": 1.0}]

@@ -39,8 +39,42 @@
       "promotedAt": "2026-05-06T00:00:00Z"
     }
   ],
-  "designNotes": "",
-  "continuityRules": [],
-  "outfitVariants": [],
+  "designNotes": "A young adult female kemonomimi cat-girl with a punk-arcade glitch aesthetic. Dark skin, voluminous magenta curly afro shoulder-length, triangular fur-tufted cat ears matching hair color, slim tapered feline tail, warm yellow eyes, grounded anime face style with moderate eye size — not pushed toward exaggerated moe. 7.5 head heights — standard young adult proportions. Outfit aesthetic combines bustier/corset elements with arcade-fashion accents (fishnet hosiery, platform boots, belt accessories with charms).",
+  "continuityRules": [
+    "Hair color is magenta; no drift toward pink, purple, or red",
+    "Cat ears are triangular and fur-tufted, matching hair color exactly; not rounded, not differently colored",
+    "Tail is slim and tapered, not chunky or fluffy",
+    "Skin tone is dark; no drift toward light or olive",
+    "Eyes are warm yellow; no drift toward gold, amber, or green",
+    "Face style is grounded anime, not exaggerated moe; eyes should not be pushed larger than the reference sheet",
+    "Boots are mid-calf height with moderate platform sole; never knee-high, never oversized lug soles",
+    "Belt always carries the side chain with heart charm dangling",
+    "Fishnet hosiery reads as clear mesh, not solid coverage",
+    "No garter straps unless explicitly called for by a named outfit variant"
+  ],
+  "outfitVariants": [
+    {
+      "name": "Design_A_default",
+      "description": "Canonical street outfit from the four-view turnaround. Punk-arcade glitch aesthetic — corset/bustier upper body, fitted mini skirt with side wrap, fishnet hosiery, mid-calf lace-up platform boots.",
+      "tags": [
+        "halter_neck_bustier",
+        "lace_up_corset_front",
+        "thin_choker_with_circular_charm",
+        "fishnet_arm_sleeves",
+        "buckled_wrist_cuffs",
+        "upper_arm_strap_buckles",
+        "black_fingerless_gloves",
+        "fitted_a_line_mini_skirt",
+        "side_wrap_skirt_detail",
+        "thick_belt_with_buckle",
+        "side_belt_chain",
+        "heart_charm",
+        "light_fishnet_thighhighs",
+        "mid_calf_lace_up_platform_boots",
+        "moderate_platform_sole"
+      ],
+      "isDefault": true
+    }
+  ],
   "audit": []
 }

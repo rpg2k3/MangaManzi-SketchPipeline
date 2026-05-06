@@ -10,7 +10,10 @@ def test_9k9base_is_locked_and_seeded():
     base = loras.get("9k9base")
     assert base.pixai_model_id == "2006655610114208859"
     assert base.locked is True
-    assert base.weight == 1.0
+    # Phase 1B baseline: 0.9 (down from 1.0 — full strength was over-applying
+    # the pencil-construction style; Illustrious base does most of the work).
+    assert base.weight == 0.9
+    assert base.architecture == "illustrious"
     assert base.used_in_stage == 1
     assert "9k9base" in base.trigger_words
     assert "construction lines" in base.positive_append

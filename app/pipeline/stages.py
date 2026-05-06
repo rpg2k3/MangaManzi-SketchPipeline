@@ -122,6 +122,11 @@ def stage_1_base_mannequin(
     # else passes through with spaces preserved.
     prompts = to_booru(natural_prompts)
 
+    # Phase 1B baseline: 832x1216 portrait, CFG 6.0, 26 steps come from
+    # the global defaults (set in app/pixai/defaults.py). LoRA weight 0.9
+    # comes from the registry. Sampler DPM++ 2M Karras and clip_skip 2
+    # also from defaults. `priority` field is omitted entirely when
+    # high_priority is off (do not pass priority:0).
     params = TaskParameters(
         prompts=prompts,
         negative_prompts=base.default_negative,
@@ -155,26 +160,53 @@ def stage_2_sketch_pass(
     high_priority: bool = False,
     timeout: float = 180.0,
 ) -> StageResult:
-    """Phase 1A placeholder — pass-through.
+    """Phase 1B: pure img2img refinement on the Stage 1 base, no LoRA.
 
-    The original Stage 2 called `loras.get("sketch_lora")`, but that LoRA
-    was never trained (confirmed by user). Until Phase 1B restructures
-    Stage 2 into a proper pure-img2img refinement step (no LoRA, denoise
-    0.40, tapered ControlNet), this placeholder forwards the Stage 1
-    media id and image path unchanged. No PixAI call is issued.
+    The previous design called a `sketch_lora` that was never actually
+    trained. The new design refines the Stage 1 mannequin into a cleaner
+    pencil sketch via a low-denoise img2img pass (strength 0.40) on the
+    same Illustrious base checkpoint, with the original 9k9base
+    ControlNet conditioning carried through at tapered weights so the
+    pose stays locked but doesn't dominate.
 
-    `pixai_client`, `high_priority`, and `timeout` are kept in the
-    signature for API stability with the orchestrator caller and so
-    Phase 1B can fill the body without touching call sites.
+    Parameters per Phase 1B spec:
+      cfg_scale=5.5, sampling_steps=24, strength=0.40
+      ControlNet weights: openpose 0.85, depth 0.55
+      No LoRA. Same base checkpoint as Stage 1 (Illustrious-XL-v1.0).
+      qualityTag (Booster) omitted — same logic as Stage 1.
     """
-    del pixai_client, high_priority, timeout  # intentionally unused — Phase 1B fills these
-    stage_1_path = output_dir / "stage_1_base.png"
-    return StageResult(
-        stage=2,
-        task={"placeholder": "phase_1a_passthrough"},
-        output_image_path=stage_1_path,
+    base = loras.get("9k9base")  # only for base_model_id pinning
+
+    # Stage 2 prompt is intentionally minimal — Phase 1C will harden this
+    # to the spec'd "9k9base, refined_pencil_sketch, clean_construction_lines"
+    # form. For Phase 1B we keep the Stage 1 trigger language so this
+    # commit is parameter-only.
+    stage_2_prompt = "9k9base, refined pencil sketch, clean construction lines"
+
+    params = TaskParameters(
+        prompts=stage_2_prompt,
+        negative_prompts=base.default_negative,
+        loras=[],
         media_id=base_media_id,
+        strength=0.40,
+        cfg_scale=5.5,
+        sampling_steps=24,
+        control_nets=[
+            ControlNetSpec(type="openpose", media_id=base_media_id, weight=0.85),
+            ControlNetSpec(type="depth", media_id=base_media_id, weight=0.55),
+        ],
+        priority=(1000 if high_priority else None),
+        model_id=base.base_model_id,
+        quality_tag=None,
     )
+
+    task = _run_task(pixai_client, params, timeout=timeout)
+    media_ids = media_ids_from_task(task)
+    if not media_ids:
+        raise StageError("Stage 2 produced no output media", stage=2)
+
+    out_path = _save_output(pixai_client, media_ids[0], output_dir / "stage_2_sketch.png")
+    return StageResult(stage=2, task=task, output_image_path=out_path, media_id=media_ids[0])
 
 
 def stage_3_character_finalization(
@@ -188,18 +220,53 @@ def stage_3_character_finalization(
     view: str = "front",
     pose: str | None = None,
     prior_critiques: list[dict] | None = None,
-    strength: float = 0.55,
     high_priority: bool = False,
     timeout: float = 180.0,
 ) -> StageResult:
+    """Phase 1B: character finalization via the per-sheet character LoRA.
+
+    Parameters per Phase 1B spec:
+      cfg_scale=6.5, sampling_steps=28, strength=0.60
+      ControlNet weights: openpose 0.7, depth 0.5 (further tapered from S2)
+      Character LoRA at sheet.loraWeight (default 0.75).
+      9k9base is OFF in Stage 3 — the pose is now locked by ControlNet.
+      qualityTag (Booster) omitted — same logic as Stage 1/2.
+
+    Two spec items remain unimplementable on the current PixAI GraphQL
+    surface and are tracked for Phase 2 / 4:
+      - "ControlNet end at 0.85" (guidance end / control-end timing) —
+        ControlNetSpec has no field for it; PixAI's exposed schema in
+        this codebase doesn't accept one.
+      - Reference-image conditioning at weight 0.55 / 0.5 (IP-Adapter
+        Plus or Reference-Only ControlNet) — neither type string is
+        documented in the codebase. Sheet.referenceAnchors is carried
+        through the pipeline but no API call references it yet.
+    """
     char_lora_id = sheet.get("linkedLoraId")
     if not char_lora_id:
         raise StageError(
-            f"Sheet '{sheet.get('id')}' has no linkedLoraId — cannot finalize character.",
+            f"Sheet '{sheet.get('id')}' has no linkedLoraId — cannot finalize "
+            "character. Supply the PixAI model id on the sheet's linkedLoraId "
+            "field, then register the LoRA via app.loras.register() so Stage 3 "
+            "can resolve its architecture and base_model_id.",
             stage=3,
         )
-    char_weight = float(sheet.get("loraWeight") or 1.0)
-    char_triggers = sheet.get("triggerWords") or ""
+    char_lora = loras.find_by_pixai_id(char_lora_id)
+    if char_lora is None:
+        raise StageError(
+            f"linkedLoraId={char_lora_id!r} is not in the LoRA registry. "
+            "Register the LoRA first via app.loras.register() — Stage 3 needs "
+            "its architecture (DiT.2 vs SDXL) and base_model_id to assemble a "
+            "valid request.",
+            stage=3,
+        )
+
+    char_weight = float(sheet.get("loraWeight") or 0.75)
+    triggers = sheet.get("triggerWords") or []
+    if isinstance(triggers, list):
+        char_triggers = ", ".join(triggers)
+    else:
+        char_triggers = str(triggers)
 
     prompt_data = generate_prompt(
         api_key=anthropic_api_key,
@@ -214,21 +281,21 @@ def stage_3_character_finalization(
         pose_id=pose or "",
     )
 
-    # Stage 3 uses the same base checkpoint as the sketch_lora — the chain
-    # stays on one model family for visual consistency.
-    sketch = loras.get("sketch_lora")
     params = TaskParameters(
         prompts=prompt_data["prompts"],
         negative_prompts=prompt_data["negative_prompts"],
-        loras=[LoraSpec(model_id=char_lora_id, weight=char_weight)],
+        loras=[LoraSpec(model_id=char_lora.pixai_model_id, weight=char_weight)],
         media_id=sketch_media_id,
-        strength=strength,
+        strength=0.60,
+        cfg_scale=6.5,
+        sampling_steps=28,
         control_nets=[
-            ControlNetSpec(type="openpose", media_id=sketch_media_id),
-            ControlNetSpec(type="depth", media_id=sketch_media_id),
+            ControlNetSpec(type="openpose", media_id=sketch_media_id, weight=0.7),
+            ControlNetSpec(type="depth", media_id=sketch_media_id, weight=0.5),
         ],
         priority=(1000 if high_priority else None),
-        model_id=sketch.base_model_id,
+        model_id=char_lora.base_model_id,
+        quality_tag=None,
     )
 
     task = _run_task(pixai_client, params, timeout=timeout)
