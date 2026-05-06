@@ -113,9 +113,18 @@ FAYE_LYN_SDXL = LoRA(
     pixai_model_id="2007725844888836295",
     purpose=(
         "9k9_Faye_Lyn-GlitchArcade-SDXL — character LoRA, "
-        "Illustrious-XL-v1.0 family. Initial sheet binding."
+        "Illustrious-XL-v1.0 family. Initial sheet binding. "
+        "trigger_words below are ACTIVATION ONLY — the longer "
+        "descriptor list shown on the PixAI model page (kemonomimi, "
+        "cat ears, dark skin, magenta curly afro, type 3c hair, "
+        "yellow off-shoulder top, teal pleated skirt, white platform "
+        "boots, neon pink guitar cable, glitch arcade aesthetic, "
+        "vaporwave, retro CRT monitors) is co-trained content that "
+        "the LoRA already bakes in by default. Putting those tokens "
+        "in trigger_words would crowd out the Phase 3 token-weight "
+        "ordering (outfit/accessories at 1.2/1.3, style at 0.9)."
     ),
-    trigger_words="faye_lyn",  # FALLBACK — verify canonical from PixAI UI
+    trigger_words="faye-lyn, 9k9_fayeLyn_glitchArcade",
     weight=0.75,                # FALLBACK — verify canonical from PixAI UI
     base_model="Illustrious-XL-v1.0",
     base_model_id="1844843519625072849",  # same as 9k9base SDXL base
@@ -132,9 +141,17 @@ FAYE_LYN_DIT2 = LoRA(
         "Drift correction goes through positive re-specification "
         "(no negative prompt). base_model_id REQUIRED before runtime "
         "use — DiT.2 base checkpoint id was not exposed on the model "
-        "page; supply via register() override."
+        "page; supply via register() override. "
+        "trigger_words below is the ACTIVATION-ONLY token. The longer "
+        "descriptor list shown on the PixAI model page (magenta curly "
+        "afro, pink cat ears, eye scar, tan skin, kemonomimi, yellow "
+        "off-shoulder crop top, mint pleated skirt, X-harness belt, "
+        "white ankle wraps, glowing pink cable) is co-trained content "
+        "the LoRA already bakes in by default. Note the SDXL and DiT.2 "
+        "outfits differ from each other and from Design_A — the two "
+        "LoRAs were trained on different outfit variants."
     ),
-    trigger_words="faye_lyn",  # FALLBACK — verify canonical from PixAI UI
+    trigger_words="faye_lyn_kemonomimi_arcade_9k9",
     weight=0.75,                # FALLBACK — verify canonical from PixAI UI
     base_model="DiT.2 (TBD)",
     base_model_id=_DIT2_BASE_MODEL_ID_TBD,

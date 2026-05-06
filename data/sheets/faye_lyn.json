@@ -4,7 +4,7 @@
   "archetype": "F_yadult",
   "head_count": 7.5,
   "linkedLoraId": "2007725844888836295",
-  "triggerWords": ["faye_lyn"],
+  "triggerWords": ["faye-lyn", "9k9_fayeLyn_glitchArcade"],
   "loraWeight": 0.75,
   "referenceAnchors": [
     {
