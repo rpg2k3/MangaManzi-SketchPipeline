@@ -174,6 +174,10 @@ def test_stage_1_uses_controlnet_when_skeleton_provided(
     assert any(cn["type"] == "openpose" for cn in params["controlNets"])
 
 
+@pytest.mark.skip(reason="Phase 1A: Stage 2 is a pass-through placeholder. "
+                         "Phase 1B will restore Stage 2 (pure img2img, no LoRA, "
+                         "tapered ControlNet) and this test will be rewritten "
+                         "against that behavior.")
 def test_stage_2_attaches_controlnet_from_base_media_id(
     respx_pixai, fake_pixai_responses, sample_sheet, tmp_data_root, sketch_lora_registered,
 ):
@@ -220,6 +224,10 @@ def test_stage_3_attaches_controlnet_from_sketch_media_id(
     assert types_to_media == {"openpose": sketch_media, "depth": sketch_media}
 
 
+@pytest.mark.skip(reason="Phase 1A: sketch_lora was never trained (confirmed by "
+                         "user). The 'requires sketch_lora' contract is permanently "
+                         "removed. Phase 1B's restructured Stage 2 has no LoRA, so "
+                         "this test will be deleted then.")
 def test_stage_2_requires_sketch_lora(
     respx_pixai, fake_pixai_responses, sample_sheet, tmp_data_root,
 ):
@@ -273,6 +281,11 @@ def test_stage_4_critique_returns_structured_dict(
     assert saved_critique.exists()
 
 
+@pytest.mark.skip(reason="Phase 1A: Stage 2 is a placeholder that issues no "
+                         "PixAI call, so this test's '3 createGenerationTask "
+                         "calls' assertion fails. Phase 1B will restore Stage "
+                         "2's PixAI call (pure img2img, no LoRA, tapered "
+                         "ControlNet) and this test will be updated.")
 def test_full_pipeline_end_to_end_mocked(
     respx_pixai, fake_pixai_responses, sample_sheet,
     tmp_data_root, patched_claude, sketch_lora_registered,

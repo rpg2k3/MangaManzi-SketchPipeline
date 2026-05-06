@@ -1,0 +1,46 @@
+{
+  "id": "faye_lyn",
+  "name": "Faye-Lyn",
+  "archetype": "F_yadult",
+  "head_count": 7.5,
+  "linkedLoraId": null,
+  "triggerWords": [],
+  "loraWeight": 0.75,
+  "referenceAnchors": [
+    {
+      "path": "data/inputs/Design_A-combined.png",
+      "role": "design",
+      "weight": 0.55
+    }
+  ],
+  "learnedDrifts": [
+    {
+      "drift": "knee-high boots with chunky lug sole",
+      "correction": "mid_calf_boots, lace_up_platform_boots, moderate_platform_sole",
+      "sourceRunIds": ["pre-audit"],
+      "promotedAt": "2026-05-06T00:00:00Z"
+    },
+    {
+      "drift": "missing belt chain and heart charm",
+      "correction": "side_belt_chain, heart_charm, charm_dangles_right_hip",
+      "sourceRunIds": ["pre-audit"],
+      "promotedAt": "2026-05-06T00:00:00Z"
+    },
+    {
+      "drift": "over-dense fishnet hosiery reading as solid mesh",
+      "correction": "light_fishnet_thighhighs, clearly_readable_mesh, sheer_hosiery",
+      "sourceRunIds": ["pre-audit"],
+      "promotedAt": "2026-05-06T00:00:00Z"
+    },
+    {
+      "drift": "invented garter strap on right thigh",
+      "correction": "no_garter_strap, plain_thigh_high_boundary",
+      "sourceRunIds": ["pre-audit"],
+      "promotedAt": "2026-05-06T00:00:00Z"
+    }
+  ],
+  "designNotes": "",
+  "continuityRules": [],
+  "outfitVariants": [],
+  "audit": []
+}

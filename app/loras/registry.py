@@ -4,9 +4,17 @@ Seeded with the production-ready `9k9base` LoRA (locked). Sketch and
 per-character LoRAs land here once their PixAI model IDs are provided.
 """
 
+import warnings
 from dataclasses import dataclass, field
+from typing import Literal
 
 from app.pixai.defaults import DEFAULT_BASE_MODEL
+
+# Authoritative set of valid `architecture` values for the LoRA dataclass.
+# Used by Stage 3 prompt assembly to fork DiT.2 (no negative prompt) vs
+# SDXL/Illustrious (negative-prompt template + drift-as-negative injection).
+LORA_ARCHITECTURES = ("sdxl", "illustrious", "dit1", "dit2", "unknown")
+LoRAArchitecture = Literal["sdxl", "illustrious", "dit1", "dit2", "unknown"]
 
 
 @dataclass(frozen=True)
@@ -18,6 +26,11 @@ class LoRA:
     training base or output is degraded — the runtime always sends the
     LoRA's `base_model_id` as the request's `modelId`, never the global
     default.
+
+    `architecture` drives Stage 3 prompt assembly: DiT.2 LoRAs cannot use
+    negative prompts, so drift correction goes positive. SDXL/Illustrious
+    LoRAs use the negative-prompt template with drifts as absences. New
+    entries default to "unknown" and emit a one-shot warning when fetched.
     """
     name: str
     pixai_model_id: str
@@ -30,6 +43,7 @@ class LoRA:
     positive_append: str = ""
     default_negative: str = ""
     locked: bool = False
+    architecture: LoRAArchitecture = "unknown"
 
 
 # P18: drastically simplified. The previous long negative was stacking
@@ -69,12 +83,15 @@ NINEK9BASE = LoRA(
     positive_append=_POS_9K9BASE,
     default_negative=_NEG_9K9BASE,
     locked=True,
+    architecture="illustrious",
 )
 
 
 _REGISTRY: dict[str, LoRA] = {
     NINEK9BASE.name: NINEK9BASE,
 }
+
+_WARNED_UNKNOWN_ARCH: set[str] = set()
 
 
 def get(name: str) -> LoRA:
@@ -83,7 +100,16 @@ def get(name: str) -> LoRA:
             f"LoRA '{name}' not in registry. Known: {sorted(_REGISTRY)}. "
             "If this is the sketch or a character LoRA, register it via register()."
         )
-    return _REGISTRY[name]
+    lora = _REGISTRY[name]
+    if lora.architecture == "unknown" and name not in _WARNED_UNKNOWN_ARCH:
+        _WARNED_UNKNOWN_ARCH.add(name)
+        warnings.warn(
+            f"LoRA '{name}' has architecture='unknown'. Stage 3 prompt "
+            "assembly cannot fork DiT.2 vs SDXL correctly until this is set. "
+            f"Valid values: {LORA_ARCHITECTURES}.",
+            stacklevel=2,
+        )
+    return lora
 
 
 def register(lora: LoRA) -> None:

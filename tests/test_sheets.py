@@ -19,7 +19,9 @@ def test_upgrade_sheet_is_non_destructive_and_adds_new_fields(sample_sheet):
     assert upgraded["id"] == "x_y"
     assert upgraded["name"] == "X Y"
     assert upgraded["linkedLoraId"] is None
-    assert upgraded["loraWeight"] == 1.0
+    assert upgraded["loraWeight"] == 0.75
+    assert upgraded["triggerWords"] == []
+    assert upgraded["referenceAnchors"] == []
     assert upgraded["designNotes"] == "preserve mesh wraps"
     assert upgraded["learnedDrifts"] == []
     assert upgraded["audit"] == []

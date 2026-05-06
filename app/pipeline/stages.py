@@ -152,45 +152,29 @@ def stage_2_sketch_pass(
     pixai_client: PixAIClient,
     base_media_id: str,
     output_dir: Path,
-    sketch_lora_name: str = "sketch_lora",
-    strength: float = 0.6,
     high_priority: bool = False,
     timeout: float = 180.0,
 ) -> StageResult:
-    """img2img with sketch_lora, ControlNet (openpose + depth) auto-derived
-    from the Stage 1 output. PixAI runs the preprocessor server-side based
-    on the `type` field — we just hand it the prior stage's mediaId.
+    """Phase 1A placeholder — pass-through.
+
+    The original Stage 2 called `loras.get("sketch_lora")`, but that LoRA
+    was never trained (confirmed by user). Until Phase 1B restructures
+    Stage 2 into a proper pure-img2img refinement step (no LoRA, denoise
+    0.40, tapered ControlNet), this placeholder forwards the Stage 1
+    media id and image path unchanged. No PixAI call is issued.
+
+    `pixai_client`, `high_priority`, and `timeout` are kept in the
+    signature for API stability with the orchestrator caller and so
+    Phase 1B can fill the body without touching call sites.
     """
-    try:
-        sketch = loras.get(sketch_lora_name)
-    except KeyError as e:
-        raise StageError(
-            f"{e}. Register the sketch LoRA via app.loras.register() before running stage 2.",
-            stage=2,
-        ) from None
-
-    prompts = ", ".join(p for p in [sketch.trigger_words, sketch.positive_append] if p)
-    params = TaskParameters(
-        prompts=prompts,
-        negative_prompts=sketch.default_negative,
-        loras=[LoraSpec(model_id=sketch.pixai_model_id, weight=sketch.weight)],
+    del pixai_client, high_priority, timeout  # intentionally unused — Phase 1B fills these
+    stage_1_path = output_dir / "stage_1_base.png"
+    return StageResult(
+        stage=2,
+        task={"placeholder": "phase_1a_passthrough"},
+        output_image_path=stage_1_path,
         media_id=base_media_id,
-        strength=strength,
-        control_nets=[
-            ControlNetSpec(type="openpose", media_id=base_media_id),
-            ControlNetSpec(type="depth", media_id=base_media_id),
-        ],
-        priority=(1000 if high_priority else None),
-        model_id=sketch.base_model_id,
     )
-
-    task = _run_task(pixai_client, params, timeout=timeout)
-    media_ids = media_ids_from_task(task)
-    if not media_ids:
-        raise StageError("Stage 2 produced no output media", stage=2)
-
-    out_path = _save_output(pixai_client, media_ids[0], output_dir / "stage_2_sketch.png")
-    return StageResult(stage=2, task=task, output_image_path=out_path, media_id=media_ids[0])
 
 
 def stage_3_character_finalization(

@@ -31,6 +31,8 @@ characters/*/source_sheet.png
 data/outputs/
 data/history/
 data/sheets/*.json
+# Canonical project sheets are committed; user-generated sheets stay local.
+!data/sheets/faye_lyn.json
 data/debug/
 
 # === Cost logs (usage patterns + potentially sensitive) ===

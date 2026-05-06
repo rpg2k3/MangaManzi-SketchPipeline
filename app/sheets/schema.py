@@ -8,11 +8,12 @@ siblings, non-destructively.
 
 NEW_FIELD_DEFAULTS = {
     "linkedLoraId": None,
-    "triggerWords": None,
-    "loraWeight": 1.0,
+    "triggerWords": [],
+    "loraWeight": 0.75,
     "designNotes": "",
     "outfitVariants": [],
     "continuityRules": [],
+    "referenceAnchors": [],
     "learnedDrifts": [],
     "audit": [],
 }
