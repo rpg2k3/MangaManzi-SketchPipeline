@@ -3,8 +3,15 @@
 `TaskParameters.to_pixai_dict()` produces the JSONObject payload for the
 `createGenerationTask(parameters: JSONObject!)` mutation. Field naming
 matches the PixAI GraphQL schema verbatim (see app/pixai/client.py).
+
+Phase 3: Booster (`qualityTag`) is gated. Callers must pass
+`allow_booster=True` explicitly to include the field in the request
+payload. A `quality_tag` set without `allow_booster=True` is dropped at
+serialization time and a warning is emitted, so accidental Booster runs
+can never reach PixAI silently.
 """
 
+import warnings
 from dataclasses import dataclass, field
 
 from .defaults import (
@@ -67,8 +74,11 @@ class TaskParameters:
     # were getting whatever server-side default and producing different output.
     clip_skip: int = 2
     # `quality_tag` is the web UI's "Booster" — appends quality boosters to the
-    # prompt. The exact suffix below mirrors what PixAI's Booster sends.
+    # prompt. Gated: only included in the request when `allow_booster` is True.
+    # Stage 1/2/3 set quality_tag=None and never opt in. A non-None value
+    # without allow_booster=True is dropped + warned, NOT sent silently.
     quality_tag: dict | None = None
+    allow_booster: bool = False
 
     def to_pixai_dict(self) -> dict:
         d: dict = {
@@ -83,7 +93,15 @@ class TaskParameters:
             "clipSkip": self.clip_skip,
         }
         if self.quality_tag is not None:
-            d["qualityTag"] = self.quality_tag
+            if self.allow_booster:
+                d["qualityTag"] = self.quality_tag
+            else:
+                warnings.warn(
+                    "TaskParameters.quality_tag is set but allow_booster is False. "
+                    "Dropping qualityTag from the PixAI request to honor the Phase 3 "
+                    "booster gate. Pass allow_booster=True explicitly to send it.",
+                    stacklevel=2,
+                )
         if self.model_id is not None:
             d["modelId"] = self.model_id
         if self.seed is not None:

@@ -159,6 +159,7 @@ def run_pipeline(
     iterations: list[dict] = []
     promoted_drifts: list[dict] = []
 
+    initial_run_id = scene_id
     with PixAIClient(api_key=pixai_key) as client:
         s1 = stage_1_base_mannequin(
             pixai_client=client,
@@ -170,6 +171,7 @@ def run_pipeline(
             output_dir=out_dir,
             high_priority=req.high_priority,
             seed=req.seed,
+            run_id=initial_run_id,
         )
         if req.max_stage >= 2:
             s2 = stage_2_sketch_pass(
@@ -177,6 +179,7 @@ def run_pipeline(
                 base_media_id=s1.media_id,
                 output_dir=out_dir,
                 high_priority=req.high_priority,
+                run_id=initial_run_id,
             )
         if req.max_stage >= 3:
             s3 = stage_3_character_finalization(
@@ -190,6 +193,7 @@ def run_pipeline(
                 pose=pose,
                 prior_critiques=req.prior_critiques,
                 high_priority=req.high_priority,
+                run_id=initial_run_id,
             )
 
         if req.max_stage >= 4 and s3 is not None:
@@ -234,6 +238,7 @@ def run_pipeline(
                         n=req.max_iterations,
                     )
 
+                    iter_run_id = f"{scene_id}_iter_{n}"
                     s3 = stage_3_character_finalization(
                         pixai_client=client,
                         sketch_media_id=s2.media_id,
@@ -245,6 +250,7 @@ def run_pipeline(
                         pose=pose,
                         prior_critiques=bundle,
                         high_priority=req.high_priority,
+                        run_id=iter_run_id,
                     )
                     crit = stage_4_critique(
                         image_path=s3.output_image_path,

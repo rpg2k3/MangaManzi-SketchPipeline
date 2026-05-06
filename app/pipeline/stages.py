@@ -4,19 +4,16 @@ Stage 1 — base mannequin   (PixAI txt2img + 9k9base + ControlNet)
 Stage 2 — sketch pass      (PixAI img2img + tapered ControlNet, no LoRA)
 Stage 3 — character        (PixAI img2img + character LoRA from sheet)
 Stage 4 — critique         (Claude review)
-"""
 
-# Phase 1C Stage 2 negative — short booru-token form per spec.
-# Construction-style drift (which the long Stage 1 negative addresses)
-# is no longer a Stage 2 concern: this stage starts from a clean Stage 1
-# mannequin, so we only need to ward off the universal failure modes.
-_STAGE_2_NEGATIVE = (
-    "worst_quality, bad_quality, photo_realistic, "
-    "finished_illustration, color, multiple_figures"
-)
+Phase 3: each stage writes its assembled createGenerationTask payload to
+`runs/<run_id>/stage_<n>_request.json` before the PixAI call, plus a
+manifest line into `runs/<run_id>/manifest.jsonl`. Token-budget breaches
+and unknown-booru-tag warnings land in the manifest too.
+"""
 
 import json
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 
 from app import loras
@@ -32,16 +29,136 @@ from app.pixai import (
     poll_until_complete,
 )
 from app.pixai.prompt_rewriter import to_booru
+from app.ui.taxonomy import archetype_core, pose_core, subject_anchor
+
+from .errors import StageError
+
+# Phase 1C Stage 2 negative — short booru-token form per spec.
+# Construction-style drift (which the long Stage 1 negative addresses)
+# is no longer a Stage 2 concern: this stage starts from a clean Stage 1
+# mannequin, so we only need to ward off the universal failure modes.
+_STAGE_2_NEGATIVE = (
+    "worst_quality, bad_quality, photo_realistic, "
+    "finished_illustration, color, multiple_figures"
+)
+
+# Phase 3 logging — `runs/` is repo-relative, gitignored. Each stage writes
+# the assembled request + a manifest line so a run is reproducible
+# offline.
+RUNS_ROOT = Path(__file__).resolve().parent.parent.parent / "runs"
+
+# One-shot session debug print: the very first assembled request a
+# session emits is also dumped to stdout so an interactive operator
+# can sanity-check parameters without opening the JSON file.
+_FIRST_LOG_EMITTED = False
+
+# Token budgets per stage. Values are SOFT — runs proceed even on
+# breach; the warning lands in the manifest.
+_TOKEN_BUDGETS = {
+    1: {"hard": 12, "ideal": (1, 12)},
+    2: {"hard": 20, "ideal": (1, 20)},
+    3: {"hard": 50, "ideal": (30, 40)},
+}
+
+
+def _count_prompt_tokens(prompt: str) -> int:
+    """Comma-split token count, ignoring empty parts."""
+    if not prompt:
+        return 0
+    return sum(1 for t in prompt.split(",") if t.strip())
+
+
+def _log_assembled_request(
+    *,
+    run_id: str | None,
+    stage: int,
+    params_dict: dict,
+    extra: dict | None = None,
+) -> None:
+    """Write the assembled PixAI payload and any token-budget /
+    tag-validity warnings to runs/<run_id>/. No-op if `run_id is None`
+    (so direct-from-test stage calls don't litter the FS).
+
+    The first assembled request per process is also printed to stdout —
+    one-shot — so an interactive operator can verify parameters without
+    opening files.
+    """
+    global _FIRST_LOG_EMITTED
+    if run_id is None:
+        return
+    run_dir = RUNS_ROOT / run_id
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    # Token-budget evaluation
+    budget = _TOKEN_BUDGETS.get(stage, {})
+    positive = params_dict.get("prompts", "")
+    token_count = _count_prompt_tokens(positive)
+    budget_warnings: list[str] = []
+    hard = budget.get("hard")
+    ideal = budget.get("ideal")
+    if hard is not None and token_count > hard:
+        budget_warnings.append(
+            f"Stage {stage} positive prompt has {token_count} tokens "
+            f"(hard cap {hard}). Soft warning — run continues."
+        )
+    if (
+        ideal is not None
+        and token_count > 0
+        and not (ideal[0] <= token_count <= ideal[1])
+        and not budget_warnings
+    ):
+        budget_warnings.append(
+            f"Stage {stage} positive prompt has {token_count} tokens "
+            f"(ideal range {ideal[0]}-{ideal[1]})."
+        )
+
+    # Tag-validity check (best-effort; empty-cache returns no warnings)
+    try:
+        from app.pixai.tag_validator import validate_tokens
+        unknown_tags = validate_tokens(positive)
+    except Exception as e:  # never let validation break a run
+        unknown_tags = []
+        budget_warnings.append(f"tag-validator error: {e}")
+
+    request_path = run_dir / f"stage_{stage}_request.json"
+    request_path.write_text(
+        json.dumps(params_dict, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    manifest_path = run_dir / "manifest.jsonl"
+    manifest_entry = {
+        "ts": datetime.now().isoformat(),
+        "stage": stage,
+        "token_count_positive": token_count,
+        "budget_warnings": budget_warnings,
+        "unknown_booru_tags": unknown_tags,
+        "request_file": str(request_path.name),
+    }
+    if extra:
+        manifest_entry.update(extra)
+    with open(manifest_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(manifest_entry, ensure_ascii=False) + "\n")
+
+    if not _FIRST_LOG_EMITTED:
+        _FIRST_LOG_EMITTED = True
+        print(
+            f"[pipeline] First assembled request this session — "
+            f"stage {stage}, run_id={run_id}, "
+            f"{token_count} positive tokens, "
+            f"{len(budget_warnings)} budget warnings, "
+            f"{len(unknown_tags)} unknown booru tags. "
+            f"Full payload: {request_path}",
+            flush=True,
+        )
 
 # PixAI web UI's default Booster — appended to the positive prompt by the
-# server when qualityTag is set.
+# server when qualityTag is set. Phase 3: gated behind allow_booster=True
+# on TaskParameters; the three real stages keep quality_tag=None.
 QUALITY_BOOSTER = {
     "prefix": "",
     "suffix": "masterpiece, best quality, amazing quality, very aesthetic, absurdres",
 }
-from app.ui.taxonomy import archetype_core, pose_core, subject_anchor
-
-from .errors import StageError
 
 
 @dataclass
@@ -88,6 +205,7 @@ def stage_1_base_mannequin(
     high_priority: bool = False,
     seed: int | None = None,
     timeout: float = 180.0,
+    run_id: str | None = None,
 ) -> StageResult:
     """Run free txt2img with the 9k9base LoRA. Skeleton/depth are OPTIONAL
     overrides — the LoRA was trained to produce well-posed mannequins on
@@ -152,6 +270,10 @@ def stage_1_base_mannequin(
         quality_tag=None,
     )
 
+    _log_assembled_request(
+        run_id=run_id, stage=1, params_dict=params.to_pixai_dict(),
+    )
+
     task = _run_task(pixai_client, params, timeout=timeout)
     media_ids = media_ids_from_task(task)
     if not media_ids:
@@ -168,6 +290,7 @@ def stage_2_sketch_pass(
     output_dir: Path,
     high_priority: bool = False,
     timeout: float = 180.0,
+    run_id: str | None = None,
 ) -> StageResult:
     """Phase 1B: pure img2img refinement on the Stage 1 base, no LoRA.
 
@@ -209,6 +332,10 @@ def stage_2_sketch_pass(
         quality_tag=None,
     )
 
+    _log_assembled_request(
+        run_id=run_id, stage=2, params_dict=params.to_pixai_dict(),
+    )
+
     task = _run_task(pixai_client, params, timeout=timeout)
     media_ids = media_ids_from_task(task)
     if not media_ids:
@@ -231,6 +358,7 @@ def stage_3_character_finalization(
     prior_critiques: list[dict] | None = None,
     high_priority: bool = False,
     timeout: float = 180.0,
+    run_id: str | None = None,
 ) -> StageResult:
     """Phase 1B: character finalization via the per-sheet character LoRA.
 
@@ -310,6 +438,11 @@ def stage_3_character_finalization(
         priority=(1000 if high_priority else None),
         model_id=char_lora.base_model_id,
         quality_tag=None,
+    )
+
+    _log_assembled_request(
+        run_id=run_id, stage=3, params_dict=params.to_pixai_dict(),
+        extra={"architecture": char_lora.architecture},
     )
 
     task = _run_task(pixai_client, params, timeout=timeout)

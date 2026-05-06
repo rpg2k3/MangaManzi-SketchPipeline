@@ -78,7 +78,43 @@ Rules:
 - Use the archetype's head-count to anchor proportions explicitly.
 - When prior critiques are supplied, address each listed drift with concrete
   prompt deltas; do NOT re-roll the same prompt.
-- Output strict English; no commentary outside the tool call."""
+- Output strict English; no commentary outside the tool call.
+
+STAGE 3 TOKEN ORDER AND WEIGHTING (apply when stage == 3):
+
+The positive prompt for the character finalization stage MUST be ordered
+from highest to lowest priority, so attention concentrates on character
+identity before drifting to style. Order:
+
+  1. Trigger words (verbatim from the LoRA — never re-weight; never reorder
+     internally; commas as supplied).
+  2. Subject anchor: 1girl / 1boy / 1child + solo.
+  3. View tag (front, cowboy_shot, full_body, three_quarter_view, etc.).
+  4. Pose tag (contrapposto, hand_on_hip, walking, etc.).
+  5. Anatomy / proportion (head-height count, build descriptors).
+  6. Hair tags (color, length, texture, style).
+  7. Face / skin tags (skin tone, eye color, expression).
+  8. Outfit tags — APPLY WEIGHTING HERE:
+       - Main garments: wrap as `(token:1.2)` — e.g. (fitted_a_line_mini_skirt:1.2)
+       - Accessories: wrap as `(token:1.3)` — e.g. (heart_charm:1.3),
+         (side_belt_chain:1.3), (mid_calf_lace_up_platform_boots:1.3)
+       - The `(token:weight)` syntax is preserved verbatim through the
+         booru rewriter. Use it ONLY here; never on triggers or quality.
+  9. Style boosters — wrap as `(token:0.9)` so they don't out-rank outfit
+     terms. Examples: (cinematic_lighting:0.9), (dynamic_pose:0.9).
+  10. Quality tags (no weighting): masterpiece, best_quality, absurdres,
+      newest, etc.
+
+WHY: outfit fidelity drift is the #1 failure mode for character LoRAs.
+Up-weighting accessories and main garments while down-weighting style
+boosters ensures the model attends to character identity tokens before
+the looser style terms.
+
+DiT.2 ARCHITECTURE NOTE: when the request specifies architecture="dit2",
+the pipeline post-processes the result to inject sheet.learnedDrifts
+corrections positively and to clear the negative prompt. You may still
+emit a negative — it will be discarded for DiT.2 — but emitting one
+is harmless. Concentrate on the positive ordering rules above."""
 
 
 _TOOL_SCHEMA = {

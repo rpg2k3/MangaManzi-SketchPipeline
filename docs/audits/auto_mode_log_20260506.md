@@ -40,6 +40,35 @@
 - **Confirmed deferred to D2** (already tracked in Phase 1 closeout). Resolution path: Kero email follow-up (drafted in this session) asking explicitly which preprocessor types the API exposes for reference-image content conditioning.
 - **No code changes** under Phase 2.4. No invented API fields per guardrail.
 
+### 2026-05-06T08:38:00Z — Phase 2 commit
+- `becc8cc` (origin/pixAI). 10 files changed, 904 insertions(+), 42 deletions(-).
+- 60 tests passing.
+
+### 2026-05-06T08:40:00Z — Phase 3 — starting
+Plan order (independent edges first to keep commits clean):
+1. Booster gate in TaskParameters (`allow_booster=True` required to include `qualityTag`).
+2. Tag-validator module — best-effort Danbooru download, graceful fallback, cache to data/danbooru_tags.csv.
+3. Stage 3 token weight ordering rules in `_SYSTEM` prompt.
+4. Assembled-request logging — stages write `runs/<run_id>/stage_<n>_request.json` before each PixAI call; first per-session also goes to stdout.
+5. Token budget warnings written into `runs/<run_id>/manifest.json`.
+6. Tests for all of the above.
+
+### 2026-05-06T11:14:00Z — Phase 3.3 Danbooru tag cache populated
+- Successfully downloaded **100,000 Danbooru tags** (sorted by `post_count` desc) in 44.5s via `app.pixai.tag_validator.download_danbooru_tags()`.
+- Cache written to `data/danbooru_tags.csv` (2.0 MB, 100,001 lines including header).
+- Cache file is gitignored — regenerable any time via `scripts/download_danbooru_tags.py`.
+
+### 2026-05-06T11:30:00Z — Phase 3 — implementation complete
+- `app/pixai/models.py`: `TaskParameters.allow_booster: bool = False` added. `to_pixai_dict()` drops `qualityTag` and emits a `UserWarning` when `quality_tag is not None and allow_booster is False`. The three real stages keep `quality_tag=None` so this is purely a defense against accidental Booster injection.
+- `app/pixai/tag_validator.py`: new module — `download_danbooru_tags()`, `load_cache()`, `validate_tokens()`, `seed_cache_for_tests()`. Booru-shape regex (`^[a-z0-9_]+$`) so natural-language clauses and `(token:weight)` syntax are passed through without false alarms. Cache miss returns empty unknown-list (no spurious warnings when offline).
+- `scripts/download_danbooru_tags.py`: CLI wrapper for cache rebuild.
+- `app/claude/prompts.py`: `_SYSTEM` extended with the Stage 3 token-order-and-weighting rules — trigger words → subject → view → pose → anatomy → hair → face/skin → outfit (main `(token:1.2)`, accessories `(token:1.3)`) → style boosters `(token:0.9)` → quality tags. Plus a DiT.2 architecture note explaining that emitted negatives are discarded post-process.
+- `app/pipeline/stages.py`: imports hoisted to the top (was a fragile mid-file second block). `RUNS_ROOT = repo/runs/`. New `_log_assembled_request(run_id, stage, params_dict, extra=None)` helper writes the assembled payload to `runs/<run_id>/stage_<n>_request.json` and a manifest line to `runs/<run_id>/manifest.jsonl` carrying `token_count_positive`, `budget_warnings`, `unknown_booru_tags`, `request_file`. First call per session also prints a one-shot stdout summary so an interactive operator can sanity-check without opening files. `run_id` is plumbed through all three stages and the orchestrator (initial_run_id = scene_id; iter_run_id = `<scene_id>_iter_<n>`).
+- Token budgets: Stage 1 hard cap 12, Stage 2 hard cap 20, Stage 3 hard cap 50 (ideal range 30–40). All warnings are SOFT — runs proceed; warning lands in manifest.
+- `runs/` dir added to `.gitignore` (per-run debug artifacts, not source).
+- `tests/test_phase3.py`: 14 new tests covering booster gate (3), tag validator (5), assembled-request logging + token budgets (6).
+- Test suite: **74 passed, 0 failed, 0 skipped, 2 expected warnings**.
+
 ---
 
 ## STATE WHEN USER RETURNS

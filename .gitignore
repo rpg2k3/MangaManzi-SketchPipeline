@@ -34,6 +34,12 @@ data/sheets/*.json
 # Canonical project sheets are committed; user-generated sheets stay local.
 !data/sheets/faye_lyn.json
 data/debug/
+# Phase 3 booru-tag cache — regenerable via scripts/download_danbooru_tags.py.
+data/danbooru_tags.csv
+
+# === Phase 3 per-run manifests (assembled requests, token-budget warnings, ===
+# === tag-validity warnings) — local debug artifacts, not source. =============
+runs/
 
 # === Cost logs (usage patterns + potentially sensitive) ===
 logs/
