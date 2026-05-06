@@ -71,6 +71,58 @@ Plan order (independent edges first to keep commits clean):
 
 ---
 
+### 2026-05-06T11:35:00Z — Phase 3 commit
+- `0685380` (origin/pixAI). 9 files changed, 639 insertions, 16 deletions.
+- 74 tests passing.
+
+### 2026-05-06T11:42:00Z — Kero email drafted
+- `docs/correspondence/kero_phase2_followup_20260506.md`. Singular focus on IP-Adapter / Reference-Only / reference-content preprocessor (D2). Holds back the controlNet end-timing question (D1) for a later email per "the Kero follow-up question" (singular) wording in the prompt.
+- Awaiting user review before send. Tone matches Kero's prior informal/technical register.
+
+### 2026-05-06T11:45:00Z — Closeout files written
+- `docs/audits/phase2_closeout_20260506.md`
+- `docs/audits/phase3_closeout_20260506.md`
+- Same permanent-reference pattern as `phase0_audit_*.md` and `phase1_closeout_*.md`. Do not edit after final commit.
+
+---
+
 ## STATE WHEN USER RETURNS
 
-(populated at session end)
+### What was completed
+
+- **Phase 2** (commit `becc8cc`): outfit consistency check (boots/hosiery/belt/skirt/arm-coverage/added-elements) wired into Stage 4 critique with reference-image plumbing from `sheet.referenceAnchors[0].path`; consecutive in-scene drift escalation (`promote_consecutive_drifts`); auto-regenerate loop in the orchestrator with `max_iterations=3` and `drift_severity_threshold="high"`; severity ladder helper that aliases `"high" → "major"`. 14 new tests, 60/60 passing at commit time.
+- **Phase 3** (commit `0685380`): booster gate (`TaskParameters.allow_booster: bool = False`); booru-tag validator with 100k Danbooru tags cached at `data/danbooru_tags.csv` (gitignored); Stage 3 token-order-and-weighting rules in `_SYSTEM` (trigger → subject → view → pose → anatomy → hair → face/skin → outfit-with-up-weights → style-down-weights → quality); per-run assembled-request logging to `runs/<run_id>/stage_<n>_request.json` + `manifest.jsonl`; soft token-budget warnings (Stage 1≤12, Stage 2≤20, Stage 3 ideal 30-40 cap 50); imports hoisted to top of `stages.py`. 14 new tests, 74/74 passing at commit time.
+- **Auto-mode log** committed at session start (`d92bf0d`), updated inline during work, finalized in this final commit.
+- **Kero email draft** at `docs/correspondence/kero_phase2_followup_20260506.md`, ready for the user to review and send.
+- **Phase 2 closeout** at `docs/audits/phase2_closeout_20260506.md`.
+- **Phase 3 closeout** at `docs/audits/phase3_closeout_20260506.md`.
+
+### What is blocked (with unblockers)
+
+| Block | Why | Unblock |
+|---|---|---|
+| Phase 4 benchmark suite | Auto-mode guardrail forbids running it (real PixAI generation calls); D4 also unresolved | Human supervision + D4 resolved |
+| D4 — Faye-Lyn character LoRA `linkedLoraId` | User hasn't supplied the PixAI model id yet | User pastes id; user runs `loras.register(LoRA(name="faye_lyn", pixai_model_id=..., architecture="dit2", ...))` |
+| D2 — Reference-image conditioning (IP-Adapter / Reference-Only) | PixAI API surface unknown; no probe path without generation calls | Kero reply (email draft ready to send) |
+| D1 — ControlNet end-timing (`controlEnd: 0.85`) | No field exposed in current GraphQL schema | Held back from this email; raise in a separate later thread |
+| Live verification of auto-regen loop end-to-end | Mock harness covers it; real PixAI run blocked on D4 | D4 + Phase 4 |
+
+### Recommended order of attention when user returns
+
+1. **Read `docs/correspondence/kero_phase2_followup_20260506.md`** and send if approved. This is the single biggest unblocker — D2 (reference-image conditioning) is the structural gap most directly responsible for the "recognizable but drifts" symptom that the entire upgrade pass was aimed at.
+2. **Supply the Faye-Lyn LoRA PixAI id (D4)**. Register it via `loras.register(...)` with `architecture="dit2"` per project notes. Once registered, the entire pipeline becomes runnable end-to-end against live PixAI for the first time.
+3. **Run `scripts/preview_phase1b_params.py`** with the real Faye-Lyn LoRA (not the synthetic demo entry) — verifies the Stage 3 assembled dict before any live generation.
+4. **Optionally rebuild the Danbooru tag cache** if `data/danbooru_tags.csv` is missing locally: `.venv/bin/python scripts/download_danbooru_tags.py` (~45s for 100k tags).
+5. **Plan Phase 4 benchmarks** — the spec is in the original auto-mode prompt (6 reference generations × old vs new × structured critique scoring). Implementation deferred per guardrail; pick up when D4 is resolved.
+6. **(Later)** Send a separate, focused email to Kero on D1 (controlNet end-timing) once D2 is resolved.
+
+### Commits made in this session
+
+| Commit | Purpose |
+|---|---|
+| `d92bf0d` | Auto-mode log: session start (empty shell) |
+| `becc8cc` | Phase 2: outfit critique, drift escalation, auto-regenerate loop, IP-Adapter discovery |
+| `0685380` | Phase 3: prompt logging, token budget, tag validity, weight ordering, booster gate |
+| _(this commit)_ | Auto-mode session complete: phase 2, phase 3, kero draft |
+
+All pushed to `origin/pixAI`. No force pushes, no history rewrites, no PixAI generation calls.
