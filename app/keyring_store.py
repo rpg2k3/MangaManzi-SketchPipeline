@@ -1,5 +1,7 @@
 """OS-native secure storage for API keys using keyring."""
 
+import sys
+
 import keyring
 
 SERVICE_NAME = "9LivesK9"
@@ -12,7 +14,35 @@ def store_key(provider: str, api_key: str):
 
 
 def get_key(provider: str) -> str | None:
-    val = keyring.get_password(SERVICE_NAME, provider)
+    """Return the stored key, or None if missing or unreadable.
+
+    A keyring entry written by another tool can carry bytes that
+    `keyring`'s SecretService backend can't UTF-8 decode (observed:
+    UnicodeDecodeError on byte 0x93 — a smart-quote-shaped byte). In
+    that case we treat the entry as missing so the app falls through
+    to the onboarding flow instead of crashing at startup. The user
+    can then re-enter the key, which overwrites the corrupt entry.
+    """
+    try:
+        val = keyring.get_password(SERVICE_NAME, provider)
+    except UnicodeDecodeError as e:
+        print(
+            f"[keyring] {provider}: stored value is not valid UTF-8 "
+            f"({e}). Treating as missing — please re-enter the key in "
+            "the Settings tab; that will overwrite the corrupt entry.",
+            file=sys.stderr,
+            flush=True,
+        )
+        return None
+    except Exception as e:
+        # Don't let any keyring backend exception crash launch.
+        print(
+            f"[keyring] {provider}: read failed ({type(e).__name__}: {e}). "
+            "Treating as missing.",
+            file=sys.stderr,
+            flush=True,
+        )
+        return None
     return val if val else None
 
 
