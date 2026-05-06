@@ -16,8 +16,14 @@ def test_9k9base_is_locked_and_seeded():
     assert base.architecture == "illustrious"
     assert base.used_in_stage == 1
     assert "9k9base" in base.trigger_words
-    assert "construction lines" in base.positive_append
+    # Phase 1C: _POS_9K9BASE dead code removed. positive_append is now ""
+    # (the dataclass default) — Stage 1 prompt assembly never used it.
+    assert base.positive_append == ""
     assert "nsfw" in base.default_negative
+    # Phase 1C: Stage 1 negative uses underscored booru tokens.
+    assert "worst_quality" in base.default_negative
+    assert "face_features" in base.default_negative
+    assert "photo_realistic" in base.default_negative
 
 
 def test_register_replaces_unlocked_entries():

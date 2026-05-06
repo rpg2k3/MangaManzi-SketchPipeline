@@ -75,9 +75,12 @@ def build_stage_1_params(*, archetype: str, view: str, pose: str) -> TaskParamet
 
 def build_stage_2_params(*, base_media_id: str) -> TaskParameters:
     base = loras.get("9k9base")
+    # Mirror app.pipeline.stages._STAGE_2_NEGATIVE so the preview reflects
+    # what the real pipeline will send.
+    from app.pipeline.stages import _STAGE_2_NEGATIVE
     return TaskParameters(
         prompts="9k9base, refined pencil sketch, clean construction lines",
-        negative_prompts=base.default_negative,
+        negative_prompts=_STAGE_2_NEGATIVE,
         loras=[],
         media_id=base_media_id,
         strength=0.40,
@@ -100,15 +103,24 @@ def build_stage_3_params(
     char_triggers = ", ".join(triggers) if isinstance(triggers, list) else str(triggers)
     char_weight = float(sheet.get("loraWeight") or 0.75)
 
-    # Stage 3 normally calls Claude to compose the prompt. For this preview
-    # we emit a representative concatenation showing what the assembled
-    # call would carry — Phase 1C wires the actual DiT.2/SDXL prompt fork.
-    placeholder_positive = (
-        f"{char_triggers or '(no_triggers_yet)'}, "
-        "1girl, solo, full_body, contrapposto, "
-        "[Phase 1C will inject sheet.outfitVariants[0].tags + learnedDrifts here]"
+    # Stage 3 normally calls Claude to compose the positive prompt; the
+    # negative is built deterministically post-process. For this preview
+    # we substitute Claude with a fixed positive and run the architecture
+    # fork from app.claude.prompts._apply_architecture_handling so the
+    # printed prompt accurately reflects what Phase 1C will send.
+    from app.claude.prompts import _apply_architecture_handling
+    fake_claude_result = {
+        "prompts": (
+            f"{char_triggers or '(no_triggers_yet)'}, "
+            "1girl, solo, full_body, contrapposto"
+        ),
+        "negative_prompts": "(claude-generated negative — discarded for known archs)",
+    }
+    forked = _apply_architecture_handling(
+        dict(fake_claude_result), char_lora.architecture, sheet
     )
-    placeholder_negative = "(empty for DiT.2; SDXL template will be built in Phase 1C)"
+    placeholder_positive = forked["prompts"]
+    placeholder_negative = forked["negative_prompts"]
 
     return TaskParameters(
         prompts=placeholder_positive,

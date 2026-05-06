@@ -1,10 +1,19 @@
 """Independently callable pipeline stages.
 
 Stage 1 — base mannequin   (PixAI txt2img + 9k9base + ControlNet)
-Stage 2 — sketch pass      (PixAI img2img + sketch_lora)
+Stage 2 — sketch pass      (PixAI img2img + tapered ControlNet, no LoRA)
 Stage 3 — character        (PixAI img2img + character LoRA from sheet)
 Stage 4 — critique         (Claude review)
 """
+
+# Phase 1C Stage 2 negative — short booru-token form per spec.
+# Construction-style drift (which the long Stage 1 negative addresses)
+# is no longer a Stage 2 concern: this stage starts from a clean Stage 1
+# mannequin, so we only need to ward off the universal failure modes.
+_STAGE_2_NEGATIVE = (
+    "worst_quality, bad_quality, photo_realistic, "
+    "finished_illustration, color, multiple_figures"
+)
 
 import json
 from dataclasses import dataclass
@@ -84,9 +93,9 @@ def stage_1_base_mannequin(
     overrides — the LoRA was trained to produce well-posed mannequins on
     its own, and adding ControlNet by default suppresses its style.
 
-    Prompt assembly order (from spec):
-      [subject anchor] + [archetype proportions] + [view] + [pose]
-      + [9k9base triggers] + [9k9base positive_append] + [isolation]
+    Prompt assembly order:
+      [subject anchor] + [archetype proportions] + [pose]
+      + [9k9base triggers] + [minimal style support] + [white_background]
     """
     base = loras.get("9k9base")
 
@@ -185,7 +194,7 @@ def stage_2_sketch_pass(
 
     params = TaskParameters(
         prompts=stage_2_prompt,
-        negative_prompts=base.default_negative,
+        negative_prompts=_STAGE_2_NEGATIVE,
         loras=[],
         media_id=base_media_id,
         strength=0.40,
@@ -268,8 +277,13 @@ def stage_3_character_finalization(
     else:
         char_triggers = str(triggers)
 
+    # Phase 1C: pass the character LoRA's architecture so generate_prompt
+    # can fork its post-processing — DiT.2 routes drift corrections into
+    # the positive prompt and clears the negative; SDXL/Illustrious uses
+    # the deterministic SDXL negative template + drift identifiers.
     prompt_data = generate_prompt(
         api_key=anthropic_api_key,
+        architecture=char_lora.architecture,
         archetype=_archetype_dict(sheet),
         view=view,
         pose=pose,

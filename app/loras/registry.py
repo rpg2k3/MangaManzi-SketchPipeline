@@ -46,19 +46,14 @@ class LoRA:
     architecture: LoRAArchitecture = "unknown"
 
 
-# P18: drastically simplified. The previous long negative was stacking
-# band-aids for failures the new tight prompt no longer produces. Reference
-# web-UI tests achieved clean output with an empty negative — we keep just
-# enough to ward off the most obvious failure modes.
+# Phase 1C Stage 1 negative — underscored booru tokens, Phase 1C spec.
+# (`_POS_9K9BASE` removed: it was dead code. Stage 1 prompt assembly never
+# used it, and the comment chain in stages.py noted that "blueprint style /
+# technical drawing" tokens pulled the model toward architectural diagrams.)
 _NEG_9K9BASE = (
-    "nsfw, worst quality, bad quality, low quality, lowres, "
-    "bad anatomy, multiple figures, "
-    "clothing, hair, face, shading, finished anime"
-)
-
-_POS_9K9BASE = (
-    "flat line drawing, pencil sketch, construction lines visible, "
-    "no shading, no rendering, blueprint style, technical drawing"
+    "nsfw, worst_quality, bad_quality, low_quality, lowres, "
+    "bad_anatomy, multiple_figures, clothing, hair, face_features, "
+    "shading, finished_illustration, color, photo_realistic"
 )
 
 NINEK9BASE = LoRA(
@@ -83,7 +78,6 @@ NINEK9BASE = LoRA(
     base_model="Illustrious-XL-v1.0",
     base_model_id="1844843519625072849",
     used_in_stage=1,
-    positive_append=_POS_9K9BASE,
     default_negative=_NEG_9K9BASE,
     locked=True,
     architecture="illustrious",

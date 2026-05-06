@@ -19,22 +19,6 @@ from app.pixai import PixAIClient
 
 
 @pytest.fixture
-def sketch_lora_registered():
-    sketch = LoRA(
-        name="sketch_lora",
-        pixai_model_id="sketch-id-123",
-        purpose="sketch finishing",
-        trigger_words="sketch_style",
-        weight=1.0,
-        base_model="Illustrious-XL-v1.0",
-        base_model_id="1844843519625072849",
-        used_in_stage=2,
-    )
-    loras.register(sketch)
-    yield sketch
-
-
-@pytest.fixture
 def char_lora_registered():
     """Phase 1B: Stage 3 looks up the character LoRA by linkedLoraId via
     loras.find_by_pixai_id(). Tests that exercise Stage 3 must register a
@@ -116,15 +100,15 @@ def test_stage_1_runs_free_with_no_skeleton_or_depth(
         f"qualityTag must be omitted (Booster opposes the LoRA's training); got {params.get('qualityTag')!r}"
     )
 
-    # P18: drastically simplified negative — only the core safety / failure
-    # mode tokens remain. The previous large negative was stacking band-aids
-    # for failures the new tight prompt no longer produces.
+    # Phase 1C: Stage 1 negative uses underscored booru tokens — adds
+    # `face_features` (replaces ambiguous `face`), plus `finished_illustration`,
+    # `color`, and `photo_realistic` to keep the LoRA's flat-pencil aesthetic.
     neg = params["negativePrompts"]
     assert neg == (
-        "nsfw, worst quality, bad quality, low quality, lowres, "
-        "bad anatomy, multiple figures, "
-        "clothing, hair, face, shading, finished anime"
-    ), f"negative does not match P18 simplified template: {neg!r}"
+        "nsfw, worst_quality, bad_quality, low_quality, lowres, "
+        "bad_anatomy, multiple_figures, clothing, hair, face_features, "
+        "shading, finished_illustration, color, photo_realistic"
+    ), f"negative does not match Phase 1C Stage 1 template: {neg!r}"
 
     # High Priority is OFF by default → priority field must be absent.
     assert "priority" not in params, f"priority must be omitted in standard-queue runs: {params.get('priority')!r}"
@@ -197,15 +181,15 @@ def test_stage_1_uses_controlnet_when_skeleton_provided(
     assert any(cn["type"] == "openpose" for cn in params["controlNets"])
 
 
-@pytest.mark.skip(reason="Phase 1A: Stage 2 is a pass-through placeholder. "
-                         "Phase 1B will restore Stage 2 (pure img2img, no LoRA, "
-                         "tapered ControlNet) and this test will be rewritten "
-                         "against that behavior.")
-def test_stage_2_attaches_controlnet_from_base_media_id(
-    respx_pixai, fake_pixai_responses, sample_sheet, tmp_data_root, sketch_lora_registered,
+def test_stage_2_pure_img2img_with_tapered_controlnet(
+    respx_pixai, fake_pixai_responses, sample_sheet, tmp_data_root,
 ):
-    """Stage 2 should auto-derive ControlNet (openpose + depth) from the
-    Stage 1 output mediaId — PixAI runs the preprocessor server-side.
+    """Phase 1B/1C contract for Stage 2:
+    - img2img with mediaId from the Stage 1 output
+    - no LoRA (pure refinement)
+    - ControlNet tapered: openpose 0.85, depth 0.55
+    - CFG 5.5, 24 steps, strength 0.40
+    - Stage 2 negative is the short Phase 1C template
     """
     base_media = "stage1-output-media-XYZ"
     with PixAIClient(api_key="sk-test") as client:
@@ -218,10 +202,30 @@ def test_stage_2_attaches_controlnet_from_base_media_id(
         c for c in respx_pixai.calls
         if c.request.method == "POST" and "createGenerationTask" in json.loads(c.request.content)["query"]
     ]
+    assert len(create_calls) == 1
     params = json.loads(create_calls[0].request.content)["variables"]["parameters"]
-    assert params["mediaId"] == base_media  # img2img init
-    types_to_media = {cn["type"]: cn["mediaId"] for cn in params["controlNets"]}
-    assert types_to_media == {"openpose": base_media, "depth": base_media}
+    # img2img init from Stage 1 output
+    assert params["mediaId"] == base_media
+    # ControlNet tapered to 0.85/0.55, both attached to the Stage 1 mediaId
+    by_type = {cn["type"]: cn for cn in params["controlNets"]}
+    assert set(by_type) == {"openpose", "depth"}
+    assert by_type["openpose"]["mediaId"] == base_media
+    assert by_type["depth"]["mediaId"] == base_media
+    assert by_type["openpose"]["weight"] == 0.85
+    assert by_type["depth"]["weight"] == 0.55
+    # No LoRA — Stage 2 is pure img2img refinement
+    assert "lora" not in params or params["lora"] == {}
+    # Phase 1B per-stage params
+    assert params["cfgScale"] == 5.5
+    assert params["samplingSteps"] == 24
+    assert params["strength"] == 0.4
+    # Phase 1C short Stage 2 negative
+    assert params["negativePrompts"] == (
+        "worst_quality, bad_quality, photo_realistic, "
+        "finished_illustration, color, multiple_figures"
+    )
+    # Booster still off
+    assert "qualityTag" not in params
 
 
 def test_stage_3_attaches_controlnet_from_sketch_media_id(
@@ -259,30 +263,6 @@ def test_stage_3_attaches_controlnet_from_sketch_media_id(
     assert params["strength"] == 0.6
 
 
-@pytest.mark.skip(reason="Phase 1A: sketch_lora was never trained (confirmed by "
-                         "user). The 'requires sketch_lora' contract is permanently "
-                         "removed. Phase 1B's restructured Stage 2 has no LoRA, so "
-                         "this test will be deleted then.")
-def test_stage_2_requires_sketch_lora(
-    respx_pixai, fake_pixai_responses, sample_sheet, tmp_data_root,
-):
-    # Make sure sketch_lora is NOT registered for this test
-    import app.loras.registry as reg
-    saved = reg._REGISTRY.pop("sketch_lora", None)
-    try:
-        with PixAIClient(api_key="sk-test") as client:
-            with pytest.raises(StageError) as ei:
-                stage_2_sketch_pass(
-                    pixai_client=client,
-                    base_media_id="media-1",
-                    output_dir=tmp_data_root / "out",
-                )
-        assert ei.value.stage == 2
-    finally:
-        if saved is not None:
-            reg._REGISTRY["sketch_lora"] = saved
-
-
 def test_stage_3_requires_linked_lora(
     respx_pixai, fake_pixai_responses, sample_sheet, tmp_data_root, patched_claude,
 ):
@@ -316,17 +296,18 @@ def test_stage_4_critique_returns_structured_dict(
     assert saved_critique.exists()
 
 
-@pytest.mark.skip(reason="Phase 1A: Stage 2 is a placeholder that issues no "
-                         "PixAI call, so this test's '3 createGenerationTask "
-                         "calls' assertion fails. Phase 1B will restore Stage "
-                         "2's PixAI call (pure img2img, no LoRA, tapered "
-                         "ControlNet) and this test will be updated.")
 def test_full_pipeline_end_to_end_mocked(
     respx_pixai, fake_pixai_responses, sample_sheet,
-    tmp_data_root, patched_claude, sketch_lora_registered,
+    tmp_data_root, patched_claude, char_lora_registered,
 ):
-    """No skeleton supplied — Stage 1 runs free, Stages 2/3 derive ControlNet
-    from the prior stage's output mediaId."""
+    """Phase 1B/1C end-to-end contract:
+    - Stage 1 txt2img (no ControlNet, no skeleton supplied).
+    - Stage 2 img2img with tapered ControlNet (0.85/0.55), no LoRA.
+    - Stage 3 img2img with character LoRA + further-tapered ControlNet.
+    - Three createGenerationTask calls total.
+    - Stage 3 negative is the SDXL template (char_lora_registered fixture
+      sets architecture='illustrious').
+    """
     sheets.save(sample_sheet)
     req = PipelineRequest(
         sheet_id=sample_sheet["id"],
@@ -356,14 +337,32 @@ def test_full_pipeline_end_to_end_mocked(
     )
     # Stage 1 runs free
     assert "controlNets" not in s1_params
-    # Stages 2 and 3 inherit ControlNets from the previous stage's mediaId
-    assert {cn["type"] for cn in s2_params["controlNets"]} == {"openpose", "depth"}
+    # Stage 2: tapered ControlNet from Stage 1 mediaId, no LoRA, denoise 0.40
+    by_type_s2 = {cn["type"]: cn for cn in s2_params["controlNets"]}
+    assert set(by_type_s2) == {"openpose", "depth"}
     assert s2_params["mediaId"] == result.base.media_id
-    for cn in s2_params["controlNets"]:
-        assert cn["mediaId"] == result.base.media_id
+    assert by_type_s2["openpose"]["mediaId"] == result.base.media_id
+    assert by_type_s2["depth"]["mediaId"] == result.base.media_id
+    assert by_type_s2["openpose"]["weight"] == 0.85
+    assert by_type_s2["depth"]["weight"] == 0.55
+    assert "lora" not in s2_params or s2_params["lora"] == {}
+    assert s2_params["strength"] == 0.4
+    # Stage 3: further-tapered ControlNet from Stage 2 mediaId, char LoRA on
+    by_type_s3 = {cn["type"]: cn for cn in s3_params["controlNets"]}
+    assert set(by_type_s3) == {"openpose", "depth"}
     assert s3_params["mediaId"] == result.sketch.media_id
-    for cn in s3_params["controlNets"]:
-        assert cn["mediaId"] == result.sketch.media_id
+    assert by_type_s3["openpose"]["weight"] == 0.7
+    assert by_type_s3["depth"]["weight"] == 0.5
+    assert s3_params["lora"] == {"char_lora_id_12345": 0.9}
+    assert s3_params["strength"] == 0.6
+    # Phase 1C: char_lora_registered architecture='illustrious' →
+    # SDXL negative template. sample_sheet has empty learnedDrifts so just
+    # the base template appears.
+    assert s3_params["negativePrompts"] == (
+        "worst_quality, bad_quality, very_displeasing, displeasing, "
+        "oldest, artistic_error, lowres, jpeg_artifacts, censor, "
+        "watermark, bad_hands, bad_anatomy"
+    )
 
 
 def test_compose_corrected_prompt_pulls_recent_history(
