@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from app import loras
-from app.claude.critique import critique_image
+from app.critique.engine import run_critique
 from app.claude.prompts import generate_prompt
 from app.pixai import (
     ControlNetSpec,
@@ -329,16 +329,16 @@ def stage_4_critique(
     anthropic_api_key: str,
     output_dir: Path | None = None,
 ) -> dict:
-    expected = {
-        "archetype": _archetype_dict(sheet),
-        "sheet": sheet,
-        "scene": scene_description,
-    }
-    critique = critique_image(
-        api_key=anthropic_api_key,
+    """Phase 2: delegates to `app.critique.engine.run_critique` so the
+    reference-image resolution (sheet.referenceAnchors[0].path → Claude's
+    second image block) and outfit-consistency schema live in one place.
+    """
+    critique = run_critique(
         image_path=image_path,
-        expected=expected,
-        character_id=sheet.get("id", ""),
+        sheet=sheet,
+        scene_description=scene_description,
+        anthropic_api_key=anthropic_api_key,
+        manual_feedback=None,
     )
     if output_dir is not None:
         output_dir.mkdir(parents=True, exist_ok=True)

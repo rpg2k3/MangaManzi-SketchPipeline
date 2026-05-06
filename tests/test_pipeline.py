@@ -365,6 +365,197 @@ def test_full_pipeline_end_to_end_mocked(
     )
 
 
+@pytest.fixture
+def fake_critique_with_major_drift(monkeypatch):
+    """Override the patched_claude critique payload so every Stage 4 emits
+    one 'major' boot_silhouette drift — used to test the auto-regen loop.
+    """
+    payload = {
+        "drifts": [{"aspect": "boot_silhouette", "expected": "mid_calf",
+                    "observed": "knee_high", "severity": "major"}],
+        "successes": [],
+        "suggestedPromptDeltas": ["mid_calf_boots, lace_up_platform_boots"],
+    }
+    return payload
+
+
+@pytest.fixture
+def stateful_patched_claude(monkeypatch, fake_prompt_payload):
+    """Like patched_claude but lets each test set the critique payload via
+    `state["critique"]` and switch payloads partway through (for the
+    'clean critique on iter 2' test).
+    """
+    state = {
+        "critique": {
+            "drifts": [{"aspect": "boot_silhouette", "expected": "mid_calf",
+                        "observed": "knee_high", "severity": "major"}],
+            "successes": [],
+            "suggestedPromptDeltas": ["mid_calf_boots"],
+        },
+        "calls": {"emit_prompt": 0, "report_critique": 0},
+    }
+
+    def fake_call_with_tool(api_key, *, tool_name, **kwargs):
+        state["calls"][tool_name] = state["calls"].get(tool_name, 0) + 1
+        if tool_name == "report_critique":
+            return dict(state["critique"])
+        if tool_name == "emit_prompt":
+            return dict(fake_prompt_payload)
+        if tool_name == "emit_patch":
+            return {"operations": [], "audit_summary": "noop"}
+        if tool_name == "emit_scene_plan":
+            return {"subjects": [], "prompt_skeleton": "x", "suggested_control_nets": []}
+        raise RuntimeError(f"Unmocked tool: {tool_name}")
+
+    monkeypatch.setattr("app.claude.client.call_with_tool", fake_call_with_tool)
+    monkeypatch.setattr("app.claude.prompts.call_with_tool", fake_call_with_tool)
+    monkeypatch.setattr("app.claude.critique.call_with_tool", fake_call_with_tool)
+    monkeypatch.setattr("app.claude.sheets.call_with_tool", fake_call_with_tool)
+    monkeypatch.setattr("app.claude.scene.call_with_tool", fake_call_with_tool)
+    return state
+
+
+def test_auto_regen_loop_caps_at_max_iterations(
+    respx_pixai, fake_pixai_responses, sample_sheet,
+    tmp_data_root, stateful_patched_claude, char_lora_registered,
+):
+    """Phase 2: with a critique that ALWAYS surfaces a 'major' drift, the
+    loop should make exactly max_iterations Stage-3 calls — no infinite
+    loop, no extra runs."""
+    sheets.save(sample_sheet)
+    req = PipelineRequest(
+        sheet_id=sample_sheet["id"],
+        scene_description="cap_test",
+        view="front",
+        pose="contrapposto_classic",
+        max_iterations=3,
+        drift_severity_threshold="high",
+    )
+    result = run_pipeline(
+        req,
+        pixai_api_key="sk-pixai-test",
+        anthropic_api_key="sk-ant-test",
+    )
+    create_calls = [
+        c for c in respx_pixai.calls
+        if c.request.method == "POST" and "createGenerationTask" in json.loads(c.request.content)["query"]
+    ]
+    # Stage 1 (1) + Stage 2 (1) + Stage 3 initial (1) + Stage 3 iter_2 (1) + Stage 3 iter_3 (1) = 5
+    assert len(create_calls) == 5
+    # iterations records re-rolls only (initial run is not in this list)
+    assert len(result.iterations) == 2
+    assert [i["iter"] for i in result.iterations] == [2, 3]
+    # The drift persisted across all 3 critiques → consecutive promotion
+    assert any(p["aspect"] == "boot_silhouette" for p in result.promoted_drifts)
+
+
+def test_auto_regen_loop_breaks_on_clean_critique(
+    respx_pixai, fake_pixai_responses, sample_sheet,
+    tmp_data_root, stateful_patched_claude, char_lora_registered,
+):
+    """Phase 2: as soon as a critique no longer carries drifts at or above
+    the threshold, the loop exits. Iter 2's critique is clean → no iter 3.
+    """
+    sheets.save(sample_sheet)
+
+    # We need to flip the critique payload after the SECOND Stage-3 call.
+    # Track Stage-3 calls (each one triggers a subsequent Stage-4 critique)
+    # and switch to a clean payload for iteration 2's critique.
+    stage_3_count = {"n": 0}
+    original_handler = fake_pixai_responses["graphql_handler"]
+
+    def counting_handler(request):
+        body = json.loads(request.content)
+        if "mutation createGenerationTask" in body.get("query", ""):
+            params = body.get("variables", {}).get("parameters", {})
+            # Stage 3 is the only call that uses a non-empty `lora` dict in
+            # this fixture's setup (Stage 1 uses 9k9base; Stage 2 has no
+            # LoRA). We can use the lora dict's char id presence to detect.
+            if params.get("lora", {}).get("char_lora_id_12345") is not None:
+                stage_3_count["n"] += 1
+                if stage_3_count["n"] >= 2:
+                    # Iter 2's critique should be clean — flip the payload now
+                    stateful_patched_claude["critique"] = {
+                        "drifts": [],
+                        "successes": ["everything matches"],
+                        "suggestedPromptDeltas": [],
+                    }
+        return original_handler(request)
+
+    fake_pixai_responses["graphql_handler"] = counting_handler
+    respx_pixai.routes[0].mock(side_effect=counting_handler)
+
+    req = PipelineRequest(
+        sheet_id=sample_sheet["id"],
+        scene_description="break_test",
+        view="front",
+        pose="contrapposto_classic",
+        max_iterations=3,
+        drift_severity_threshold="high",
+    )
+    result = run_pipeline(
+        req,
+        pixai_api_key="sk-pixai-test",
+        anthropic_api_key="sk-ant-test",
+    )
+    # Initial Stage 3 + 1 re-roll = 2 Stage-3 calls. Iter 3 should NOT happen.
+    assert stage_3_count["n"] == 2
+    assert len(result.iterations) == 1
+    assert result.iterations[0]["iter"] == 2
+
+
+def test_auto_regen_loop_disabled_with_max_iterations_one(
+    respx_pixai, fake_pixai_responses, sample_sheet,
+    tmp_data_root, stateful_patched_claude, char_lora_registered,
+):
+    """max_iterations=1 preserves the original single-pass behavior — no
+    re-rolls regardless of critique severity."""
+    sheets.save(sample_sheet)
+    req = PipelineRequest(
+        sheet_id=sample_sheet["id"],
+        scene_description="single_pass",
+        view="front",
+        pose="contrapposto_classic",
+        max_iterations=1,
+        drift_severity_threshold="high",
+    )
+    result = run_pipeline(
+        req,
+        pixai_api_key="sk-pixai-test",
+        anthropic_api_key="sk-ant-test",
+    )
+    assert result.iterations == []
+    assert result.promoted_drifts == []
+
+
+def test_severity_threshold_below_drift_severity_skips_reroll(
+    respx_pixai, fake_pixai_responses, sample_sheet,
+    tmp_data_root, stateful_patched_claude, char_lora_registered,
+):
+    """If only minor drifts surface but threshold is 'high', no re-roll."""
+    stateful_patched_claude["critique"] = {
+        "drifts": [{"aspect": "stray_strand", "expected": "smooth",
+                    "observed": "wisp", "severity": "minor"}],
+        "successes": [],
+        "suggestedPromptDeltas": [],
+    }
+    sheets.save(sample_sheet)
+    req = PipelineRequest(
+        sheet_id=sample_sheet["id"],
+        scene_description="threshold_test",
+        view="front",
+        pose="contrapposto_classic",
+        max_iterations=3,
+        drift_severity_threshold="high",
+    )
+    result = run_pipeline(
+        req,
+        pixai_api_key="sk-pixai-test",
+        anthropic_api_key="sk-ant-test",
+    )
+    assert result.iterations == []
+
+
 def test_compose_corrected_prompt_pulls_recent_history(
     tmp_data_root, sample_sheet, patched_claude,
 ):

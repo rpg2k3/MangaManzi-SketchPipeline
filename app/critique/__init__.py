@@ -11,6 +11,7 @@ from .history import (
 from .learning import (
     DEFAULT_THRESHOLD,
     count_drift_recurrences,
+    promote_consecutive_drifts,
     promote_recurring_drifts,
 )
 from .regenerate import compose_corrected_prompt
@@ -23,6 +24,7 @@ __all__ = [
     "compose_corrected_prompt",
     "count_drift_recurrences",
     "load_iterations",
+    "promote_consecutive_drifts",
     "promote_recurring_drifts",
     "recent_iterations",
     "run_critique",
