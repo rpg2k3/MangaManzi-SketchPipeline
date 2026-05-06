@@ -84,8 +84,70 @@ NINEK9BASE = LoRA(
 )
 
 
+# ─────────────────────────────────────────────────────────────────────
+# Faye-Lyn character LoRAs (D4 unblock — registered 2026-05-06).
+#
+# Both variants supplied by the user. Two architectures so the team can
+# benchmark DiT.2 (no-negative, positive-respec drift correction) against
+# SDXL/Illustrious (negative-template + drift-as-absence). The character
+# sheet at data/sheets/faye_lyn.json initially binds to the SDXL variant
+# for full negative-prompt support; swap `linkedLoraId` to the DiT.2 id
+# (2007394339034365733) to test that path.
+#
+# Trigger words and recommended weight could not be parsed from the
+# public model pages — those values live in PixAI's authenticated
+# hydrated GraphQL response, not in the static HTML. Per spec, fell back
+# to trigger_words="faye_lyn" + weight=0.75. User must verify the
+# canonical values from the model page UI and update via register() if
+# they differ.
+# ─────────────────────────────────────────────────────────────────────
+
+# Sentinel value so the DiT.2 variant fails loudly at PixAI validation if
+# someone binds the sheet to it before the actual base checkpoint id is
+# supplied. PixAI rejects unknown modelIds with "Invalid modelId" — see
+# the comment chain on NINEK9BASE.base_model_id.
+_DIT2_BASE_MODEL_ID_TBD = "DIT2_BASE_MODEL_ID_REQUIRED"
+
+FAYE_LYN_SDXL = LoRA(
+    name="faye_lyn_sdxl",
+    pixai_model_id="2007725844888836295",
+    purpose=(
+        "9k9_Faye_Lyn-GlitchArcade-SDXL — character LoRA, "
+        "Illustrious-XL-v1.0 family. Initial sheet binding."
+    ),
+    trigger_words="faye_lyn",  # FALLBACK — verify canonical from PixAI UI
+    weight=0.75,                # FALLBACK — verify canonical from PixAI UI
+    base_model="Illustrious-XL-v1.0",
+    base_model_id="1844843519625072849",  # same as 9k9base SDXL base
+    used_in_stage=3,
+    locked=True,
+    architecture="illustrious",
+)
+
+FAYE_LYN_DIT2 = LoRA(
+    name="faye_lyn_dit2",
+    pixai_model_id="2007394339034365733",
+    purpose=(
+        "9k9_fayeLyn_glitchArcade — character LoRA, DiT.2 architecture. "
+        "Drift correction goes through positive re-specification "
+        "(no negative prompt). base_model_id REQUIRED before runtime "
+        "use — DiT.2 base checkpoint id was not exposed on the model "
+        "page; supply via register() override."
+    ),
+    trigger_words="faye_lyn",  # FALLBACK — verify canonical from PixAI UI
+    weight=0.75,                # FALLBACK — verify canonical from PixAI UI
+    base_model="DiT.2 (TBD)",
+    base_model_id=_DIT2_BASE_MODEL_ID_TBD,
+    used_in_stage=3,
+    locked=True,
+    architecture="dit2",
+)
+
+
 _REGISTRY: dict[str, LoRA] = {
     NINEK9BASE.name: NINEK9BASE,
+    FAYE_LYN_SDXL.name: FAYE_LYN_SDXL,
+    FAYE_LYN_DIT2.name: FAYE_LYN_DIT2,
 }
 
 _WARNED_UNKNOWN_ARCH: set[str] = set()

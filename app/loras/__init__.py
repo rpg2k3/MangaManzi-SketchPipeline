@@ -5,6 +5,8 @@ via register() once their PixAI model IDs are provided.
 """
 
 from .registry import (
+    FAYE_LYN_DIT2,
+    FAYE_LYN_SDXL,
     LORA_ARCHITECTURES,
     NINEK9BASE,
     LoRA,
@@ -16,6 +18,8 @@ from .registry import (
 )
 
 __all__ = [
+    "FAYE_LYN_DIT2",
+    "FAYE_LYN_SDXL",
     "LORA_ARCHITECTURES",
     "LoRA",
     "NINEK9BASE",

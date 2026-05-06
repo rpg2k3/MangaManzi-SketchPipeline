@@ -3,8 +3,8 @@
   "name": "Faye-Lyn",
   "archetype": "F_yadult",
   "head_count": 7.5,
-  "linkedLoraId": null,
-  "triggerWords": [],
+  "linkedLoraId": "2007725844888836295",
+  "triggerWords": ["faye_lyn"],
   "loraWeight": 0.75,
   "referenceAnchors": [
     {
@@ -39,7 +39,7 @@
       "promotedAt": "2026-05-06T00:00:00Z"
     }
   ],
-  "designNotes": "A young adult female kemonomimi cat-girl with a punk-arcade glitch aesthetic. Dark skin, voluminous magenta curly afro shoulder-length, triangular fur-tufted cat ears matching hair color, slim tapered feline tail, warm yellow eyes, grounded anime face style with moderate eye size — not pushed toward exaggerated moe. 7.5 head heights — standard young adult proportions. Outfit aesthetic combines bustier/corset elements with arcade-fashion accents (fishnet hosiery, platform boots, belt accessories with charms).",
+  "designNotes": "A young adult female kemonomimi cat-girl with a punk-arcade glitch aesthetic. Dark skin, voluminous magenta curly afro shoulder-length, triangular fur-tufted cat ears matching hair color, slim tapered feline tail, warm yellow eyes, grounded anime face style with moderate eye size — not pushed toward exaggerated moe. 7.5 head heights — standard young adult proportions. Outfit aesthetic combines bustier/corset elements with arcade-fashion accents (fishnet hosiery, platform boots, belt accessories with charms). DiT.2 variant available under PixAI id 2007394339034365733 for benchmark comparison; swap linkedLoraId to test.",
   "continuityRules": [
     "Hair color is magenta; no drift toward pink, purple, or red",
     "Cat ears are triangular and fur-tufted, matching hair color exactly; not rounded, not differently colored",
